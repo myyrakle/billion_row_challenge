@@ -79,7 +79,6 @@ func main() {
 	}
 
 	expect_output_str := string(expect_output)
-	expect_output_str = strings.TrimSpace(expect_output_str)
 
 	timer := pkg.NewTimer()
 	got := solution(pkg.MEASUREMENTS_PATH)

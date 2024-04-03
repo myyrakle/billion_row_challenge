@@ -35,6 +35,12 @@ path = "./src/파일명.rs"
 cargo run --release --manifest-path ./rust/Cargo.toml --bin 파일명
 ```
 
+## 현재 결과
+|Lang|Sample|time|
+|---|---|---|
+|Rust|Basic|144653ms|
+|Go|Basic|213713ms|
+
 ## Reference 
 - https://github.com/gunnarmorling/1brc
 - https://benhoyt.com/writings/go-1brc/
