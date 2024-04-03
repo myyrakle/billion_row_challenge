@@ -231,7 +231,7 @@ fn main() {
     for (city_name, status) in list {
         let avg = status.total / status.count as f64;
         let line = format!(
-            "{}={};{};{:.1}({:.1}/{})\n",
+            "{}={:.1};{:.1};{:.1}({:.1}/{})\n",
             city_name, status.min, status.max, avg, status.total, status.count,
         );
         let buffer = line.as_bytes();

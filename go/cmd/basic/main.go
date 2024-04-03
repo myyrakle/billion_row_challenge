@@ -79,12 +79,19 @@ func main() {
 	}
 
 	expect_output_str := string(expect_output)
+	expect_output_str = strings.TrimSpace(expect_output_str)
 
 	timer := pkg.NewTimer()
 	got := solution(pkg.MEASUREMENTS_PATH)
 	fmt.Printf("Elapsed: %fms\n", timer.ElapsedAsMilliseconds())
 
-	if got != expect_output_str {
-		panic("output not as expected")
+	if expect_output_str != got {
+		fmt.Println("Expect:")
+		fmt.Println(expect_output_str)
+		fmt.Println("Got:")
+		fmt.Println(got)
+		panic("Not matched")
+	} else {
+		fmt.Println("Matched")
 	}
 }
