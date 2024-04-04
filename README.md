@@ -59,12 +59,13 @@ cargo run --release --manifest-path ./rust/Cargo.toml --bin 파일명
 
 ## 현재 결과
 
-| Lang    | Sample                                      | time      |
-| ------- | -------------------------------             | --------- |
-| Go      | [lemon-mint1](./go/cmd/lemon-mint1/main.go) | 29217ms   |
-| Go      | [Basic](./go/cmd/basic/main.go)             | 105674ms  |
-| Rust    | [Basic](./rust/src/basic.rs)                | 149706ms  |
-| Node.js | [Basic](./nodejs/basic.js)                  | 1021432ms |
+재측정 필요
+| Lang | Sample | time |
+| ------- | ------------------------------- | --------- |
+| Go | [lemon-mint1](./go/cmd/lemon-mint1/main.go) | ?ms |
+| Go | [Basic](./go/cmd/basic/main.go) | ?ms |
+| Rust | [Basic](./rust/src/basic.rs) | ?ms |
+| Node.js | [Basic](./nodejs/basic.js) | ?ms |
 
 ## Reference
 
