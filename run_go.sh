@@ -1,6 +1,6 @@
 #!/bin/sh
-echo "BASIC example"
+echo "BaseLine example"
 cd go
-go build -o ./../main cmd/basic/main.go 
+go build -ldflags="-s -w" -gcflags=-B -o ./../main ./cmd/baseline 
 cd ..
-./main
+GODEBUG=asyncpreemptoff=1 ./main
