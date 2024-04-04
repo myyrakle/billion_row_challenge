@@ -32,6 +32,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 
 ## Rust
 
+버전은 1.77.0입니다.
 1. rust/src 경로에 basic 파일을 복사해서 새 파일을 만듭니다.
 2. rust/Cargo.toml에 다음과 같이 실행 경로를 추가합니다.
 
@@ -49,23 +50,24 @@ cargo run --release --manifest-path ./rust/Cargo.toml --bin 파일명
 
 ## Go
 
+버전은 Go 1.22.2 입니다.
 1. go/cmd 경로에 새 폴더를 만듭니다.
-2. go/cmd/basic/main.go 파일을 복사한 뒤에 수정합니다.
+2. go/cmd/basic/main.go 파일을 복사한 뒤에 수정해서 최적화합니다.
 
 ## Node.js
 
+버전은 v18.19.0입니다.
 1. nodejs 경로에 새 파일을 만듭니다.
-2. nodejs/basic.js 파일을 복사한 뒤에 수정합니다.
+2. nodejs/basic.js 파일을 복사한 뒤에 수정해서 최적화합니다.
 
 ## 현재 결과
 
-재측정 필요
-| Lang | Sample | time |
-| ------- | ------------------------------- | --------- |
-| Go | [lemon-mint1](./go/cmd/lemon-mint1/main.go) | ?ms |
-| Go | [Basic](./go/cmd/basic/main.go) | ?ms |
-| Rust | [Basic](./rust/src/basic.rs) | ?ms |
-| Node.js | [Basic](./nodejs/basic.js) | ?ms |
+| Rank | Lang    | Sample                                      | time      |
+| ---- | ------- | ------------------------------------------- | --------- |
+| 1    | Go      | [lemon-mint1](./go/cmd/lemon-mint1/main.go) | 5736ms    |
+| 2    | Rust    | [Basic](./rust/src/basic.rs)                | 127043ms  |
+| 3    | Go      | [Basic](./go/cmd/basic/main.go)             | 204525ms  |
+| 4    | Node.js | [Basic](./nodejs/basic.js)                  | 1269280ms |
 
 ## Reference
 
