@@ -1,4 +1,4 @@
-# billion_row_challenge
+# billion row challenge
 
 Rust, Go, Node.js 등의 언어로 진행하는 10억개 데이터 처리 챌린지입니다.
 
@@ -52,7 +52,7 @@ cargo run --release --manifest-path ./rust/Cargo.toml --bin 파일명
 |---|---|---|
 |Rust|Basic|144653ms|
 |Go|Basic|213713ms|
-|Nodejs|Basic|1021432ms|
+|Node.js|Basic|1021432ms|
 
 ## Reference 
 - https://github.com/gunnarmorling/1brc
