@@ -28,7 +28,7 @@ def solution(path: str) -> str:
     bucket = ""
     for city_name, status in sorted_map.items():
         avg = int(status["total"] / status["count"])
-        line = format("{}={};{};{}({}/{})\n",city_name, status["min"], 
+        line = "{}={};{};{}({}/{})\n".format(city_name, status["min"], 
                       status["max"], avg, status["total"], status["count"])
         bucket += line
     return bucket
