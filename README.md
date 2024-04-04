@@ -43,7 +43,7 @@ cargo run --release --manifest-path ./rust/Cargo.toml --bin 파일명
 1. go/cmd 경로에 새 폴더를 만듭니다. 
 2. go/cmd/basic/main.go 파일을 복사한 뒤에 수정합니다.
 
-## Nodejs
+## Node.js
 1. nodejs 경로에 새 파일을 만듭니다.
 2. nodejs/basic.js 파일을 복사한 뒤에 수정합니다.
 
