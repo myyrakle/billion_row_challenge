@@ -11,7 +11,6 @@ import (
 	"runtime"
 	"runtime/debug"
 	"sort"
-	"strconv"
 	"sync"
 	"syscall"
 	"unsafe"
@@ -69,6 +68,28 @@ func chunk(view []byte, n int64) (bounds []int64) {
 	return bounds
 }
 
+func parseIntNoCheck(b []byte) (out int64) {
+	var neg bool
+	if b[0] == '-' {
+		neg = true
+		b = b[1:]
+	} else if b[0] == '+' {
+		neg = false
+		b = b[1:]
+	}
+
+	var exp int64 = 1
+	for i := len(b) - 1; i >= 0; i-- {
+		out += int64((b[i] - '0')) * exp
+		exp *= 10
+	}
+
+	if neg {
+		out = -out
+	}
+	return
+}
+
 func processChunk(ht *hashtable, view []byte, wg *sync.WaitGroup) {
 	defer wg.Done()
 	for i := range ht.buckets {
@@ -88,10 +109,7 @@ func processChunk(ht *hashtable, view []byte, wg *sync.WaitGroup) {
 
 		temp_index := bytes.IndexByte(view[index+int64(city_index)+1:], '\n')
 		temp_bytes := view[index+int64(city_index)+1 : index+int64(city_index)+1+int64(temp_index)]
-		temp, err := strconv.ParseInt(fastString(temp_bytes), 10, 64)
-		if err != nil {
-			panic(err)
-		}
+		temp := parseIntNoCheck(temp_bytes)
 
 		if ht.buckets[idx].Len == 0 {
 			// Copy Key
