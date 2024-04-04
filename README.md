@@ -1,4 +1,4 @@
-# billion_row_challenge
+# billion row challenge
 
 Rust, Go, Node.js 등의 언어로 진행하는 10억개 데이터 처리 챌린지입니다.
 
@@ -21,6 +21,10 @@ Amsterdam=0.4;999999.9;499913.3(4715142248923.3/9431920)
 Anápolis=0.0;999999.9;499955.0(4718363502090.6/9437576)
 ```
 
+## 제한
+- 해당 언어 안에서 모든 것이 완료되어야 합니다. FFI 같은 것은 반칙입니다.
+- 일반적인 상용 컴퓨팅 환경에서 동작해야 합니다. x86, linux. RAM 32GB
+- 하지만 unsafe나 트리키한 흑마술들은 사용 가능합니다.
 
 ## Rust
 1. rust/src 경로에 basic 파일을 복사해서 새 파일을 만듭니다.
@@ -39,16 +43,16 @@ cargo run --release --manifest-path ./rust/Cargo.toml --bin 파일명
 1. go/cmd 경로에 새 폴더를 만듭니다. 
 2. go/cmd/basic/main.go 파일을 복사한 뒤에 수정합니다.
 
-## Nodejs
+## Node.js
 1. nodejs 경로에 새 파일을 만듭니다.
 2. nodejs/basic.js 파일을 복사한 뒤에 수정합니다.
 
 ## 현재 결과
 |Lang|Sample|time|
 |---|---|---|
-|Rust|Basic|144653ms|
-|Go|Basic|213713ms|
-|Nodejs|Basic|1021432ms|
+|Rust|[Basic](./rust/src/basic.rs)|144653ms|
+|Go|[Basic](./go/cmd/basic/main.go)|213713ms|
+|Node.js|[Basic](./nodejs/basic.js)|1021432ms|
 
 ## Reference 
 - https://github.com/gunnarmorling/1brc

@@ -120,15 +120,13 @@ fn get_city_name() -> &'static str {
 }
 
 // 0.0 ~ 1000000.0 (1자리까지 반올림)
-fn generate_measurement() -> f64 {
+fn generate_measurement() -> i64 {
     use rand::Rng;
 
     let mut rng = rand::thread_rng();
-    let measurement = rng.gen_range(0.0..1000000.0);
+    let measurement = rng.gen_range(0..50000000);
 
-    let rounded_measurement = (measurement * 10.0_f64).round() / 10.0;
-
-    rounded_measurement
+    measurement
 }
 
 pub struct Timer {
@@ -172,10 +170,10 @@ fn main() {
 
     let mut map = HashMap::new();
     struct Status {
-        min: f64,
-        max: f64,
-        total: f64,
-        count: i128,
+        min: i64,
+        max: i64,
+        total: i64,
+        count: i64,
     }
 
     let timer = Timer::new();
@@ -194,8 +192,8 @@ fn main() {
             count,
         }) = map.get_mut(city_name)
         {
-            *min = min.min(measurement);
-            *max = max.max(measurement);
+            *min = (*min).min(measurement);
+            *max = (*max).max(measurement);
             *total += measurement;
             *count += 1;
         } else {
@@ -229,9 +227,9 @@ fn main() {
     let mut list = map.into_iter().collect::<Vec<_>>();
     list.sort_by(|a, b| a.0.cmp(&b.0));
     for (city_name, status) in list {
-        let avg = status.total / status.count as f64;
+        let avg = status.total / status.count;
         let line = format!(
-            "{}={:.1};{:.1};{:.1}({:.1}/{})\n",
+            "{}={};{};{}({}/{})\n",
             city_name, status.min, status.max, avg, status.total, status.count,
         );
         let buffer = line.as_bytes();
