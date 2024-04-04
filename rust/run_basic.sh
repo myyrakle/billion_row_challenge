@@ -1,0 +1,1 @@
+cargo run --release --manifest-path ./rust/basic/Cargo.toml

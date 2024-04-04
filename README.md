@@ -33,20 +33,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 ## Rust
 
 버전은 1.77.0입니다.
-1. rust/src 경로에 basic 파일을 복사해서 새 파일을 만듭니다.
-2. rust/Cargo.toml에 다음과 같이 실행 경로를 추가합니다.
-
-```
-[[bin]]
-name = "파일명"
-path = "./src/파일명.rs"
-```
-
-3. 다음과 같이 실행합니다.
-
-```
-cargo run --release --manifest-path ./rust/Cargo.toml --bin 파일명
-```
+1. rust 경로에 추가 프로젝트를 구성합니다. basic을 복사해도 되고, cargo new로 생성해도 됩니다.
 
 ## Go
 
