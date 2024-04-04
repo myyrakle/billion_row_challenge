@@ -10,11 +10,25 @@ import (
 	"strings"
 )
 
+func min(a, b int64) int64 {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+func max(a, b int64) int64 {
+	if a > b {
+		return a
+	}
+	return b
+}
+
 func solution(inputPath string) string {
 	buffer := ""
 
 	type stats struct {
-		min, max, sum float64
+		min, max, sum int64
 		count         int64
 	}
 
@@ -34,7 +48,7 @@ func solution(inputPath string) string {
 			continue
 		}
 
-		temp, err := strconv.ParseFloat(tempStr, 64)
+		temp, err := strconv.ParseInt(tempStr, 10, 64)
 		if err != nil {
 			panic(err)
 		}
@@ -62,10 +76,9 @@ func solution(inputPath string) string {
 
 	for _, station := range stations {
 		s := stationStats[station]
-		mean := s.sum / float64(s.count)
-		line := fmt.Sprintf("%s=%.1f;%.1f;%.1f(%.1f/%d)\n", station, s.min, s.max, mean, s.sum, s.count)
+		mean := s.sum / s.count
+		line := fmt.Sprintf("%s=%d;%d;%d(%d/%d)\n", station, s.min, s.max, mean, s.sum, s.count)
 
-		fmt.Println(line)
 		buffer += line
 	}
 
