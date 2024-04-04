@@ -2,7 +2,6 @@ import sys, time
 from common import OUTPUT_PATH, MEASUREMENTS_PATH, Timer
 
 def solution(path: str) -> str:
-    
     map = {}
     with open(path, 'r') as f:
         for line in f:
