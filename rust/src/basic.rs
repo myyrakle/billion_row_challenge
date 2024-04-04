@@ -11,10 +11,10 @@ fn solution(path: &str) -> String {
 
     let mut map = HashMap::new();
     struct Status {
-        min: f64,
-        max: f64,
-        total: f64,
-        count: i128,
+        min: i64,
+        max: i64,
+        total: i64,
+        count: i64,
     }
 
     for line_result in reader.lines() {
@@ -22,7 +22,7 @@ fn solution(path: &str) -> String {
 
         let mut parts = line.split(';');
         let city_name = parts.next().unwrap().to_string();
-        let measurement = parts.next().unwrap().parse::<f64>().unwrap();
+        let measurement = parts.next().unwrap().parse::<i64>().unwrap();
 
         if let Some(Status {
             min,
@@ -31,8 +31,8 @@ fn solution(path: &str) -> String {
             count,
         }) = map.get_mut(&city_name)
         {
-            *min = min.min(measurement);
-            *max = max.max(measurement);
+            *min = (*min).min(measurement);
+            *max = (*max).max(measurement);
             *total += measurement;
             *count += 1;
         } else {
@@ -52,9 +52,9 @@ fn solution(path: &str) -> String {
     let mut list = map.into_iter().collect::<Vec<_>>();
     list.sort_by(|a, b| a.0.cmp(&b.0));
     for (city_name, status) in list {
-        let avg = status.total / status.count as f64;
+        let avg = status.total / status.count;
         let line = format!(
-            "{}={:.1};{:.1};{:.1}({:.1}/{})\n",
+            "{}={};{};{}({}/{})\n",
             city_name, status.min, status.max, avg, status.total, status.count,
         );
         bucket.push_str(&line);
