@@ -1,8 +1,8 @@
 package main
 
 import (
-	"brc/cmd/baseline/mmap"
-	"brc/cmd/baseline/wyhash"
+	"brc/cmd/lemon-mint1/mmap"
+	"brc/cmd/lemon-mint1/wyhash"
 	"brc/internal/measurement"
 	"bytes"
 	"fmt"

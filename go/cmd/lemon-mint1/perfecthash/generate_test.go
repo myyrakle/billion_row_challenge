@@ -1,7 +1,7 @@
 package main
 
 import (
-	"brc/cmd/baseline/wyhash"
+	"brc/cmd/lemon-mint1/wyhash"
 	"testing"
 	"unsafe"
 )
