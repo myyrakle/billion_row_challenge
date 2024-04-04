@@ -1,7 +1,7 @@
 package main
 
 import (
-	"brc/pkg"
+	"brc/internal/measurement"
 	"bufio"
 	"fmt"
 	"os"
@@ -86,15 +86,15 @@ func solution(inputPath string) string {
 }
 
 func main() {
-	expect_output, err := os.ReadFile(pkg.OUTPUT_PATH)
+	expect_output, err := os.ReadFile(measurement.OUTPUT_PATH)
 	if err != nil {
 		panic(err)
 	}
 
 	expect_output_str := string(expect_output)
 
-	timer := pkg.NewTimer()
-	got := solution(pkg.MEASUREMENTS_PATH)
+	timer := measurement.NewTimer()
+	got := solution(measurement.MEASUREMENTS_PATH)
 	fmt.Printf("Elapsed: %fms\n", timer.ElapsedAsMilliseconds())
 
 	if expect_output_str != got {
