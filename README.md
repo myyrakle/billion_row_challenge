@@ -51,7 +51,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | Rank | Lang    | Sample                                      | time      |
 | ---- | ------- | ------------------------------------------- | --------- |
 | 1    | Go      | [lemon-mint1](./go/cmd/lemon-mint1/main.go) | 5736ms    |
-| 2    | Rust    | [Basic](./rust/src/basic.rs)                | 127043ms  |
+| 2    | Rust    | [Basic](./rust/basic/src/main.rs)                | 127043ms  |
 | 3    | Go      | [Basic](./go/cmd/basic/main.go)             | 204525ms  |
 | 4    | Node.js | [Basic](./nodejs/basic.js)                  | 1269280ms |
 
