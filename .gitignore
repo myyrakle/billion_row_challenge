@@ -24,3 +24,5 @@ outputs.txt
 main
 
 node_modules
+
+.vscode
