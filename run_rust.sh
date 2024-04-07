@@ -1,6 +1,6 @@
 #!/bin/sh
-echo "BASIC example"
+echo "[Rust] BASIC example"
 sh rust/run_basic.sh
 
-echo "whitetac example"
-sh rust/run_whitetac.sh
+echo "[Rust] whitetac1 example"
+sh rust/run_whitetac1.sh

@@ -46,14 +46,20 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 1. nodejs 경로에 새 파일을 만듭니다.
 2. nodejs/basic.js 파일을 복사한 뒤에 수정해서 최적화합니다.
 
+## Python
+버전은 Python 3.10.12입니다.
+1. python 경로에 새 파일을 만듭니다.
+
 ## 현재 결과,,,,,,
 
 | Rank | Lang    | Sample                                      | time      |
 | ---- | ------- | ------------------------------------------- | --------- |
-| 1    | Go      | [lemon-mint1](./go/cmd/lemon-mint1/main.go) | 5736ms    |
-| 2    | Rust    | [Basic](./rust/basic/src/main.rs)                | 127043ms  |
-| 3    | Go      | [Basic](./go/cmd/basic/main.go)             | 204525ms  |
-| 4    | Node.js | [Basic](./nodejs/basic.js)                  | 1269280ms |
+| 1    | Go      | [lemon-mint1](./go/cmd/lemon-mint1/main.go) | 6113ms    |
+| 2    | Rust    | [whitetac1](./rust/whitetac1/src/main.rs)   | 8046ms    |
+| 3    | Rust    | [Basic](./rust/basic/src/main.rs)           | 128293ms  |
+| 4    | Go      | [Basic](./go/cmd/basic/main.go)             | 191004ms  |
+| 5    | Python  | [Basic](./python/basic.js)                  | 936269ms  |
+| 6    | Node.js | [Basic](./nodejs/basic.js)                  | 1262149ms |
 
 ## Reference
 

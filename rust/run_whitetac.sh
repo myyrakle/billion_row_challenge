@@ -1,1 +1,0 @@
-cargo run --release --manifest-path ./rust/whitetac/Cargo.toml
