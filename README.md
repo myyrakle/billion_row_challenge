@@ -1,6 +1,6 @@
 # billion row challenge
 
-Rust, Go, Node.js 등의 언어로 진행하는 10억개 데이터 처리 챌린지입니다.
+Rust, Go, Node.js, Python, Java 등의 언어로 진행하는 10억개 데이터 처리 챌린지입니다.
 
 1. setup.sh를 실행해서 테스트 데이터를 생성합니다. (17GB 정도의 크기입니다.)
 2. 입력 데이터 파일에는 다음과 같이 지역과 측정값 쌍이 개행으로 구분된 채로 들어있습니다. 숫자는 정수 값입니다.
@@ -50,6 +50,10 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 버전은 Python 3.10.12입니다.
 1. python 경로에 새 파일을 만듭니다.
 
+## Java
+버전은 openjdk 11.0.22입니다.
+1. java 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
+
 ## 현재 결과,,,,,,
 
 | Rank | Lang    | Sample                                      | time      |
@@ -57,9 +61,10 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 1    | Go      | [lemon-mint1](./go/cmd/lemon-mint1/main.go) | 6113ms    |
 | 2    | Rust    | [whitetac1](./rust/whitetac1/src/main.rs)   | 8046ms    |
 | 3    | Rust    | [Basic](./rust/basic/src/main.rs)           | 128293ms  |
-| 4    | Go      | [Basic](./go/cmd/basic/main.go)             | 191004ms  |
-| 5    | Python  | [Basic](./python/basic.js)                  | 936269ms  |
-| 6    | Node.js | [Basic](./nodejs/basic.js)                  | 1262149ms |
+| 4    | Java    | [Basic](./java/basic/Main.java)             | 184825ms  |
+| 5    | Go      | [Basic](./go/cmd/basic/main.go)             | 191004ms  |
+| 6    | Python  | [Basic](./python/basic.js)                  | 936269ms  |
+| 7    | Node.js | [Basic](./nodejs/basic.js)                  | 1262149ms |
 
 ## Reference
 
