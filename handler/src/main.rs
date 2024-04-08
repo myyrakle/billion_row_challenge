@@ -1,112 +1,106 @@
-use std::{collections::HashMap, fs::OpenOptions, io::Write};
+use std::{collections::HashMap, fs::OpenOptions, io::Write, io::BufWriter};
 
-const CITY_NAMES: [&'static str; 106] = [
-    "Seoul",
-    "Tokyo",
-    "Singapore",
-    "Sydney",
-    "Mumbai",
-    "Frankfurt",
-    "London",
-    "Ireland",
-    "Sao Paulo",
-    "N. Virginia",
-    "Ohio",
-    "N. California",
-    "Oregon",
-    "Canada",
-    "Central",
-    "Paris",
-    "Stockholm",
-    "Bahrain",
-    "Hong Kong",
-    "Osaka",
-    "Krofast",
-    "Prover",
-    "Qrokwood",
-    "Larfast",
-    "Gaaphis",
-    "Qreigh",
-    "Prico",
-    "Krore",
-    "Urgtin",
-    "Adenarith",
-    "New York",
-    "Los Angeles",
-    "Dallas",
-    "Miami",
-    "Mexico City",
-    "Sao Paulo",
-    "Montreal",
-    "Vancouver",
-    "London",
-    "Paris",
-    "Stockholm",
-    "Frankfurt",
-    "Milan",
-    "Madrid",
-    "Warsaw",
-    "Dublin",
-    "Brussels",
-    "Amsterdam",
-    "Zurich",
-    "Oslo",
-    "Helsinki",
-    "Copenhagen",
-    "Vienna",
-    "Athens",
-    "Bucharest",
-    "Istanbul",
-    "Moscow",
-    "St. Petersburg",
-    "Kiev",
-    "Mumbai",
-    "New Delhi",
-    "Bangalore",
-    "Hyderabad",
-    "Chennai",
-    "Kolkata",
-    "Pune",
-    "São Paulo",
-    "Rio de Janeiro",
-    "Belo Horizonte",
-    "Brasília",
-    "Salvador",
-    "Fortaleza",
-    "Manaus",
-    "Curitiba",
-    "Recife",
-    "Porto Alegre",
-    "Belém",
-    "Goiania",
-    "Guarulhos",
-    "Campinas",
-    "Nova Iguaçu",
-    "Santo André",
-    "São Bernardo do Campo",
-    "Osasco",
-    "Duque de Caxias",
-    "São José dos Campos",
-    "Ribeirão Preto",
-    "Niterói",
-    "São Gonçalo",
-    "Feira de Santana",
-    "Juiz de Fora",
-    "Aparecida de Goiânia",
-    "Londrina",
-    "Anápolis",
-    "Porto Velho",
-    "Cuiabá",
-    "Macapá",
-    "Palmas",
-    "Boa Vista",
-    "Austin",
-    "Boston",
-    "Indianapolis",
-    "Chongqing",
-    "Guadalajara",
-    "Barcelona",
-    "Toronto",
+const CITY_NAMES: [&'static str; 100] = [
+	"Adenarith",
+	"Amsterdam",
+	"Anápolis",
+	"Aparecida de Goiânia",
+	"Athens",
+	"Austin",
+	"Bahrain",
+	"Bangalore",
+	"Barcelona",
+	"Belo Horizonte",
+	"Belém",
+	"Boa Vista",
+	"Boston",
+	"Brasília",
+	"Brussels",
+	"Bucharest",
+	"Campinas",
+	"Canada",
+	"Central",
+	"Chennai",
+	"Chongqing",
+	"Copenhagen",
+	"Cuiabá",
+	"Curitiba",
+	"Dallas",
+	"Dublin",
+	"Duque de Caxias",
+	"Feira de Santana",
+	"Fortaleza",
+	"Frankfurt",
+	"Gaaphis",
+	"Goiania",
+	"Guadalajara",
+	"Guarulhos",
+	"Helsinki",
+	"Hong Kong",
+	"Hyderabad",
+	"Indianapolis",
+	"Ireland",
+	"Istanbul",
+	"Juiz de Fora",
+	"Kiev",
+	"Kolkata",
+	"Krofast",
+	"Krore",
+	"Larfast",
+	"London",
+	"Londrina",
+	"Los Angeles",
+	"Macapá",
+	"Madrid",
+	"Manaus",
+	"Mexico City",
+	"Miami",
+	"Milan",
+	"Montreal",
+	"Moscow",
+	"Mumbai",
+	"N. California",
+	"N. Virginia",
+	"New Delhi",
+	"New York",
+	"Niterói",
+	"Nova Iguaçu",
+	"Ohio",
+	"Oregon",
+	"Osaka",
+	"Osasco",
+	"Oslo",
+	"Palmas",
+	"Paris",
+	"Porto Alegre",
+	"Porto Velho",
+	"Prico",
+	"Prover",
+	"Pune",
+	"Qreigh",
+	"Qrokwood",
+	"Recife",
+	"Ribeirão Preto",
+	"Rio de Janeiro",
+	"Salvador",
+	"Santo André",
+	"Sao Paulo",
+	"Seoul",
+	"Singapore",
+	"St. Petersburg",
+	"Stockholm",
+	"Sydney",
+	"São Bernardo do Campo",
+	"São Gonçalo",
+	"São José dos Campos",
+	"São Paulo",
+	"Tokyo",
+	"Toronto",
+	"Urgtin",
+	"Vancouver",
+	"Vienna",
+	"Warsaw",
+	"Zurich"
 ];
 
 fn get_city_name() -> &'static str {
@@ -154,19 +148,21 @@ impl Timer {
 }
 
 fn main() {
-    let mut measurements_file = OpenOptions::new()
+    let measurements_file = OpenOptions::new()
         .create(true)
         .write(true)
         .truncate(true)
         .open("measurements.txt")
         .unwrap();
+    let mut measurements_writer = BufWriter::new(measurements_file);
 
-    let mut outputs_file = OpenOptions::new()
+    let outputs_file = OpenOptions::new()
         .create(true)
         .write(true)
         .truncate(true)
         .open("outputs.txt")
         .unwrap();
+    let mut outputs_writer = BufWriter::new(outputs_file);
 
     let mut map = HashMap::new();
     struct Status {
@@ -213,12 +209,12 @@ fn main() {
         bucket_count += 1;
 
         if bucket_count == 10000000 {
-            let buffer = bucket.as_bytes();
-            measurements_file.write(buffer).unwrap();
+            measurements_writer.write(bucket.as_bytes()).unwrap();
             bucket.clear();
             bucket_count = 0;
         }
     }
+    measurements_writer.flush().unwrap();
 
     let elapsed_secs = timer.elapsed_as_secs();
     println!("measurements generate Done! {}s", elapsed_secs);
@@ -232,9 +228,9 @@ fn main() {
             "{}={};{};{}({}/{})\n",
             city_name, status.min, status.max, avg, status.total, status.count,
         );
-        let buffer = line.as_bytes();
-        outputs_file.write(buffer).unwrap();
+        outputs_writer.write(line.as_bytes()).unwrap();
     }
+    outputs_writer.flush().unwrap();
 
     let elapsed_secs = timer.elapsed_as_secs();
     println!("outputs generate Done! {}s", elapsed_secs);
