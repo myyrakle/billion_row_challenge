@@ -63,7 +63,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 3    | Rust    | [Basic](./rust/basic/src/main.rs)           | 128293ms  |
 | 4    | Java    | [Basic](./java/basic/Main.java)             | 184825ms  |
 | 5    | Go      | [Basic](./go/cmd/basic/main.go)             | 191004ms  |
-| 6    | Python  | [Basic](./python/basic.js)                  | 936269ms  |
+| 6    | Python  | [Basic](./python/basic.py)                  | 936269ms  |
 | 7    | Node.js | [Basic](./nodejs/basic.js)                  | 1262149ms |
 
 ## Reference
