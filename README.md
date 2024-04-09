@@ -54,6 +54,10 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 버전은 openjdk 11.0.22입니다.
 1. java 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
 
+## C++
+버전은 G++ 11.4.0입니다.
+1. cpp 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
+
 ## 현재 결과,,,,,,
 
 | Rank | Lang    | Sample                                      | time      |
@@ -63,8 +67,9 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 3    | Rust    | [Basic](./rust/basic/src/main.rs)           | 128293ms  |
 | 4    | Java    | [Basic](./java/basic/Main.java)             | 184825ms  |
 | 5    | Go      | [Basic](./go/cmd/basic/main.go)             | 191004ms  |
-| 6    | Python  | [Basic](./python/basic.py)                  | 936269ms  |
-| 7    | Node.js | [Basic](./nodejs/basic.js)                  | 1262149ms |
+| 6    | C++     | [Basic](./cpp/basic/main.cpp)               | 198062ms  |
+| 7    | Python  | [Basic](./python/basic.py)                  | 936269ms  |
+| 8    | Node.js | [Basic](./nodejs/basic.js)                  | 1262149ms |
 
 ## Reference
 
