@@ -72,8 +72,8 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 2    | Rust    | [whitetac1](./rust/whitetac1/src/main.rs)   | 8046ms    |
 | 3    | Rust    | [Basic](./rust/basic/src/main.rs)           | 128293ms  |
 | 4    | Java    | [Basic](./java/basic/Main.java)             | 184825ms  |
-| 5    | Go      | [Basic](./go/cmd/basic/main.go)             | 191004ms  |
-| 6    | C++     | [Basic](./cpp/basic/main.cpp)               | 198062ms  |
+| 5    | C++     | [Basic](./cpp/basic/main.cpp)               | 190039ms  |
+| 6    | Go      | [Basic](./go/cmd/basic/main.go)             | 191004ms  |
 | 7    | C#      | [Basic](./c#/basic/main.cpp)                | 215245ms  |
 | 8    | Python  | [Basic](./python/basic.py)                  | 936269ms  |
 | 9    | Node.js | [Basic](./nodejs/basic.js)                  | 1262149ms |
