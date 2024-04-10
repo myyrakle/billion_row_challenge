@@ -33,3 +33,5 @@ bin
 
 Debug
 Release
+
+*.sln
