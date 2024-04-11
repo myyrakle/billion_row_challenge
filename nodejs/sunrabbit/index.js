@@ -1,6 +1,7 @@
-const fs = require("fs");
+const fs = require("node:fs");
 const readline = require("readline");
-const { OUTPUT_PATH, MEASUREMENTS_PATH, Timer } = require("./common");
+
+const { OUTPUT_PATH, MEASUREMENTS_PATH, Timer } = require("../common");
 
 const cityMap = new Map(
   [
@@ -107,49 +108,44 @@ const cityMap = new Map(
   ].map((v) => [
     v,
     {
-      min: BigInt(9007199254740991),
-      max: BigInt(0),
+      min: 9007199254740991,
+      max: 0,
       total: BigInt(0),
-      count: BigInt(0),
+      count: 0,
     },
   ])
 );
-function minBigInt(a, b) {
-  return a < b ? a : b;
-}
-
-function maxBigInt(a, b) {
-  return a > b ? a : b;
-}
 
 async function solution() {
   const instream = fs.createReadStream(MEASUREMENTS_PATH);
-
   const rl = readline.createInterface({
     input: instream,
     crlfDelay: Infinity,
   });
-
-  for await (const line of rl) {
+  rl.addListener("line", (line) => {
     let [cityName, measurement] = line.split(";");
-    measurement = BigInt(measurement);
+
+    measurement = Number(measurement);
 
     const city = cityMap.get(cityName);
-    city.min = minBigInt(city.min, measurement);
-    city.max = maxBigInt(city.max, measurement);
-    city.total += measurement;
+    city.min = Math.min(city.min, measurement);
+    city.max = Math.max(city.max, measurement);
+    city.total += BigInt(measurement);
     city.count++;
-  }
+  });
 
-  let bucket = "";
+  await new Promise((resolve, _) => {
+    rl.addListener("close", () => resolve());
+  });
 
-  for (const [city_name, status] of Array.from(cityMap)) {
-    const avg = status.total / status.count;
-    const line = `${city_name}=${status.min};${status.max};${avg}(${status.total}/${status.count})\n`;
-    bucket += line;
-  }
-
-  return bucket;
+  return Array.from(cityMap)
+    .map(
+      ([city_name, status]) =>
+        `${city_name}=${status.min};${status.max};${~~(
+          status.total / BigInt(status.count)
+        )}(${status.total}/${status.count})\n`
+    )
+    .join("");
 }
 
 async function main() {
