@@ -66,7 +66,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 
 ## 현재 결과,,,,,,
 
-| Rank | Lang    | Sample                                      | time      |
+| Rank | Lang    | Code                                        | time      |
 | ---- | ------- | ------------------------------------------- | --------- |
 | 1    | Go      | [lemon-mint1](./go/cmd/lemon-mint1/main.go) | 6113ms    |
 | 2    | Rust    | [whitetac1](./rust/whitetac1/src/main.rs)   | 8046ms    |
@@ -75,8 +75,9 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 5    | C++     | [Basic](./cpp/basic/main.cpp)               | 190039ms  |
 | 6    | Go      | [Basic](./go/cmd/basic/main.go)             | 191004ms  |
 | 7    | C#      | [Basic](./c#/basic/main.cpp)                | 215245ms  |
-| 8    | Python  | [Basic](./python/basic.py)                  | 936269ms  |
-| 9    | Node.js | [Basic](./nodejs/basic.js)                  | 1262149ms |
+| 8    | Node.js | [sunrabbit1](./nodejs/sunrabbit1/index.js)  | 593877ms  |
+| 9    | Python  | [Basic](./python/basic.py)                  | 936269ms  |
+| 10   | Node.js | [Basic](./nodejs/basic.js)                  | 1262149ms |
 
 ## Reference
 
