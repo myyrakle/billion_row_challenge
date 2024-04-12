@@ -9,51 +9,27 @@
 
 #include "../common.h"
 
-#define MAX_KEYS 16384
-#define KEY_SIZE 32
+#define MAX_KEYS 511
 #define VALUE_SIZE 32
 
 typedef struct Region {
-    long long max;
-    long long min;
     long long total;
-    long long count;
+    int count;
+    int min;   
+    int max;
+    long long dummy[5];
 } Region;
-
-typedef struct {
-    char key[KEY_SIZE];
-    uint8_t value[VALUE_SIZE];
-} TableEntry;
 
 typedef struct WorkerContext {
     off_t start_offset;
     off_t length;
-    char** regions;
+    uint8_t** regions;
     int region_count;
-    TableEntry* table;
+    Region* table;
     long long dummy[3];
 } WorkerContext;
 
-char* mapped_measurements_buffer;
-
-void* get_region(TableEntry* table, const char* key) {
-    uint32_t hash = 5381;
-    for (const char* p = key; *p; p++) {
-        hash = ((hash << 5) + hash) + *p;
-    }
-    uint32_t index = hash % MAX_KEYS;
-
-    TableEntry* TableEntry = &table[index];
-    if (TableEntry->key[0] == '\0') {
-        strncpy(TableEntry->key, key, KEY_SIZE);
-        ((Region*)TableEntry->value)->count = 0;
-        ((Region*)TableEntry->value)->total = 0;
-        ((Region*)TableEntry->value)->min = 0x7fffffffffffffff;
-        ((Region*)TableEntry->value)->max = -1;
-    }
-
-    return TableEntry->value;
-}
+uint8_t* input_data;
 
 int compare(const void* a, const void* b) {
     const char* str1 = *(const char**)a;
@@ -61,70 +37,54 @@ int compare(const void* a, const void* b) {
     return strcmp(str1, str2);
 }
 
-inline long long str_to_int(const char* str) {
-    int result = 0;
-
-    while (*str) {
-        result = result * 10 + (*str++ - '0');
-    }
-
-    return result;
-}
-
 void* worker(void* arg) {
     char region_buffer[32];
     int region_buffer_offset = 0;
 
-    char measurement_buffer[32];
-    int measurement_buffer_offset = 0;
-
-    int state = 0;
-
     WorkerContext* context = (WorkerContext*)arg;
 
     context->region_count = 0;
+    context->regions = (uint8_t**) malloc(sizeof(uint8_t*) * 100);
 
-    context->regions = (char**) malloc(sizeof(char*) * 128);
-
-    for (int i = 0; i < 128; ++i) {
-        context->regions[i] = (char*) malloc(sizeof(char) * 32);
+    for (int i = 0; i < 100; ++i) {
+        context->regions[i] = (uint8_t*) malloc(sizeof(uint8_t) * 32);
     }
 
     off_t offset = context->start_offset;
     off_t end_offset = context->start_offset + context->length;
 
-    while (offset < end_offset) {
-        off_t i;
-        for (i = offset; mapped_measurements_buffer[i] != ';'; ++i) {
-            region_buffer[region_buffer_offset++] = mapped_measurements_buffer[i];
+    while (offset < end_offset) {   
+        uint32_t hash = 7243;
+
+        for (; input_data[offset] != ';'; ++offset) {
+            hash = ((hash << 5) + hash) + input_data[offset];
+            region_buffer[region_buffer_offset++] = input_data[offset];
         }
+        offset++;
         region_buffer[region_buffer_offset] = 0;
 
-        offset = i + 1;
-
-        for (i = offset; mapped_measurements_buffer[i] != '\n'; ++i) {
-            measurement_buffer[measurement_buffer_offset++] = mapped_measurements_buffer[i];
+        int measurement = 0;
+        for (; input_data[offset] != '\n'; ++offset) {
+             measurement = measurement * 10 + (input_data[offset] - '0');
         }
-        measurement_buffer[measurement_buffer_offset] = 0;
+        offset++;
 
-        offset = i + 1;
+        off_t index = hash % MAX_KEYS;
+        Region* region = &context->table[index];
 
-        long long measurement = str_to_int(measurement_buffer);
-
-        Region* data = (Region*)get_region(context->table, region_buffer);
-
-        if (data->count == 0) {
-            strcpy(context->regions[context->region_count++], region_buffer);
+        if (region->count == 0) {
+            region->total = 0;
+            region->min = 0x7fffffff;
+            region->max = -1;
+            strcpy((char*)context->regions[context->region_count++], region_buffer);
         }
 
-        data->count++;
-        data->total += measurement;
-        data->max = data->max < measurement ? measurement : data->max;
-        data->min = data->min > measurement ? measurement : data->min;
+        region->count++;
+        region->total += measurement;
+        region->max = region->max < measurement ? measurement : region->max;
+        region->min = region->min > measurement ? measurement : region->min;
 
-        state = 0;
         region_buffer_offset = 0;
-        measurement_buffer_offset = 0;
     }
 
     pthread_exit(NULL);
@@ -139,28 +99,28 @@ const char* solution() {
     off_t file_size = sb.st_size;
     off_t map_size = (file_size - file_size % 0x1000) + 0x1000;
 
-    mapped_measurements_buffer = (char*) mmap64(NULL, map_size, PROT_READ, MAP_SHARED, fd, 0);
+    input_data = (uint8_t*) mmap64(NULL, map_size, PROT_READ, MAP_SHARED, fd, 0);
 
     long num_threads = sysconf(_SC_NPROCESSORS_ONLN);
     off_t chunk_size = file_size / num_threads;
 
-    pthread_t threads[128];
-    WorkerContext* contexts[128];
+    pthread_t threads[100];
+    WorkerContext* contexts[100];
 
-    for (int i = 0; i < 128; ++i) {
+    for (int i = 0; i < 100; ++i) {
         contexts[i] = (WorkerContext*) malloc(sizeof(WorkerContext));
     }
 
     off_t start_offset = 0;
     for (int i = 0; i < num_threads; ++i) {
-        contexts[i]->table = (TableEntry*) malloc(sizeof(TableEntry) * MAX_KEYS);
+        contexts[i]->table = (Region*) calloc(sizeof(Region), MAX_KEYS);
 
         off_t end = start_offset + chunk_size;
 
         if (file_size <= end) {
             end = file_size - 1;
         } else {
-            for (; mapped_measurements_buffer[end] != '\n'; ++end);
+            for (; input_data[end] != '\n'; ++end);
         }
 
         contexts[i]->start_offset = start_offset;
@@ -175,24 +135,34 @@ const char* solution() {
         pthread_join(threads[i], NULL);
     }
 
-    TableEntry* result_table = (TableEntry*) malloc(sizeof(TableEntry) * MAX_KEYS);
+    Region* result_table = (Region*) calloc(sizeof(Region), MAX_KEYS);
 
-    char* regions[128];
+    uint8_t* regions[100];
     int region_count = 0;
 
-    for (int i = 0; i < 128; ++i) {
-        regions[i] = (char*) malloc(sizeof(char) * 32);
+    for (int i = 0; i < 100; ++i) {
+        regions[i] = (uint8_t*) calloc(1, 32);
     }
 
     for (int i = 0; i < num_threads; ++i) {
-        TableEntry* thread_table = contexts[i]->table;
+        Region* thread_table = contexts[i]->table;
 
         for (int j = 0; j < contexts[i]->region_count; ++j) {
-            Region* thread_region = (Region*) get_region(thread_table, contexts[i]->regions[j]);
-            Region* result_region = (Region*) get_region(result_table, contexts[i]->regions[j]);
+            uint32_t hash = 7243;
+            for (int k = 0; contexts[i]->regions[j][k] != '\0'; ++k) {
+                hash = ((hash << 5) + hash) + contexts[i]->regions[j][k];
+            }
+
+            off_t index = hash % MAX_KEYS;
+
+            Region* thread_region = &thread_table[index];
+            Region* result_region = &result_table[index];
 
             if (result_region->count == 0) {
-                strcpy(regions[region_count++], contexts[i]->regions[j]);
+                result_region->total = 0;
+                result_region->min = 0x7fffffff;
+                result_region->max = -1;
+                strcpy((char*)regions[region_count++], (char*)contexts[i]->regions[j]);
             }
 
             result_region->count += thread_region->count;
@@ -207,11 +177,18 @@ const char* solution() {
     char* result = (char*) calloc(sizeof(char), 32768);
 
     for (int i = 0; i < region_count; ++i) {
-        Region* data = (Region*) get_region(result_table, regions[i]);
+        uint32_t hash = 7243;
+        for (int j = 0; regions[i][j] != '\0'; ++j) {
+            hash = ((hash << 5) + hash) + regions[i][j];
+        }
+        
+        off_t index = hash % MAX_KEYS;
+
+        Region* region = &result_table[index];
 
         char line[256];
 
-        sprintf(line, "%s=%lld;%lld;%lld(%lld/%lld)\n", regions[i], data->min, data->max, data->total / data->count, data-> total, data->count);
+        sprintf(line, "%s=%d;%d;%lld(%lld/%d)\n", regions[i], region->min, region->max, region->total / region->count, region-> total, region->count);
         strcat(result, line);
     }
 
