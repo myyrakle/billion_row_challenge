@@ -35,3 +35,6 @@ Debug
 Release
 
 *.sln
+
+# python env
+env
