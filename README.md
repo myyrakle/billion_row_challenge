@@ -66,18 +66,19 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 
 ## 현재 결과,,,,,,
 
-| Rank | Lang    | Code                                        | time      |
-| ---- | ------- | ------------------------------------------- | --------- |
-| 1    | Go      | [lemon-mint1](./go/cmd/lemon-mint1/main.go) | 6113ms    |
-| 2    | Rust    | [whitetac1](./rust/whitetac1/src/main.rs)   | 8046ms    |
-| 3    | Rust    | [Basic](./rust/basic/src/main.rs)           | 128293ms  |
-| 4    | Java    | [Basic](./java/basic/Main.java)             | 184825ms  |
-| 5    | C++     | [Basic](./cpp/basic/main.cpp)               | 190039ms  |
-| 6    | Go      | [Basic](./go/cmd/basic/main.go)             | 191004ms  |
-| 7    | C#      | [Basic](./c#/basic/main.cpp)                | 215245ms  |
-| 8    | Node.js | [sunrabbit1](./nodejs/sunrabbit1/index.js)  | 593877ms  |
-| 9    | Python  | [Basic](./python/basic.py)                  | 936269ms  |
-| 10   | Node.js | [Basic](./nodejs/basic.js)                  | 1262149ms |
+| Rank | Lang    | Code                                          | time      |
+| ---- | ------- | --------------------------------------------- | --------- |
+| 1    | C++     | [libertyrapid1](./cpp/libertyrapid1/main.cpp) | 3272ms    |
+| 2    | Go      | [lemon-mint1](./go/cmd/lemon-mint1/main.go)   | 6113ms    |
+| 3    | Rust    | [whitetac1](./rust/whitetac1/src/main.rs)     | 8046ms    |
+| 4    | Rust    | [Basic](./rust/basic/src/main.rs)             | 128293ms  |
+| 5    | Java    | [Basic](./java/basic/Main.java)               | 184825ms  |
+| 6    | C++     | [Basic](./cpp/basic/main.cpp)                 | 190039ms  |
+| 7    | Go      | [Basic](./go/cmd/basic/main.go)               | 191004ms  |
+| 8    | C#      | [Basic](./c#/basic/main.cpp)                  | 215245ms  |
+| 9    | Node.js | [sunrabbit1](./nodejs/sunrabbit1/index.js)    | 593877ms  |
+| 10   | Python  | [Basic](./python/basic.py)                    | 936269ms  |
+| 11   | Node.js | [Basic](./nodejs/basic.js)                    | 1262149ms |
 
 ## Reference
 
