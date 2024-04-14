@@ -19,7 +19,7 @@ import (
 	"unsafe"
 )
 
-var threads = runtime.NumCPU() * 8
+var threads = runtime.NumCPU() * 2
 var pagesize = syscall.Getpagesize()
 
 const hash_space = 1 << 8
