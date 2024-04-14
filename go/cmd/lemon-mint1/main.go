@@ -197,7 +197,6 @@ func solution(inputPath string) []byte {
 		mean := s.sum / s.count
 		buffer = fmt.Appendf(buffer, "%s=%d;%d;%d(%d/%d)\n", station, s.min, s.max, mean, s.sum, s.count)
 	}
-	os.Stdout.Write(buffer)
 
 	runtime.KeepAlive(&hashtables) // Memory Lifetime
 
