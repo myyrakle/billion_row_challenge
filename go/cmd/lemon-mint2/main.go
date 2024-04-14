@@ -19,7 +19,7 @@ import (
 	"unsafe"
 )
 
-var threads = runtime.NumCPU() * 2
+var threads = runtime.NumCPU() * 6
 var pagesize = syscall.Getpagesize()
 
 const hash_space = 1 << 8
@@ -43,17 +43,6 @@ type stats struct {
 }
 
 func fastString(b []byte) string { return unsafe.String(unsafe.SliceData(b), len(b)) }
-
-func ht_index(b *byte, len int64) uint64 {
-	if len > 8 {
-		len = 8
-	}
-	var x0 uint64 = *(*uint64)(unsafe.Pointer(b)) << ((8 - len) * 8)
-	x0 += 7048676786887195564
-	x0 = (x0 ^ (x0 >> 30)) * 0xbf58476d1ce4e5b9
-	x0 = (x0 ^ (x0 >> 27)) * 0x94d049bb133111eb
-	return (x0 ^ (x0 >> 31)) & hash_mask
-}
 
 func chunk(view []byte, n int64) (bounds []int64) {
 	bounds = make([]int64, n+1)
@@ -97,7 +86,15 @@ func processChunk(ht *hashtable, view []byte, wg *sync.WaitGroup) {
 		}
 
 		city_bytes := view[index : index+int64(city_index)]
-		idx := ht_index(unsafe.SliceData(city_bytes), int64(city_index))
+		_len := int64(city_index)
+		if _len > 8 {
+		        _len = 8
+	        }
+	        var x0 uint64 = *(*uint64)(unsafe.Pointer(unsafe.SliceData(city_bytes))) << ((8 - _len) * 8)
+	        x0 += 7048676786887195564
+	        x0 = (x0 ^ (x0 >> 30)) * 0xbf58476d1ce4e5b9
+	        x0 = (x0 ^ (x0 >> 27)) * 0x94d049bb133111eb
+	        idx := (x0 ^ (x0 >> 31)) & hash_mask
 
 		temp_index := bytes.IndexByte(view[index+int64(city_index)+1:], '\n')
 		temp_bytes := view[index+int64(city_index)+1 : index+int64(city_index)+1+int64(temp_index)]
