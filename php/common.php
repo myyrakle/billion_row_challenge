@@ -1,3 +1,4 @@
 <?php
-const OUT_PUT_PATH = __DIR__ . DIRECTORY_SEPARATOR . 'outputs.txt';
-const MEASUREMENTS_PATH = __DIR__ . DIRECTORY_SEPARATOR ."measurements.txt";
+
+define("OUT_PUT_PATH", dirname(__DIR__, 1) . DIRECTORY_SEPARATOR . 'outputs.txt');
+define("MEASUREMENTS_PATH", dirname(__DIR__, 1) . DIRECTORY_SEPARATOR ."measurements.txt");
