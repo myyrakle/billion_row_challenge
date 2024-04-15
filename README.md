@@ -64,6 +64,10 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
    -  dotnet new로 직접 생성해도 좋고,
    -  basic을 복제해서 사용해도 좋습니다.
 
+## PHP
+버전은 8.1.2입니다.
+1. php 경로에 새 소스파일을 작성합니다.
+
 ## 현재 결과,,,,,,
 
 | Rank | Lang    | Code                                          | time      |
@@ -77,10 +81,11 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 7    | Java    | [Basic](./java/basic/Main.java)               | 184825ms  |
 | 8    | C++     | [Basic](./cpp/basic/main.cpp)                 | 190039ms  |
 | 9    | Go      | [Basic](./go/cmd/basic/main.go)               | 191004ms  |
-| 10   | C#      | [Basic](./c#/basic/Program.cs)                  | 215245ms  |
-| 11   | Node.js | [sunrabbit1](./nodejs/sunrabbit1/index.js)    | 593877ms  |
-| 12   | Python  | [Basic](./python/basic.py)                    | 936269ms  |
-| 13   | Node.js | [Basic](./nodejs/basic.js)                    | 1262149ms |
+| 10   | C#      | [Basic](./c#/basic/Program.cs)                | 215245ms  |
+| 11   | PHP     | [Basic](./php/basic.php)                      | 259109ms  |
+| 12   | Node.js | [sunrabbit1](./nodejs/sunrabbit1/index.js)    | 593877ms  |
+| 13   | Python  | [Basic](./python/basic.py)                    | 936269ms  |
+| 14   | Node.js | [Basic](./nodejs/basic.js)                    | 1262149ms |
 
 ## Reference
 

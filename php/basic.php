@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/common.php';
 
-function challenge()
+function solution()
 {
     $file = fopen(MEASUREMENTS_PATH, 'r');
 
@@ -12,6 +12,7 @@ function challenge()
         $key = $temp[0];
         $value = (int)$temp[1];
         $current_arr = &$arr[$key];
+        
         if ($current_arr !== null) {
             if ($current_arr['max'] < $value) {
                 $current_arr['max'] = $value;
@@ -44,7 +45,7 @@ function challenge()
 }
 
 $start = microtime(true);
-$got = challenge();
+$got = solution();
 $end = microtime(true);
 $total_time = floor(($end - $start) * 1000);
 
@@ -54,12 +55,12 @@ echo "Elapsed {$total_time}ms\n";
 $expect_output = file_get_contents(OUTPUT_PATH);
 if ($got === $expect_output) {
     echo 'Test passed';
-    exit;
+} else {
+    echo "Test failed\n";
+    echo 'Expected:';
+    echo $expect_output;
+    echo PHP_EOL;
+    echo 'Actual:';
+    echo $got;
 }
 
-echo "Test failed\n";
-echo 'Expected:';
-echo $expect_output;
-echo PHP_EOL;
-echo 'Actual:';
-echo $got;
