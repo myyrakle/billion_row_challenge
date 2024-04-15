@@ -39,205 +39,212 @@ void* worker(void* arg) {
     uint8_t* mem = &context->mem[offset];
     uint8_t* end = &context->mem[end_offset];
 
+    for (int i = 0; i < 100; i++) {
+        Region* region = &table[i];
+        region->total = 0;
+        region->min = 0x7fffffff;
+        region->max = -1;
+    }
+
     while (mem != end) {
-        int index;
+        Region* region;
 
         if (mem[0] == 65) {
-            if (mem[1] == 100) {
-                mem += 10;
-                index = 0;
-            } else if (mem[1] == 109) {
-                mem += 10;
-                index = 1;
-            } else if (mem[1] == 110) {
-                mem += 10;
-                index = 2;
-            } else if (mem[1] == 112) {
-                mem += 22;
-                index = 3;
-            } else if (mem[1] == 116) {
-                mem += 7;
-                index = 4;
-            } else {
-                mem += 7;
-                index = 5;
+            switch (mem[1]) {
+                case 100:
+                    mem += 10;
+                    region = table + 0;
+                    break;
+                case 109:
+                    mem += 10;
+                    region = table + 1;
+                    break;
+                case 110:
+                    mem += 10;
+                    region = table + 2;
+                    break;
+                case 112:
+                    mem += 22;
+                    region = table + 3;
+                    break;
+                case 116:
+                    mem += 7;
+                    region = table + 4;
+                    break;
+                default:
+                    mem += 7;
+                    region = table + 5;
             }
         } else if (mem[0] == 66) {
             if (mem[1] == 97) {
                 if (mem[2] == 104) {
                     mem += 8;
-                    index = 6;
+                    region = table + 6;
                 } else if (mem[2] == 114) {
                     mem += 10;
-                    index = 7;
+                    region = table + 7;
                 } else {
                     mem += 10;
-                    index = 8;
+                    region = table + 8;
                 }
             } else if (mem[1] == 101) {
                 if (mem[2] == 108) {
                     if (mem[3] == 195) {
                         mem += 7;
-                        index = 9;
+                        region = table + 9;
                     } else {
                         mem += 15;
-                        index = 10;
+                        region = table + 10;
                     }
                 }
             } else if (mem[1] == 111) {
                 if (mem[2] == 97) {
                     mem += 10;
-                    index = 11;
+                    region = table + 11;
                 } else {
                     mem += 7;
-                    index = 12;
+                    region = table + 12;
                 }
             } else if (mem[1] == 114) {
                 if (mem[2] == 97) {
                     mem += 10;
-                    index = 13;
+                    region = table + 13;
                 } else {
                     mem += 9;
-                    index = 14;
+                    region = table + 14;
                 }
             } else {
                 mem += 10;
-                index = 15;
+                region = table + 15;
             }
         } else if (mem[0] == 67) {
             if (mem[1] == 97) {
                 if (mem[2] == 109) {
                     mem += 9;
-                    index = 16;
+                    region = table + 16;
                 } else {
                     mem += 7;
-                    index = 17;
+                    region = table + 17;
                 }
             } else if (mem[1] == 101) {
                 mem += 8;
-                index = 18;
+                region = table + 18;
             } else if (mem[1] == 104) {
                 if (mem[2] == 101) {
                     mem += 8;
-                    index = 19;
+                    region = table + 19;
                 } else {
                     mem += 10;
-                    index = 20;
+                    region = table + 20;
                 }
             } else if (mem[1] == 111) {
                 mem += 11;
-                index = 21;
+                region = table + 21;
             } else {
                 if (mem[2] == 105) {
                     mem += 8;
-                    index = 22;
+                    region = table + 22;
                 } else {
                     mem += 9;
-                    index = 23;
+                    region = table + 23;
                 }
             }
         } else if (mem[0] == 68) {
             if (mem[1] == 97) {
                 mem += 7;
-                index = 24;
+                region = table + 24;
             } else {
                 if (mem[2] == 113) {
                     mem += 16;
-                    index = 25;
+                    region = table + 25;
                 } else {
                     mem += 7;
-                    index = 26;
+                    region = table + 26;
                 }
             }
         } else if (mem[0] == 70) {
             if (mem[1] == 114) {
                 mem += 10;
-                index = 27;
+                region = table + 27;
             } else if (mem[1] == 101) {
                 mem += 17;
-                index = 28;
+                region = table + 28;
             } else {
                 mem += 10;
-                index = 29;
+                region = table + 29;
             }
         } else if (mem[0] == 71) {
             if (mem[1] == 97) {
                 mem += 8;
-                index = 30;
+                region = table + 30;
             } else if (mem[1] == 117) {
-                if (mem[2] == 97) {
-                    if (mem[3] == 114) {
-                        mem += 10;
-                        index = 31;
-                    } else {
-                        mem += 12;
-                        index = 32;
-                    }
+                if (mem[3] == 114) {
+                    mem += 10;
+                    region = table + 31;
+                } else {
+                    mem += 12;
+                    region = table + 32;
                 }
             } else {
                 mem += 8;
-                index = 33;
+                region = table + 33;
             }
         } else if (mem[0] == 72) {
             if (mem[1] == 121) {
                 mem += 10;
-                index = 34;
+                region = table + 34;
             } else if (mem[1] == 101) {
                 mem += 9;
-                index = 35;
+                region = table + 35;
             } else {
                 mem += 10;
-                index = 36;
+                region = table + 36;
             }
         } else if (mem[0] == 73) {
             if (mem[1] == 114) {
                 mem += 8;
-                index = 37;
+                region = table + 37;
             } else if (mem[1] == 115) {
                 mem += 9;
-                index = 38;
+                region = table + 38;
             } else {
                 mem += 13;
-                index = 39;
+                region = table + 39;
             }
         } else if (mem[0] == 74) {
             mem += 13;
-            index = 40;
+            region = table + 40;
         } else if (mem[0] == 75) {
             if (mem[1] == 105) {
                 mem += 5;
-                index = 41;
+                region = table + 41;
             } else if (mem[1] == 114) {
-                if (mem[2] == 111) {
-                    if (mem[3] == 114) {
-                        mem += 6;
-                        index = 42;
-                    } else {
-                        mem += 8;
-                        index = 43;
-                    }
+                if (mem[3] == 114) {
+                    mem += 6;
+                    region = table + 42;
+                } else {
+                    mem += 8;
+                    region = table + 43;
                 }
             } else {
                 mem += 8;
-                index = 44;
+                region = table + 44;
             }
         } else if (mem[0] == 76) {
             if (mem[1] == 97) {
                 mem += 8;
-                index = 45;
+                region = table + 45;
             } else {
                 if (mem[2] == 115) {
                     mem += 12;
-                    index = 46;
+                    region = table + 46;
                 } else {
-                    if (mem[3] == 100) {
-                        if (mem[4] == 114) {
-                            mem += 9;
-                            index = 47;
-                        } else {
-                            mem += 7;
-                            index = 48;
-                        }
+                    if (mem[4] == 114) {
+                        mem += 9;
+                        region = table + 47;
+                    } else {
+                        mem += 7;
+                        region = table + 48;
                     }
                 }
             }
@@ -245,240 +252,210 @@ void* worker(void* arg) {
             if (mem[1] == 97) {
                 if (mem[2] == 99) {
                     mem += 8;
-                    index = 49;
+                    region = table + 49;
                 } else if (mem[2] == 100) {
                     mem += 7;
-                    index = 50;
+                    region = table + 50;
                 } else {
                     mem += 7;
-                    index = 51;
+                    region = table + 51;
                 }
             } else if (mem[1] == 101) {
                 mem += 12;
-                index = 52;
+                region = table + 52;
             } else if (mem[1] == 105) {
                 if (mem[2] == 97) {
                     mem += 6;
-                    index = 53;
+                    region = table + 53;
                 } else {
                     mem += 6;
-                    index = 54;
+                    region = table + 54;
                 }
             } else if (mem[1] == 111) {
                 if (mem[2] == 115) {
                     mem += 7;
-                    index = 55;
+                    region = table + 55;
                 } else {
                     mem += 9;
-                    index = 56;
+                    region = table + 56;
                 }
             } else {
                 mem += 7;
-                index = 57;
+                region = table + 57;
             }
         } else if (mem[0] == 78) {
             if (mem[1] == 105) {
                 mem += 9;
-                index = 58;
+                region = table + 58;
             } else if (mem[1] == 101) {
-                if (mem[2] == 119) {
-                    if (mem[3] == 32) {
-                        if (mem[4] == 89) {
-                            mem += 9;
-                            index = 59;
-                        } else {
-                            mem += 10;
-                            index = 60;
-                        }
-                    }
+                if (mem[4] == 89) {
+                    mem += 9;
+                    region = table + 59;
+                } else {
+                    mem += 10;
+                    region = table + 60;
                 }
             } else if (mem[1] == 46) {
-                if (mem[2] == 32) {
-                    if (mem[3] == 67) {
-                        mem += 14;
-                        index = 61;
-                    } else {
-                        mem += 12;
-                        index = 62;
-                    }
+                if (mem[3] == 67) {
+                    mem += 14;
+                    region = table + 61;
+                } else {
+                    mem += 12;
+                    region = table + 62;
                 }
             } else {
                 mem += 13;
-                index = 63;
+                region = table + 63;
             }
         } else if (mem[0] == 79) {
             if (mem[1] == 104) {
                 mem += 5;
-                index = 64;
+                region = table + 64;
             } else if (mem[1] == 114) {
                 mem += 7;
-                index = 65;
+                region = table + 65;
             } else {
                 if (mem[2] == 97) {
                     if (mem[3] == 115) {
                         mem += 7;
-                        index = 66;
+                        region = table + 66;
                     } else {
                         mem += 6;
-                        index = 67;
+                        region = table + 67;
                     }
                 } else {
                     mem += 5;
-                    index = 68;
+                    region = table + 68;
                 }
             }
         } else if (mem[0] == 80) {
             if (mem[1] == 97) {
                 if (mem[2] == 114) {
                     mem += 6;
-                    index = 69;
+                    region = table + 69;
                 } else {
                     mem += 7;
-                    index = 70;
+                    region = table + 70;
                 }
             } else if (mem[1] == 114) {
                 if (mem[2] == 105) {
                     mem += 6;
-                    index = 71;
+                    region = table + 71;
                 } else {
                     mem += 7;
-                    index = 72;
+                    region = table + 72;
                 }
             } else if (mem[1] == 117) {
                 mem += 5;
-                index = 73;
+                region = table + 73;
             } else {
-                if (mem[2] == 114) {
-                    if (mem[3] == 116) {
-                        if (mem[4] == 111) {
-                            if (mem[5] == 32) {
-                                if (mem[6] == 65) {
-                                    mem += 13;
-                                    index = 74;
-                                } else {
-                                    mem += 12;
-                                    index = 75;
-                                }
-                            }
-                        }
-                    }
+                if (mem[6] == 65) {
+                    mem += 13;
+                    region = table + 74;
+                } else {
+                    mem += 12;
+                    region = table + 75;
                 }
             }
         } else if (mem[0] == 81) {
-            if (mem[1] == 114) {
-                if (mem[2] == 101) {
-                    mem += 7;
-                    index = 76;
-                } else {
-                    mem += 9;
-                    index = 77;
-                }
+            if (mem[2] == 101) {
+                mem += 7;
+                region = table + 76;
+            } else {
+                mem += 9;
+                region = table + 77;
             }
         } else if (mem[0] == 82) {
             if (mem[1] == 105) {
                 if (mem[2] == 98) {
                     mem += 16;
-                    index = 78;
+                    region = table + 78;
                 } else {
                     mem += 15;
-                    index = 79;
+                    region = table + 79;
                 }
             } else {
                 mem += 7;
-                index = 80;
+                region = table + 80;
             }
         } else if (mem[0] == 83) {
             if (mem[1] == 97) {
                 if (mem[2] == 108) {
                     mem += 9;
-                    index = 81;
+                    region = table + 81;
                 } else if (mem[2] == 110) {
                     mem += 13;
-                    index = 82;
+                    region = table + 82;
                 } else {
                     mem += 10;
-                    index = 83;
+                    region = table + 83;
                 }
             } else if (mem[1] == 195) {
-                if (mem[2] == 163) {
-                    if (mem[3] == 111) {
-                        if (mem[4] == 32) {
-                            if (mem[5] == 80) {
-                                mem += 11;
-                                index = 84;
-                            } else if (mem[5] == 66) {
-                                mem += 23;
-                                index = 85;
-                            } else if (mem[5] == 74) {
-                                mem += 22;
-                                index = 86;
-                            } else {
-                                mem += 14;
-                                index = 87;
-                            }
-                        }
+                if (mem[4] == 32) {
+                    if (mem[5] == 80) {
+                        mem += 11;
+                        region = table + 84;
+                    } else if (mem[5] == 66) {
+                        mem += 23;
+                        region = table + 85;
+                    } else if (mem[5] == 74) {
+                        mem += 22;
+                        region = table + 86;
+                    } else {
+                        mem += 14;
+                        region = table + 87;
                     }
                 }
             } else if (mem[1] == 101) {
                 mem += 6;
-                index = 88;
+                region = table + 88;
             } else if (mem[1] == 105) {
                 mem += 10;
-                index = 89;
+                region = table + 89;
             } else if (mem[1] == 116) {
                 if (mem[2] == 46) {
                     mem += 15;
-                    index = 90;
+                    region = table + 90;
                 } else {
                     mem += 10;
-                    index = 91;
+                    region = table + 91;
                 }
             } else {
                 mem += 7;
-                index = 92;
+                region = table + 92;
             }
         } else if (mem[0] == 84) {
-            if (mem[1] == 111) {
-                if (mem[2] == 114) {
-                    mem += 8;
-                    index = 93;
-                } else {
-                    mem += 6;
-                    index = 94;
-                }
+            if (mem[2] == 114) {
+                mem += 8;
+                region = table + 93;
+            } else {
+                mem += 6;
+                region = table + 94;
             }
         } else if (mem[0] == 85) {
             mem += 7;
-            index = 95;
+            region = table + 95;
         } else if (mem[0] == 86) {
             if (mem[1] == 97) {
                 mem += 10;
-                index = 96;
+                region = table + 96;
             } else {
                 mem += 7;
-                index = 97;
+                region = table + 97;
             }
         } else if (mem[0] == 87) {
             mem += 7;
-            index = 98;
+            region = table + 98;
         } else {
             mem += 7;
-            index = 99;
+            region = table + 99;
         }
-
-        Region* region = &table[index];
 
         int measurement = 0;
         for (; *mem != '\n'; ++mem) {
              measurement = measurement * 10 + (*mem - '0');
         }
         mem++;
-
-        if (region->count == 0) {
-            region->total = 0;
-            region->min = 0x7fffffff;
-            region->max = -1;
-        }
 
         region->count++;
         region->total += measurement;
