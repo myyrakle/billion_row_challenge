@@ -9,7 +9,7 @@ use std::mem::ManuallyDrop;
 use std::sync::{Arc, Mutex};
 use std::{mem, str};
 
-#[derive(Debug, Clone)]
+#[derive(Clone)]
 struct Status {
     min: i64,
     max: i64,
@@ -48,7 +48,7 @@ fn city_hash(city: &[u8]) -> u64 {
         if i >= 7 {
             break;
         }
-        hash += (city[i] as u64).wrapping_shl((i * 8) as u32);
+        hash += (city[i] as u64).wrapping_shl((i.wrapping_shl(3)) as u32);
     }
     return hash;
 }
@@ -164,9 +164,6 @@ fn solution(path: &str) -> String {
     let maps: Arc<Mutex<Vec<Box<HashMap<u64, Status>>>>> =
         Arc::new(Mutex::new(Vec::with_capacity(core + 1)));
     let mut index: usize;
-    //let max_index = 1000000000;
-
-    //let start = Instant::now(); // 시작 시간 기록
     let chunk_size = mmap.len() / core;
     // mmap을 core수만큼 나누어서 병렬처리 \n이 마지막에 있도록 분할
     let mut chunks_start_indexes: Vec<usize> = Vec::with_capacity(core + 1);
@@ -229,7 +226,6 @@ fn solution(path: &str) -> String {
                 total: 0,
                 count: 0,
             });
-            let status = unsafe { map1.get_mut(&city_code).unwrap_unchecked() };
             status.min = status.min.min(measurement);
             status.max = status.max.max(measurement);
             status.total += measurement;
