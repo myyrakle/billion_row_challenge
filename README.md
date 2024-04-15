@@ -77,7 +77,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 7    | Java    | [Basic](./java/basic/Main.java)               | 184825ms  |
 | 8    | C++     | [Basic](./cpp/basic/main.cpp)                 | 190039ms  |
 | 9    | Go      | [Basic](./go/cmd/basic/main.go)               | 191004ms  |
-| 10   | C#      | [Basic](./c#/basic/main.cpp)                  | 215245ms  |
+| 10   | C#      | [Basic](./c#/basic/Program.cs)                  | 215245ms  |
 | 11   | Node.js | [sunrabbit1](./nodejs/sunrabbit1/index.js)    | 593877ms  |
 | 12   | Python  | [Basic](./python/basic.py)                    | 936269ms  |
 | 13   | Node.js | [Basic](./nodejs/basic.js)                    | 1262149ms |
