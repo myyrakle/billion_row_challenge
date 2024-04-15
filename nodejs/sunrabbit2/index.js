@@ -122,8 +122,9 @@ const BUFFER_SIZE = 1024;
 async function solution() {
   const file = await fsp.open(MEASUREMENTS_PATH);
   const size = (await file.stat()).size;
-  const workerCount = os.cpus().length;
+  const workerCount = os.cpus().length - 1;
   const chunkSize = ~~(size / workerCount); // fast Math.floor
+  const threadHeapSize = 1024;
 
   const offsets = [];
   const buffer = Buffer.alloc(BUFFER_SIZE);
@@ -163,6 +164,9 @@ async function solution() {
               start: idx === 0 ? 0 : array[idx - 1],
               end: v,
             },
+            resourceLimits: {
+              maxOldGenerationSizeMb : threadHeapSize
+            }
           }
         );
 
@@ -184,7 +188,7 @@ async function solution() {
           if (code !== 0) {
             new Error(`Worker stopped with exit code ${code}`);
           }
-          resolve(1);
+          resolve();
         });
       });
     })
