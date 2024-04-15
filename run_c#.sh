@@ -1,5 +1,6 @@
 #!/bin/sh
 echo "[C#] basic example"
-sh c#/run_basic.sh
-echo "[C#] rudty"
-sh c#/rudty.sh
+sh csharp/run_basic.sh
+
+echo "[C#] rudty1"
+sh csharp/run_rudty1.sh
