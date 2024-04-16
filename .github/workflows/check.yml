@@ -13,8 +13,11 @@ jobs:
   check_go:
     runs-on: ubuntu-latest
     steps:
+    - uses: Swatinem/rust-cache@v2
     - uses: actions/setup-go@v5.0.0
     - uses: actions/checkout@v3
+    - name: Chmod
+      run: chmod +x **/*.sh
     - name: Setup Test
       run: ./setup.sh
     - name: Build
@@ -23,7 +26,10 @@ jobs:
   check_rust:
     runs-on: ubuntu-latest
     steps:
+    - uses: Swatinem/rust-cache@v2
     - uses: actions/checkout@v3
+    - name: Chmod
+      run: chmod +x **/*.sh
     - name: Setup Test
       run: ./setup.sh
     - name: Build
