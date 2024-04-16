@@ -61,7 +61,7 @@ func UnMap(b []byte) error {
 const OUTPUT_PATH = "outputs.txt"
 const MEASUREMENTS_PATH = "measurements.txt"
 
-var threads = runtime.NumCPU() * 4
+var threads = runtime.NumCPU() * 3 / 2
 var pagesize = syscall.Getpagesize()
 
 const hash_space = 1 << 8
