@@ -44,3 +44,17 @@ jobs:
       run: ./setup.sh
     - name: Run Check
       run: ./run_c#.sh
+
+  check_graalvm:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: graalvm/setup-graalvm@v1
+      with:
+        java-version: '22'
+        distribution: 'graalvm'
+    - uses: actions/checkout@v3
+    - run: chmod +x **/*.sh && chmod +x *.sh
+    - name: Setup Test
+      run: ./setup.sh
+    - name: Run Check
+      run: ./run_graalvm.sh
