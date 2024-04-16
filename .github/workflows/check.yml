@@ -1,0 +1,30 @@
+name: Check
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  check_go:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/setup-go@v5.0.0
+    - uses: actions/checkout@v3
+    - name: Setup Test
+      run: ./setup.sh
+    - name: Build
+      run: ./run_go.sh
+      
+  check_rust:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup Test
+      run: ./setup.sh
+    - name: Build
+      run: ./run_rust.sh
