@@ -1,6 +1,5 @@
 cd java/basic && \
   javac Main.java && \
-  native-image Main && \
-  ls && \
-  ./Main && \
+  native-image -O3 Main && \
+  ./main && \
   cd .. && cd ..
