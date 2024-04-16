@@ -110,15 +110,15 @@ const cityMap = new Map(
   ].map((v) => [
     v,
     {
-      min: 9007199254740991,
+      min: Number.MAX_SAFE_INTEGER,
       max: 0,
-      total: BigInt(0),
+      total: 0,
       count: 0,
     },
   ])
 );
 
-const BUFFER_SIZE = 1024;
+const BUFFER_SIZE = 128;
 async function solution() {
   const file = await fsp.open(MEASUREMENTS_PATH);
   const size = (await file.stat()).size;
@@ -165,8 +165,8 @@ async function solution() {
               end: v,
             },
             resourceLimits: {
-              maxOldGenerationSizeMb : threadHeapSize
-            }
+              maxOldGenerationSizeMb: threadHeapSize,
+            },
           }
         );
 
@@ -175,7 +175,7 @@ async function solution() {
             const existing = cityMap.get(key);
             existing.min = Math.min(existing.min, value.min);
             existing.max = Math.max(existing.max, value.max);
-            existing.total += BigInt(value.total);
+            existing.total += value.total;
             existing.count += value.count;
           }
         });
@@ -193,12 +193,11 @@ async function solution() {
       });
     })
   );
-
   return Array.from(cityMap)
     .map(
       ([city_name, status]) =>
         `${city_name}=${status.min};${status.max};${~~(
-          status.total / BigInt(status.count)
+          status.total / status.count
         )}(${status.total}/${status.count})\n`
     )
     .join("");
