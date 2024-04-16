@@ -18,7 +18,7 @@ jobs:
         go-version: stable
     - uses: actions/checkout@v3
     - name: Setup GCCGO
-      run: apt update && apt upgrade -y && apt install gccgo-12 gcc-12 -y && ln -s /usr/bin/gccgo-12 /usr/bin/gccgo
+      run: sudo apt update && sudo apt upgrade -y && sudo apt install gccgo-12 gcc-12 -y && sudo ln -s /usr/bin/gccgo-12 /usr/bin/gccgo
     - name: Chmod
       run: chmod +x **/*.sh && chmod +x *.sh
     - name: Setup Test
