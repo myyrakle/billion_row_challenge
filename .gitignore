@@ -37,3 +37,7 @@ Release
 *.sln
 
 obj
+
+*.beam
+
+*.dump
