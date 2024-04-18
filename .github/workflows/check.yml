@@ -51,8 +51,8 @@ jobs:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v2
       with:
-        node-version: 18.x
-        architecture: 'x86' # optional, x64 or x86. If not specified, x64 will be used by default
+        node-version: 18
+        architecture: x86
     - run: chmod +x **/*.sh && chmod +x *.sh
     - name: Setup Test
       run: ./setup.sh
