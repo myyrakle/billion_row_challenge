@@ -133,7 +133,7 @@ async function solution() {
   while (true) {
     offset += chunkSize;
 
-    if (offset >= size) {
+    if (offset >= size || offset < 0) {
       offsets.push(size);
       break;
     }
