@@ -42,11 +42,15 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 
 ## Node.js
 
-버전은 v18.19.0입니다.
+버전은 v20.12.2입니다.
 1. nodejs 경로에 새 파일을 만듭니다.
 2. nodejs/basic.js 파일을 복사한 뒤에 수정해서 최적화합니다.
 
 ## Python
+버전은 Python 3.0.2입니다.
+1. ruby 경로에 새 파일을 만듭니다.
+
+## Ruby
 버전은 Python 3.10.12입니다.
 1. python 경로에 새 파일을 만듭니다.
 
@@ -68,6 +72,10 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 버전은 8.1.2입니다.
 1. php 경로에 새 소스파일을 작성합니다.
 
+## Erlang
+버전은 V12.2.1입니다.
+1. erlang 경로에 분리된 새 폴더와 소스파일을 작성합니다.
+
 ## 현재 결과,,,,,,
 
 | Rank | Lang     | Code                                          | time      |
@@ -85,9 +93,11 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 11   | Go       | [Basic](./go/cmd/basic/main.go)               | 191004ms  |
 | 12   | C#       | [Basic](./csharp/basic/Program.cs)            | 215245ms  |
 | 13   | PHP      | [Basic](./php/basic.php)                      | 259109ms  |
-| 14   | Node.js  | [sunrabbit1](./nodejs/sunrabbit1/index.js)    | 593877ms  |
-| 15   | Python   | [Basic](./python/basic.py)                    | 936269ms  |
-| 16   | Node.js  | [Basic](./nodejs/basic.js)                    | 1262149ms |
+| 14   | Node.js  | [sunrabbit1](./nodejs/sunrabbit1/index.js)    | 580870ms  |
+| 15   | Node.js  | [Basic](./nodejs/basic.js)                    | 921809ms  |
+| 16   | Python   | [Basic](./python/basic.py)                    | 936269ms  |
+| 17   | Ruby     | [Basic](./ruby/basic.rb)                      | 1271762ms |
+| 18   | Erlang   | [Basic](./erlang/basic/main.erl)              | 3488261ms |
 
 ## Reference
 
