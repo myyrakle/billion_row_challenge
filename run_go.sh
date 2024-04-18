@@ -2,11 +2,11 @@
 echo "[GO] basic example"
 sh go/run_basic.sh
 
-echo "[GO] lemon-mint1 example"
+echo "[GO] lemon-mint1"
 sh go/run_lemon-mint1.sh
 
-echo "[GO] lemon-mint2 example"
+echo "[GO] lemon-mint2"
 sh go/run_lemon-mint1.sh
 
-echo "[GO] lemon-mint3 example"
+echo "[GO] lemon-mint3"
 sh go/run_lemon-mint1.sh
