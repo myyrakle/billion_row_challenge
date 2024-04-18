@@ -52,7 +52,7 @@ jobs:
     - uses: actions/setup-node@v2
       with:
         node-version: 20.12.2
-        architecture: amd64
+        architecture: arm64
     - run: chmod +x **/*.sh && chmod +x *.sh
     - name: Setup Test
       run: ./setup.sh
