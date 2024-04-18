@@ -72,6 +72,10 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 버전은 8.1.2입니다.
 1. php 경로에 새 소스파일을 작성합니다.
 
+## Erlang
+버전은 V12.2.1입니다.
+1. erlang 경로에 분리된 새 폴더와 소스파일을 작성합니다.
+
 ## 현재 결과,,,,,,
 
 | Rank | Lang     | Code                                          | time      |
@@ -93,6 +97,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 15   | Node.js  | [Basic](./nodejs/basic.js)                    | 921809ms  |
 | 16   | Python   | [Basic](./python/basic.py)                    | 936269ms  |
 | 17   | Ruby     | [Basic](./ruby/basic.rb)                      | 1271762ms |
+| 18   | Erlang   | [Basic](./erlang/basic/main.erl)              | 3488261ms |
 
 ## Reference
 
