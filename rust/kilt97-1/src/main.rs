@@ -1,3 +1,5 @@
+pub mod common;
+
 use fnv::FnvHasher;
 use phf::phf_map;
 use std::collections::HashMap;
