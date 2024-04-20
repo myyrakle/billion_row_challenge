@@ -1,17 +1,15 @@
 module Main where
 
 import Data.Int
-import Data.List
-import Data.Function (on)
-import System.CPUTime
-import qualified Data.Text as T
-import qualified Data.Text.IO as TIO
 import Data.List (sort)
-import Data.Map.Strict (Map)
-import qualified Data.Map.Strict as Map
 import Data.Maybe (fromMaybe)
-import qualified Data.Text.Lazy as TL
-import qualified Data.Text.Lazy.IO as TLIO
+import Data.Map.Strict (Map)
+
+import System.CPUTime
+import Conduit
+
+import qualified Data.Text as T
+import qualified Data.Map.Strict as Map
 
 outputsPath = "outputs.txt"
 measurementsPath = "measurements.txt"
@@ -23,21 +21,23 @@ data Status = Status {
     count :: Int64
 } deriving (Show, Eq)
 
+
 updateStatus :: Status -> Int64 -> Status
 updateStatus (Status minVal maxVal total count) newVal = Status (minVal `min` newVal) (maxVal `max` newVal) (total + newVal) (count + 1)
 
 solution :: IO String
 solution = runConduitRes 
          $ sourceFile measurementsPath
-        .| linesUnboundedAscii
+        .| linesUnboundedAsciiC
+        .| decodeUtf8C
         .| mapC (T.splitOn (T.pack ";"))
-        .| foldlC updateMap Map.empty
-        .| mapC formatResult
+        .| foldlC (flip updateMap) (Map.empty :: Map T.Text Status)
+        .| mapMC (sequence . fmap formatResult . Map.toList)
         .| sinkList
         >>= return . T.unpack . T.concat
     where
-    updateMap :: Map T.Text Status -> [T.Text] -> Map T.Text Status
-    updateMap map [city, measurement] = 
+    updateMap :: [T.Text] -> Map T.Text Status -> Map T.Text Status
+    updateMap [city, measurement] map = 
         let newVal = read (T.unpack measurement) :: Integer
             oldStatus = fromMaybe (Status (fromIntegral newVal) (fromIntegral newVal) 0 0) (Map.lookup city map)
         in Map.insert city (updateStatus oldStatus (fromIntegral newVal)) map

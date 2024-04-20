@@ -1,2 +1,4 @@
-ghc ./haskell/basic/main.hs
-./haskell/basic/main
+cd haskell/basic
+cabal build
+cd ../..
+# ./haskell/basic/main
