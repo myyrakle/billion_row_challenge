@@ -78,12 +78,11 @@ fn solution(path: &str) -> String {
 }
 
 fn main() {
-    let expect_output = fs::read_to_string("output.txt").unwrap();
+    let expect_output = std::fs::read_to_string(common::OUTPUT_PATH).unwrap();
 
-    let start = Instant::now();
-    let got = solution("measurements.txt");
-    let elapsed = start.elapsed();
-    println!("Elapsed: {:?}", elapsed);
+    let timer = Timer::new();
+    let got = solution(common::MEASUREMENTS_PATH);
+    println!("Elapsed: {}ms", timer.elapsed_as_millis());
 
     assert_eq!(expect_output, got);
 }
