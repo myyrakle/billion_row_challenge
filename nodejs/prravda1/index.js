@@ -78,7 +78,7 @@ async function solution() {
                   total / BigInt(count)
                 }(${total}/${count})`
             ).join("\n");
-            resolve(result);
+            resolve(result + "\n");
           }
         });
       }

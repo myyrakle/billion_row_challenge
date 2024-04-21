@@ -8,5 +8,5 @@ sh nodejs/run_sunrabbit1.sh
 echo "[Node.js] subrabbit2"
 sh nodejs/run_sunrabbit2.sh
 
-echo "[Node.js] prravda"
-sh nodejs/run_prravda.sh
+echo "[Node.js] prravda1"
+sh nodejs/run_prravda1.sh
