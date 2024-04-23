@@ -26,15 +26,12 @@ fn solution(path: []const u8) ![]const u8 {
     var hashmap = std.StringHashMap(Status).init(allocator);
     defer hashmap.deinit();
 
-    // var i: i64 = 0;
     while (try in_stream.readUntilDelimiterOrEof(&buffer, '\n')) |line| {
         // ;를 기준으로 분할
         var splitedIter = std.mem.split(u8, line, ";");
 
         const cityName: []const u8 = splitedIter.next().?;
         const measurement: i64 = try std.fmt.parseInt(i32, splitedIter.next().?, 10);
-
-        // try stdout.print("{s} {d}\n", .{ cityName, measurement });
 
         if (hashmap.getPtr(cityName)) |value| {
             var min = value.min;
@@ -135,5 +132,4 @@ pub fn main() !void {
         try stdout.print("Expected\n{s}", .{expectOutputs});
         try stdout.print("Got\n{s}", .{got});
     }
-    //    var expectOutputs = try file.readAllAlloc(allocator, 0);
 }
