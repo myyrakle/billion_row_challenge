@@ -8,8 +8,11 @@ const Status = struct {
     count: i64,
 };
 
+fn compareStrings(_: void, lhs: *[]const u8, rhs: *[]const u8) bool {
+    return std.mem.order(u8, lhs.*, rhs.*).compare(std.math.CompareOperator.lt);
+}
+
 fn solution(path: []const u8) ![]const u8 {
-    //   const stdout = std.io.getStdOut().writer();
     var allocator = std.heap.page_allocator;
 
     var file = try std.fs.cwd().openFile(path, .{});
@@ -18,23 +21,22 @@ fn solution(path: []const u8) ![]const u8 {
     var buf_reader = std.io.bufferedReader(file.reader());
     var in_stream = buf_reader.reader();
 
-    var buf: [1024]u8 = undefined;
+    var buffer: [256]u8 = undefined;
 
     var hashmap = std.StringHashMap(Status).init(allocator);
     defer hashmap.deinit();
 
-    while (try in_stream.readUntilDelimiterOrEof(&buf, '\n')) |line| {
+    // var i: i64 = 0;
+    while (try in_stream.readUntilDelimiterOrEof(&buffer, '\n')) |line| {
+        // ;를 기준으로 분할
         var splitedIter = std.mem.split(u8, line, ";");
 
-        var cityName: []const u8 = splitedIter.next().?;
-        var measurement: i64 = try std.fmt.parseInt(i32, splitedIter.next().?, 10);
+        const cityName: []const u8 = splitedIter.next().?;
+        const measurement: i64 = try std.fmt.parseInt(i32, splitedIter.next().?, 10);
 
-        const cityCopy = try allocator.alloc(u8, cityName.len);
-        @memcpy(cityCopy, cityName);
+        // try stdout.print("{s} {d}\n", .{ cityName, measurement });
 
-        //  try stdout.print("{s} {d}\n", .{ cityName, measurement });
-
-        if (hashmap.get(cityCopy)) |value| {
+        if (hashmap.getPtr(cityName)) |value| {
             var min = value.min;
             if (measurement < min) {
                 min = measurement;
@@ -45,15 +47,18 @@ fn solution(path: []const u8) ![]const u8 {
                 max = measurement;
             }
 
-            var total = value.total + measurement;
+            const total = value.total + measurement;
 
-            try hashmap.put(cityCopy, Status{
+            value.* = Status{
                 .min = min,
                 .max = max,
                 .total = total,
                 .count = value.count + 1,
-            });
+            };
         } else {
+            const cityCopy = try allocator.alloc(u8, cityName.len);
+            @memcpy(cityCopy, cityName);
+
             try hashmap.put(cityCopy, Status{
                 .min = measurement,
                 .max = measurement,
@@ -68,17 +73,38 @@ fn solution(path: []const u8) ![]const u8 {
     var cityNames = std.ArrayList(*[]const u8).init(allocator);
     defer cityNames.deinit();
 
+    // 키 추출
     while (iterator.next()) |entry| {
-        var cityName = entry.key_ptr;
+        const cityName = entry.key_ptr;
 
         try cityNames.append(cityName);
     }
+    const cityNamesSlice = try cityNames.toOwnedSlice();
 
-    // sort
-    //
-    //
+    // 키를 오름차순으로 정렬
+    std.mem.sort(*[]const u8, cityNamesSlice, {}, compareStrings);
 
-    return "asdf";
+    // 키 순서대로 조회하면서 결과 생성
+    var result = try allocator.alloc(u8, 100);
+    result = "";
+    for (cityNamesSlice) |cityName| {
+        if (hashmap.get(cityName.*)) |status| {
+            const avg = @divTrunc(status.total, status.count);
+
+            const line = try std.fmt.allocPrint(
+                allocator,
+                "{s}={d};{d};{d}({d}/{d})\n",
+                .{ cityName.*, status.min, status.max, avg, status.total, status.count },
+            );
+
+            const toFree = result;
+            result = try std.mem.concat(allocator, u8, &[_][]const u8{ result, line });
+            allocator.free(toFree);
+            allocator.free(line);
+        }
+    }
+
+    return result;
 }
 
 pub fn main() !void {
@@ -92,10 +118,15 @@ pub fn main() !void {
 
     var buffer: [10024]u8 = undefined;
 
-    var size = try in_stream.readAll(&buffer);
-    var expectOutputs = buffer[0..size];
+    const size = try in_stream.readAll(&buffer);
+    const expectOutputs = buffer[0..size];
 
+    var timer = try std.time.Timer.start();
     const got = try solution(common.MEASUREMENTS_PATH);
+    const elapsedNano = timer.read();
+    const elapsedMilli = elapsedNano / 1_000_000;
+
+    try stdout.print("elapsed: {}ms\n", .{elapsedMilli});
 
     if (std.mem.eql(u8, got, expectOutputs)) {
         try stdout.print("Test passed\n", .{});
