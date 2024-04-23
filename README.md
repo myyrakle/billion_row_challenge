@@ -104,7 +104,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 17   | Node.js  | [Basic](./nodejs/basic.js)                    | 921809ms  |
 | 18   | Python   | [Basic](./python/basic.py)                    | 936269ms  |
 | 19   | Ruby     | [Basic](./ruby/basic.rb)                      | 1271762ms |
-| 20   | Zig      | [Basic](./zig/basic.zig)                      | 2602802ms |
+| 20   | Zig      | [Basic](./zig/basic.zig)                      | 2506178ms |
 | 21   | Erlang   | [Basic](./erlang/basic/main.erl)              | 3488261ms |
 
 ## Reference
