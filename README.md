@@ -77,6 +77,10 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 버전은 V12.2.1입니다.
 1. erlang 경로에 분리된 새 폴더와 소스파일을 작성합니다.
 
+## Zig
+버전은 0.12.0입니다.
+1. zig 경로에 새 파일 혹은 새 폴더를 만들고 소스코드를 작성합니다.
+
 ## 현재 결과,,,,,,
 
 | Rank | Lang     | Code                                          | time      |
@@ -100,7 +104,8 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 17   | Node.js  | [Basic](./nodejs/basic.js)                    | 921809ms  |
 | 18   | Python   | [Basic](./python/basic.py)                    | 936269ms  |
 | 19   | Ruby     | [Basic](./ruby/basic.rb)                      | 1271762ms |
-| 20   | Erlang   | [Basic](./erlang/basic/main.erl)              | 3488261ms |
+| 20   | Zig      | [Basic](./zig/basic.zig)                      | 2602802ms |
+| 21   | Erlang   | [Basic](./erlang/basic/main.erl)              | 3488261ms |
 
 ## Reference
 
