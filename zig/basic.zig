@@ -113,7 +113,7 @@ pub fn main() !void {
     var buf_reader = std.io.bufferedReader(file.reader());
     var in_stream = buf_reader.reader();
 
-    var buffer: [10024]u8 = undefined;
+    var buffer: [8192]u8 = undefined;
 
     const size = try in_stream.readAll(&buffer);
     const expectOutputs = buffer[0..size];

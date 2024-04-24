@@ -1,2 +1,2 @@
-zig build-exe ./zig/basic.zig --name main -Doptimize=ReleaseSafe
+zig build-exe ./zig/basic.zig --name main -Doptimize=ReleaseFast
 ./main
