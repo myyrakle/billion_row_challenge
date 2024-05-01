@@ -101,7 +101,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 14   | Node.js         | [prravda1](./nodejs/prravda1/index.js)        | 290298ms  |
 | 15   | Node.js         | [sunrabbit2](./nodejs/sunrabbit2/index.js)    | 491985ms  |
 | 16   | Node.js         | [sunrabbit1](./nodejs/sunrabbit1/index.js)    | 580870ms  |
-| 17   | Python (polars) | [myyrale1](./python/myyrakle1.py)             | 908329ms  |
+| 17   | Python (polars) | [myyrakle1](./python/myyrakle1.py)            | 908329ms  |
 | 18   | Node.js         | [Basic](./nodejs/basic.js)                    | 921809ms  |
 | 19   | Python          | [Basic](./python/basic.py)                    | 936269ms  |
 | 20   | Ruby            | [Basic](./ruby/basic.rb)                      | 1271762ms |
