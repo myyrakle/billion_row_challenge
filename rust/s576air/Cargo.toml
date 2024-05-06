@@ -9,3 +9,9 @@ edition = "2021"
 num_cpus = "1.16.0"
 memmap2 = "0.9.4"
 rayon = "1.10.0"
+
+[profile.release]
+codegen-units = 1
+lto = true
+panic = "abort"
+strip = "none"
