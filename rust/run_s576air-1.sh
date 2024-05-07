@@ -1,0 +1,1 @@
+cargo run --release --manifest-path ./rust/s576air-1/Cargo.toml
