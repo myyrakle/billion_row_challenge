@@ -86,27 +86,28 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | Rank | Lang            | Code                                          | time      |
 | ---- | --------------- | --------------------------------------------- | --------- |
 | 1    | C++             | [libertyrapid1](./cpp/libertyrapid1/main.cpp) | 3272ms    |
-| 2    | Go              | [lemon-mint2](./go/cmd/lemon-mint2/main.go)   | 4365ms    |
-| 3    | Go              | [lemon-mint1](./go/cmd/lemon-mint1/main.go)   | 6113ms    |
-| 4    | Rust            | [whitetac2](./rust/whitetac2/src/main.rs)     | 6234ms    |
-| 5    | Go (GCC)        | [lemon-mint3](./go/cmd/lemon-mint3/main.go)   | 6772ms    |
-| 6    | C#              | [rudty1](./csharp/rudty1/Program.cs)          | 7674ms    |
-| 7    | Rust            | [whitetac1](./rust/whitetac1/src/main.rs)     | 8046ms    |
-| 8    | Rust            | [Basic](./rust/basic/src/main.rs)             | 128293ms  |
-| 9    | Java            | [Basic](./java/basic/Main.java)               | 184825ms  |
-| 10   | C++             | [Basic](./cpp/basic/main.cpp)                 | 190039ms  |
-| 11   | Go              | [Basic](./go/cmd/basic/main.go)               | 191004ms  |
-| 12   | C#              | [Basic](./csharp/basic/Program.cs)            | 215245ms  |
-| 13   | PHP             | [Basic](./php/basic.php)                      | 259109ms  |
-| 14   | Node.js         | [prravda1](./nodejs/prravda1/index.js)        | 290298ms  |
-| 15   | Node.js         | [sunrabbit2](./nodejs/sunrabbit2/index.js)    | 491985ms  |
-| 16   | Node.js         | [sunrabbit1](./nodejs/sunrabbit1/index.js)    | 580870ms  |
-| 17   | Python (polars) | [myyrakle1](./python/myyrakle1.py)            | 908329ms  |
-| 18   | Node.js         | [Basic](./nodejs/basic.js)                    | 921809ms  |
-| 19   | Python          | [Basic](./python/basic.py)                    | 936269ms  |
-| 20   | Ruby            | [Basic](./ruby/basic.rb)                      | 1271762ms |
-| 21   | Zig             | [Basic](./zig/basic.zig)                      | 2506178ms |
-| 22   | Erlang          | [Basic](./erlang/basic/main.erl)              | 3488261ms |
+| 2    | Rust            | [s576air-1](./rust/s576air-1/src/main.rs)     | 3994ms    |
+| 3    | Go              | [lemon-mint2](./go/cmd/lemon-mint2/main.go)   | 4365ms    |
+| 4    | Go              | [lemon-mint1](./go/cmd/lemon-mint1/main.go)   | 6113ms    |
+| 5    | Rust            | [whitetac2](./rust/whitetac2/src/main.rs)     | 6234ms    |
+| 6    | Go (GCC)        | [lemon-mint3](./go/cmd/lemon-mint3/main.go)   | 6772ms    |
+| 7    | C#              | [rudty1](./csharp/rudty1/Program.cs)          | 7674ms    |
+| 8    | Rust            | [whitetac1](./rust/whitetac1/src/main.rs)     | 8046ms    |
+| 9    | Rust            | [Basic](./rust/basic/src/main.rs)             | 128293ms  |
+| 10   | Java            | [Basic](./java/basic/Main.java)               | 184825ms  |
+| 11   | C++             | [Basic](./cpp/basic/main.cpp)                 | 190039ms  |
+| 12   | Go              | [Basic](./go/cmd/basic/main.go)               | 191004ms  |
+| 13   | C#              | [Basic](./csharp/basic/Program.cs)            | 215245ms  |
+| 14   | PHP             | [Basic](./php/basic.php)                      | 259109ms  |
+| 15   | Node.js         | [prravda1](./nodejs/prravda1/index.js)        | 290298ms  |
+| 16   | Node.js         | [sunrabbit2](./nodejs/sunrabbit2/index.js)    | 491985ms  |
+| 17   | Node.js         | [sunrabbit1](./nodejs/sunrabbit1/index.js)    | 580870ms  |
+| 18   | Python (polars) | [myyrakle1](./python/myyrakle1.py)            | 908329ms  |
+| 19   | Node.js         | [Basic](./nodejs/basic.js)                    | 921809ms  |
+| 20   | Python          | [Basic](./python/basic.py)                    | 936269ms  |
+| 21   | Ruby            | [Basic](./ruby/basic.rb)                      | 1271762ms |
+| 22   | Zig             | [Basic](./zig/basic.zig)                      | 2506178ms |
+| 23   | Erlang          | [Basic](./erlang/basic/main.erl)              | 3488261ms |
 
 ## Reference
 
