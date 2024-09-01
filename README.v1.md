@@ -1,6 +1,7 @@
 # billion row challenge
 
 Rust, Go, Node.js, Python, Java, C#, PHP, C++ 등의 언어로 진행하는 10억개 데이터 처리 챌린지입니다.
+시즌 1은 종료되었습니다.
 
 1. setup.sh를 실행해서 테스트 데이터를 생성합니다. (17GB 정도의 크기입니다.)
 2. 입력 데이터 파일에는 다음과 같이 지역과 측정값 쌍이 개행으로 구분된 채로 들어있습니다. 숫자는 정수 값입니다.
@@ -81,32 +82,32 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 버전은 0.12.0입니다.
 1. zig 경로에 새 파일 혹은 새 폴더를 만들고 소스코드를 작성합니다.
 
-## 현재 결과 (미측정 상태)
+## 현재 결과,,,,,,
 
 | Rank | Lang     | Code                                          | time      |
 | ---- | -------- | --------------------------------------------- | --------- |
-| 1    | C++      | [libertyrapid1](./cpp/libertyrapid1/main.cpp) | -    |
-| 2    | Rust     | [s576air-1](./rust/s576air-1/src/main.rs)     | -    |
-| 3    | Go       | [lemon-mint2](./go/cmd/lemon-mint2/main.go)   | -    |
-| 4    | Go       | [lemon-mint1](./go/cmd/lemon-mint1/main.go)   | -    |
-| 5    | Rust     | [whitetac2](./rust/whitetac2/src/main.rs)     | -    |
-| 6    | Go (GCC) | [lemon-mint3](./go/cmd/lemon-mint3/main.go)   | -    |
-| 7    | C#       | [rudty1](./csharp/rudty1/Program.cs)          | -    |
-| 8    | Rust     | [whitetac1](./rust/whitetac1/src/main.rs)     | -    |
-| 9    | Rust     | [Basic](./rust/basic/src/main.rs)             | -    |
-| 10   | Java     | [Basic](./java/basic/Main.java)               | -    |
-| 11   | C++      | [Basic](./cpp/basic/main.cpp)                 | -    |
-| 12   | Go       | [Basic](./go/cmd/basic/main.go)               | -    |
-| 13   | C#       | [Basic](./csharp/basic/Program.cs)            | -    |
-| 14   | PHP      | [Basic](./php/basic.php)                      | -    |
-| 15   | Node.js  | [prravda1](./nodejs/prravda1/index.js)        | -    |
-| 16   | Node.js  | [sunrabbit2](./nodejs/sunrabbit2/index.js)    | -    |
-| 17   | Node.js  | [sunrabbit1](./nodejs/sunrabbit1/index.js)    | -    |
-| 18   | Node.js  | [Basic](./nodejs/basic.js)                    | -    |
-| 19   | Python   | [Basic](./python/basic.py)                    | -    |
-| 20   | Ruby     | [Basic](./ruby/basic.rb)                      | -    |
-| 21   | Zig      | [Basic](./zig/basic.zig)                      | -    |
-| 22   | Erlang   | [Basic](./erlang/basic/main.erl)              | -    |
+| 1    | C++      | [libertyrapid1](./cpp/libertyrapid1/main.cpp) | 3272ms    |
+| 2    | Rust     | [s576air-1](./rust/s576air-1/src/main.rs)     | 3994ms    |
+| 3    | Go       | [lemon-mint2](./go/cmd/lemon-mint2/main.go)   | 4365ms    |
+| 4    | Go       | [lemon-mint1](./go/cmd/lemon-mint1/main.go)   | 6113ms    |
+| 5    | Rust     | [whitetac2](./rust/whitetac2/src/main.rs)     | 6234ms    |
+| 6    | Go (GCC) | [lemon-mint3](./go/cmd/lemon-mint3/main.go)   | 6772ms    |
+| 7    | C#       | [rudty1](./csharp/rudty1/Program.cs)          | 7674ms    |
+| 8    | Rust     | [whitetac1](./rust/whitetac1/src/main.rs)     | 8046ms    |
+| 9    | Rust     | [Basic](./rust/basic/src/main.rs)             | 128293ms  |
+| 10   | Java     | [Basic](./java/basic/Main.java)               | 184825ms  |
+| 11   | C++      | [Basic](./cpp/basic/main.cpp)                 | 190039ms  |
+| 12   | Go       | [Basic](./go/cmd/basic/main.go)               | 191004ms  |
+| 13   | C#       | [Basic](./csharp/basic/Program.cs)            | 215245ms  |
+| 14   | PHP      | [Basic](./php/basic.php)                      | 259109ms  |
+| 15   | Node.js  | [prravda1](./nodejs/prravda1/index.js)        | 290298ms  |
+| 16   | Node.js  | [sunrabbit2](./nodejs/sunrabbit2/index.js)    | 491985ms  |
+| 17   | Node.js  | [sunrabbit1](./nodejs/sunrabbit1/index.js)    | 580870ms  |
+| 18   | Node.js  | [Basic](./nodejs/basic.js)                    | 921809ms  |
+| 19   | Python   | [Basic](./python/basic.py)                    | 936269ms  |
+| 20   | Ruby     | [Basic](./ruby/basic.rb)                      | 1271762ms |
+| 21   | Zig      | [Basic](./zig/basic.zig)                      | 2506178ms |
+| 22   | Erlang   | [Basic](./erlang/basic/main.erl)              | 3488261ms |
 
 ## Reference
 
