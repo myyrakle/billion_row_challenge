@@ -56,7 +56,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 1. ruby 경로에 새 파일을 만듭니다.
 
 ## Java
-버전은 openjdk 11.0.22입니다.
+버전은 openjdk 21.0.4입니다.
 1. java 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
 
 ## C++
@@ -94,9 +94,9 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 7    | C#       | [rudty](./csharp/rudty1/Program.cs)          | -    |
 | 8    | Rust     | [whitetac(v1)](./rust/whitetac1/src/main.rs)     | 1986ms    |
 | 9    | Rust     | [Basic](./rust/basic/src/main.rs)             | 75072ms    |
-| 10   | Java     | [Basic](./java/basic/Main.java)               | -    |
-| 11   | Go       | [Basic](./go/cmd/basic/main.go)               | 78757ms    |
-| 12   | C++      | [Basic](./cpp/basic/main.cpp)                 | 86765ms   |
+| 10   | Go       | [Basic](./go/cmd/basic/main.go)               | 78757ms    |
+| 11   | C++      | [Basic](./cpp/basic/main.cpp)                 | 86765ms   |
+| 12   | Java     | [Basic](./java/basic/Main.java)               | 94091ms    |
 | 13   | C#       | [Basic](./csharp/basic/Program.cs)            | -    |
 | 14   | PHP      | [Basic](./php/basic.php)                      | -    |
 | 15   | Node.js  | [prravda1](./nodejs/prravda1/index.js)        | -    |
