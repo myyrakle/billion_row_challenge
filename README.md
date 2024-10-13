@@ -112,3 +112,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 
 - https://github.com/gunnarmorling/1brc
 - https://benhoyt.com/writings/go-1brc/
+- 
+
+## 지난결과
+- [시즌 1](./README.v1.md)
