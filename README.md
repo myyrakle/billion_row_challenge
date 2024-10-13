@@ -32,7 +32,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 
 ## Rust
 
-버전은 1.77.0입니다.
+버전은 1.80.1입니다.
 1. rust 경로에 추가 프로젝트를 구성합니다. basic을 복사해도 되고, cargo new로 생성해도 됩니다.
 
 ## Go
@@ -81,19 +81,19 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 버전은 0.12.0입니다.
 1. zig 경로에 새 파일 혹은 새 폴더를 만들고 소스코드를 작성합니다.
 
-## 현재 결과 (미측정 상태)
+## 현재 결과 (측정중)
 
 | Rank | Lang     | Code                                          | time      |
 | ---- | -------- | --------------------------------------------- | --------- |
 | 1    | C++      | [libertyrapid](./cpp/libertyrapid1/main.cpp) | 903 ms    |
-| 2    | Rust     | [s576air](./rust/s576air-1/src/main.rs)     | -    |
+| 2    | Rust     | [s576air](./rust/s576air-1/src/main.rs)     | 1304ms    |
 | 3    | Go       | [lemon-mint(v2)](./go/cmd/lemon-mint2/main.go)   | -    |
 | 4    | Go       | [lemon-mint(v1)](./go/cmd/lemon-mint1/main.go)   | -    |
-| 5    | Rust     | [whitetac(v2)](./rust/whitetac2/src/main.rs)     | -    |
+| 5    | Rust     | [whitetac(v2)](./rust/whitetac2/src/main.rs)     | 1736ms   |
 | 6    | Go (GCC) | [lemon-mint(v3)](./go/cmd/lemon-mint3/main.go)   | -    |
 | 7    | C#       | [rudty](./csharp/rudty1/Program.cs)          | -    |
-| 8    | Rust     | [whitetac(v1)](./rust/whitetac1/src/main.rs)     | -    |
-| 9    | Rust     | [Basic](./rust/basic/src/main.rs)             | -    |
+| 8    | Rust     | [whitetac(v1)](./rust/whitetac1/src/main.rs)     | 1986ms    |
+| 9    | Rust     | [Basic](./rust/basic/src/main.rs)             | 75072ms    |
 | 10   | Java     | [Basic](./java/basic/Main.java)               | -    |
 | 11   | C++      | [Basic](./cpp/basic/main.cpp)                 | 86765ms   |
 | 12   | Go       | [Basic](./go/cmd/basic/main.go)               | -    |
