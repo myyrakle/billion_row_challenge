@@ -85,23 +85,23 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 
 | Rank | Lang     | Code                                          | time      |
 | ---- | -------- | --------------------------------------------- | --------- |
-| 1    | C++      | [libertyrapid1](./cpp/libertyrapid1/main.cpp) | -    |
-| 2    | Rust     | [s576air-1](./rust/s576air-1/src/main.rs)     | -    |
-| 3    | Go       | [lemon-mint2](./go/cmd/lemon-mint2/main.go)   | -    |
-| 4    | Go       | [lemon-mint1](./go/cmd/lemon-mint1/main.go)   | -    |
-| 5    | Rust     | [whitetac2](./rust/whitetac2/src/main.rs)     | -    |
-| 6    | Go (GCC) | [lemon-mint3](./go/cmd/lemon-mint3/main.go)   | -    |
-| 7    | C#       | [rudty1](./csharp/rudty1/Program.cs)          | -    |
-| 8    | Rust     | [whitetac1](./rust/whitetac1/src/main.rs)     | -    |
+| 1    | C++      | [libertyrapid](./cpp/libertyrapid1/main.cpp) | 903 ms    |
+| 2    | Rust     | [s576air](./rust/s576air-1/src/main.rs)     | -    |
+| 3    | Go       | [lemon-mint(v2)](./go/cmd/lemon-mint2/main.go)   | -    |
+| 4    | Go       | [lemon-mint(v1)](./go/cmd/lemon-mint1/main.go)   | -    |
+| 5    | Rust     | [whitetac(v2)](./rust/whitetac2/src/main.rs)     | -    |
+| 6    | Go (GCC) | [lemon-mint(v3)](./go/cmd/lemon-mint3/main.go)   | -    |
+| 7    | C#       | [rudty](./csharp/rudty1/Program.cs)          | -    |
+| 8    | Rust     | [whitetac(v1)](./rust/whitetac1/src/main.rs)     | -    |
 | 9    | Rust     | [Basic](./rust/basic/src/main.rs)             | -    |
 | 10   | Java     | [Basic](./java/basic/Main.java)               | -    |
-| 11   | C++      | [Basic](./cpp/basic/main.cpp)                 | -    |
+| 11   | C++      | [Basic](./cpp/basic/main.cpp)                 | 86765ms   |
 | 12   | Go       | [Basic](./go/cmd/basic/main.go)               | -    |
 | 13   | C#       | [Basic](./csharp/basic/Program.cs)            | -    |
 | 14   | PHP      | [Basic](./php/basic.php)                      | -    |
 | 15   | Node.js  | [prravda1](./nodejs/prravda1/index.js)        | -    |
-| 16   | Node.js  | [sunrabbit2](./nodejs/sunrabbit2/index.js)    | -    |
-| 17   | Node.js  | [sunrabbit1](./nodejs/sunrabbit1/index.js)    | -    |
+| 16   | Node.js  | [sunrabbit(v2)](./nodejs/sunrabbit2/index.js)    | -    |
+| 17   | Node.js  | [sunrabbit(v1)](./nodejs/sunrabbit1/index.js)    | -    |
 | 18   | Node.js  | [Basic](./nodejs/basic.js)                    | -    |
 | 19   | Python   | [Basic](./python/basic.py)                    | -    |
 | 20   | Ruby     | [Basic](./ruby/basic.rb)                      | -    |
