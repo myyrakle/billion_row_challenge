@@ -37,7 +37,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 
 ## Go
 
-버전은 Go 1.22.2 입니다.
+버전은 Go 1.23.2 입니다.
 1. go/cmd 경로에 새 폴더를 만듭니다.
 2. go/cmd/basic/main.go 파일을 복사한 뒤에 수정해서 최적화합니다.
 
@@ -87,16 +87,16 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | ---- | -------- | --------------------------------------------- | --------- |
 | 1    | C++      | [libertyrapid](./cpp/libertyrapid1/main.cpp) | 903 ms    |
 | 2    | Rust     | [s576air](./rust/s576air-1/src/main.rs)     | 1304ms    |
-| 3    | Go       | [lemon-mint(v2)](./go/cmd/lemon-mint2/main.go)   | -    |
-| 4    | Go       | [lemon-mint(v1)](./go/cmd/lemon-mint1/main.go)   | -    |
-| 5    | Rust     | [whitetac(v2)](./rust/whitetac2/src/main.rs)     | 1736ms   |
-| 6    | Go (GCC) | [lemon-mint(v3)](./go/cmd/lemon-mint3/main.go)   | -    |
+| 3    | Go       | [lemon-mint(v2)](./go/cmd/lemon-mint2/main.go)   | 1566ms    |
+| 4    | Go       | [lemon-mint(v1)](./go/cmd/lemon-mint1/main.go)   | 1578ms    |
+| 5    | Go (GCC) | [lemon-mint(v3)](./go/cmd/lemon-mint3/main.go)   | 1646ms    |
+| 6    | Rust     | [whitetac(v2)](./rust/whitetac2/src/main.rs)     | 1736ms   |
 | 7    | C#       | [rudty](./csharp/rudty1/Program.cs)          | -    |
 | 8    | Rust     | [whitetac(v1)](./rust/whitetac1/src/main.rs)     | 1986ms    |
 | 9    | Rust     | [Basic](./rust/basic/src/main.rs)             | 75072ms    |
 | 10   | Java     | [Basic](./java/basic/Main.java)               | -    |
-| 11   | C++      | [Basic](./cpp/basic/main.cpp)                 | 86765ms   |
-| 12   | Go       | [Basic](./go/cmd/basic/main.go)               | -    |
+| 11   | Go       | [Basic](./go/cmd/basic/main.go)               | 78757ms    |
+| 12   | C++      | [Basic](./cpp/basic/main.cpp)                 | 86765ms   |
 | 13   | C#       | [Basic](./csharp/basic/Program.cs)            | -    |
 | 14   | PHP      | [Basic](./php/basic.php)                      | -    |
 | 15   | Node.js  | [prravda1](./nodejs/prravda1/index.js)        | -    |
