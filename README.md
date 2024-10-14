@@ -96,18 +96,20 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 9    | Node.js  | [sunrabbit(v2)](./nodejs/sunrabbit2/index.js)    | 20958ms    |
 | 10   | Rust     | [Basic](./rust/basic/src/main.rs)             | 75072ms    |
 | 11   | Go       | [Basic](./go/cmd/basic/main.go)               | 78757ms    |
-| 12   | C++      | [Basic](./cpp/basic/main.cpp)                 | 86765ms   |
-| 13   | C++ (Clang)      | [Basic](./cpp/basic/main.cpp)                 | 93906ms   |
-| 14   | Java     | [Basic](./java/basic/Main.java)               | 94091ms    |
-| 15   | C#       | [Basic](./csharp/basic/Program.cs)            | 125583ms    |
-| 16   | PHP      | [Basic](./php/basic.php)                      | 127756ms    |
-| 17   | Node.js  | [sunrabbit(v1)](./nodejs/sunrabbit1/index.js)    | 222781ms    |
-| 18   | Node.js  | [prravda1](./nodejs/prravda1/index.js)        | 272899ms    |
-| 19   | Node.js  | [Basic](./nodejs/basic.js)                    | 353561ms    |
-| 20   | Python   | [Basic](./python/basic.py)                    | 508417ms    |
-| 21   | Ruby     | [Basic](./ruby/basic.rb)                      | 604528ms    |
-| 22   | Zig      | [Basic](./zig/basic.zig)                      | 1641754ms    |
-| 23   | Erlang   | [Basic](./erlang/basic/main.erl)              | 1957916ms    |
+| 12   | Java (ParallelGC)     | [Basic](./java/basic/Main.java)               | 85782ms    |
+| 13   | C++ (GCC)     | [Basic](./cpp/basic/main.cpp)                 | 86765ms   |
+| 14   | C++ (Clang)      | [Basic](./cpp/basic/main.cpp)                 | 93906ms   |
+| 15   | Java (G1GC)     | [Basic](./java/basic/Main.java)               | 94091ms    |
+| 16   | Java (ZGC)     | [Basic](./java/basic/Main.java)               | 95413ms    |
+| 17   | C#       | [Basic](./csharp/basic/Program.cs)            | 125583ms    |
+| 18   | PHP      | [Basic](./php/basic.php)                      | 127756ms    |
+| 19   | Node.js  | [sunrabbit(v1)](./nodejs/sunrabbit1/index.js)    | 222781ms    |
+| 20   | Node.js  | [prravda1](./nodejs/prravda1/index.js)        | 272899ms    |
+| 21   | Node.js  | [Basic](./nodejs/basic.js)                    | 353561ms    |
+| 22   | Python   | [Basic](./python/basic.py)                    | 508417ms    |
+| 23   | Ruby     | [Basic](./ruby/basic.rb)                      | 604528ms    |
+| 24   | Zig      | [Basic](./zig/basic.zig)                      | 1641754ms    |
+| 25   | Erlang   | [Basic](./erlang/basic/main.erl)              | 1957916ms    |
 
 ## Reference
 
