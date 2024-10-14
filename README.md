@@ -52,7 +52,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 1. python 경로에 새 파일을 만듭니다.
 
 ## Ruby
-버전은 Ruby 3.0.2 입니다.
+버전은 Ruby 3.2.3 입니다.
 1. ruby 경로에 새 파일을 만듭니다.
 
 ## Java
@@ -104,7 +104,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 17   | Node.js  | [prravda1](./nodejs/prravda1/index.js)        | 272899ms    |
 | 18   | Node.js  | [Basic](./nodejs/basic.js)                    | 353561ms    |
 | 19   | Python   | [Basic](./python/basic.py)                    | 508417ms    |
-| 20   | Ruby     | [Basic](./ruby/basic.rb)                      | -    |
+| 20   | Ruby     | [Basic](./ruby/basic.rb)                      | 604528ms    |
 | 21   | Zig      | [Basic](./zig/basic.zig)                      | -    |
 | 22   | Erlang   | [Basic](./erlang/basic/main.erl)              | -    |
 
