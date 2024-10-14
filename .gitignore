@@ -43,3 +43,5 @@ obj
 *.dump
 
 *.o
+
+*.pyc

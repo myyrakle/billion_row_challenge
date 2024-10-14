@@ -48,7 +48,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 2. nodejs/basic.js 파일을 복사한 뒤에 수정해서 최적화합니다.
 
 ## Python
-버전은 Python 3.10.12입니다.
+버전은 Python 3.12.3입니다.
 1. python 경로에 새 파일을 만듭니다.
 
 ## Ruby
@@ -103,7 +103,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 16   | Node.js  | [sunrabbit(v1)](./nodejs/sunrabbit1/index.js)    | 222781ms    |
 | 17   | Node.js  | [prravda1](./nodejs/prravda1/index.js)        | 272899ms    |
 | 18   | Node.js  | [Basic](./nodejs/basic.js)                    | 353561ms    |
-| 19   | Python   | [Basic](./python/basic.py)                    | -    |
+| 19   | Python   | [Basic](./python/basic.py)                    | 508417ms    |
 | 20   | Ruby     | [Basic](./ruby/basic.rb)                      | -    |
 | 21   | Zig      | [Basic](./zig/basic.zig)                      | -    |
 | 22   | Erlang   | [Basic](./erlang/basic/main.erl)              | -    |
