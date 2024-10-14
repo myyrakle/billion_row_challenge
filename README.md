@@ -60,7 +60,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 1. java 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
 
 ## C++
-버전은 G++ 13.2.0입니다.
+버전은 G++ 13.2.0/Clang 18.1.3입니다.
 1. cpp 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
 
 ## C#
@@ -97,16 +97,17 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 10   | Rust     | [Basic](./rust/basic/src/main.rs)             | 75072ms    |
 | 11   | Go       | [Basic](./go/cmd/basic/main.go)               | 78757ms    |
 | 12   | C++      | [Basic](./cpp/basic/main.cpp)                 | 86765ms   |
-| 13   | Java     | [Basic](./java/basic/Main.java)               | 94091ms    |
-| 14   | C#       | [Basic](./csharp/basic/Program.cs)            | 125583ms    |
-| 15   | PHP      | [Basic](./php/basic.php)                      | 127756ms    |
-| 16   | Node.js  | [sunrabbit(v1)](./nodejs/sunrabbit1/index.js)    | 222781ms    |
-| 17   | Node.js  | [prravda1](./nodejs/prravda1/index.js)        | 272899ms    |
-| 18   | Node.js  | [Basic](./nodejs/basic.js)                    | 353561ms    |
-| 19   | Python   | [Basic](./python/basic.py)                    | 508417ms    |
-| 20   | Ruby     | [Basic](./ruby/basic.rb)                      | 604528ms    |
-| 21   | Zig      | [Basic](./zig/basic.zig)                      | 1641754ms    |
-| 22   | Erlang   | [Basic](./erlang/basic/main.erl)              | 1957916ms    |
+| 13   | C++ (Clang)      | [Basic](./cpp/basic/main.cpp)                 | 93906ms   |
+| 14   | Java     | [Basic](./java/basic/Main.java)               | 94091ms    |
+| 15   | C#       | [Basic](./csharp/basic/Program.cs)            | 125583ms    |
+| 16   | PHP      | [Basic](./php/basic.php)                      | 127756ms    |
+| 17   | Node.js  | [sunrabbit(v1)](./nodejs/sunrabbit1/index.js)    | 222781ms    |
+| 18   | Node.js  | [prravda1](./nodejs/prravda1/index.js)        | 272899ms    |
+| 19   | Node.js  | [Basic](./nodejs/basic.js)                    | 353561ms    |
+| 20   | Python   | [Basic](./python/basic.py)                    | 508417ms    |
+| 21   | Ruby     | [Basic](./ruby/basic.rb)                      | 604528ms    |
+| 22   | Zig      | [Basic](./zig/basic.zig)                      | 1641754ms    |
+| 23   | Erlang   | [Basic](./erlang/basic/main.erl)              | 1957916ms    |
 
 ## Reference
 
