@@ -64,7 +64,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 1. cpp 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
 
 ## C#
-버전은 dotnet 8.0.103입니다.
+버전은 dotnet 8.0.110입니다.
 1. c# 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
    -  dotnet new로 직접 생성해도 좋고,
    -  basic을 복제해서 사용해도 좋습니다.
@@ -91,13 +91,13 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 4    | Go       | [lemon-mint(v1)](./go/cmd/lemon-mint1/main.go)   | 1578ms    |
 | 5    | Go (GCC) | [lemon-mint(v3)](./go/cmd/lemon-mint3/main.go)   | 1646ms    |
 | 6    | Rust     | [whitetac(v2)](./rust/whitetac2/src/main.rs)     | 1736ms   |
-| 7    | C#       | [rudty](./csharp/rudty1/Program.cs)          | -    |
-| 8    | Rust     | [whitetac(v1)](./rust/whitetac1/src/main.rs)     | 1986ms    |
+| 7    | Rust     | [whitetac(v1)](./rust/whitetac1/src/main.rs)     | 1986ms    |
+| 8    | C#       | [rudty](./csharp/rudty1/Program.cs)          | 2049ms    |
 | 9    | Rust     | [Basic](./rust/basic/src/main.rs)             | 75072ms    |
 | 10   | Go       | [Basic](./go/cmd/basic/main.go)               | 78757ms    |
 | 11   | C++      | [Basic](./cpp/basic/main.cpp)                 | 86765ms   |
 | 12   | Java     | [Basic](./java/basic/Main.java)               | 94091ms    |
-| 13   | C#       | [Basic](./csharp/basic/Program.cs)            | -    |
+| 13   | C#       | [Basic](./csharp/basic/Program.cs)            | 125583ms    |
 | 14   | PHP      | [Basic](./php/basic.php)                      | -    |
 | 15   | Node.js  | [prravda1](./nodejs/prravda1/index.js)        | -    |
 | 16   | Node.js  | [sunrabbit(v2)](./nodejs/sunrabbit2/index.js)    | -    |
