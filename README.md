@@ -43,7 +43,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 
 ## Node.js
 
-버전은 v20.12.2입니다.
+버전은 v22.9.0입니다.
 1. nodejs 경로에 새 파일을 만듭니다.
 2. nodejs/basic.js 파일을 복사한 뒤에 수정해서 최적화합니다.
 
@@ -93,16 +93,16 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 6    | Rust     | [whitetac(v2)](./rust/whitetac2/src/main.rs)     | 1736ms   |
 | 7    | Rust     | [whitetac(v1)](./rust/whitetac1/src/main.rs)     | 1986ms    |
 | 8    | C#       | [rudty](./csharp/rudty1/Program.cs)          | 2049ms    |
-| 9    | Rust     | [Basic](./rust/basic/src/main.rs)             | 75072ms    |
-| 10   | Go       | [Basic](./go/cmd/basic/main.go)               | 78757ms    |
-| 11   | C++      | [Basic](./cpp/basic/main.cpp)                 | 86765ms   |
-| 12   | Java     | [Basic](./java/basic/Main.java)               | 94091ms    |
-| 13   | C#       | [Basic](./csharp/basic/Program.cs)            | 125583ms    |
-| 14   | PHP      | [Basic](./php/basic.php)                      | -    |
-| 15   | Node.js  | [prravda1](./nodejs/prravda1/index.js)        | -    |
-| 16   | Node.js  | [sunrabbit(v2)](./nodejs/sunrabbit2/index.js)    | -    |
-| 17   | Node.js  | [sunrabbit(v1)](./nodejs/sunrabbit1/index.js)    | -    |
-| 18   | Node.js  | [Basic](./nodejs/basic.js)                    | -    |
+| 9    | Node.js  | [sunrabbit(v2)](./nodejs/sunrabbit2/index.js)    | 20958ms    |
+| 10   | Rust     | [Basic](./rust/basic/src/main.rs)             | 75072ms    |
+| 11   | Go       | [Basic](./go/cmd/basic/main.go)               | 78757ms    |
+| 12   | C++      | [Basic](./cpp/basic/main.cpp)                 | 86765ms   |
+| 13   | Java     | [Basic](./java/basic/Main.java)               | 94091ms    |
+| 14   | C#       | [Basic](./csharp/basic/Program.cs)            | 125583ms    |
+| 15   | PHP      | [Basic](./php/basic.php)                      | -    |
+| 16   | Node.js  | [sunrabbit(v1)](./nodejs/sunrabbit1/index.js)    | 222781ms    |
+| 17   | Node.js  | [prravda1](./nodejs/prravda1/index.js)        | 272899ms    |
+| 18   | Node.js  | [Basic](./nodejs/basic.js)                    | 353561ms    |
 | 19   | Python   | [Basic](./python/basic.py)                    | -    |
 | 20   | Ruby     | [Basic](./ruby/basic.rb)                      | -    |
 | 21   | Zig      | [Basic](./zig/basic.zig)                      | -    |
