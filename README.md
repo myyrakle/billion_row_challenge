@@ -74,7 +74,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 1. php 경로에 새 소스파일을 작성합니다.
 
 ## Erlang
-버전은 V12.2.1입니다.
+버전은 V13.2.2.5입니다.
 1. erlang 경로에 분리된 새 폴더와 소스파일을 작성합니다.
 
 ## Zig
@@ -106,7 +106,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 19   | Python   | [Basic](./python/basic.py)                    | 508417ms    |
 | 20   | Ruby     | [Basic](./ruby/basic.rb)                      | 604528ms    |
 | 21   | Zig      | [Basic](./zig/basic.zig)                      | 1641754ms    |
-| 22   | Erlang   | [Basic](./erlang/basic/main.erl)              | -    |
+| 22   | Erlang   | [Basic](./erlang/basic/main.erl)              | 1957916ms    |
 
 ## Reference
 
