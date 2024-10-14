@@ -70,7 +70,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
    -  basic을 복제해서 사용해도 좋습니다.
 
 ## PHP
-버전은 8.1.2입니다.
+버전은 8.2.2입니다.
 1. php 경로에 새 소스파일을 작성합니다.
 
 ## Erlang
@@ -99,7 +99,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 12   | C++      | [Basic](./cpp/basic/main.cpp)                 | 86765ms   |
 | 13   | Java     | [Basic](./java/basic/Main.java)               | 94091ms    |
 | 14   | C#       | [Basic](./csharp/basic/Program.cs)            | 125583ms    |
-| 15   | PHP      | [Basic](./php/basic.php)                      | -    |
+| 15   | PHP      | [Basic](./php/basic.php)                      | 127756ms    |
 | 16   | Node.js  | [sunrabbit(v1)](./nodejs/sunrabbit1/index.js)    | 222781ms    |
 | 17   | Node.js  | [prravda1](./nodejs/prravda1/index.js)        | 272899ms    |
 | 18   | Node.js  | [Basic](./nodejs/basic.js)                    | 353561ms    |
