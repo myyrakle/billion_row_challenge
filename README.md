@@ -85,7 +85,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 
 | Rank | Lang     | Code                                          | time      |
 | ---- | -------- | --------------------------------------------- | --------- |
-| 1    | C++      | [libertyrapid](./cpp/libertyrapid1/main.cpp) | 903 ms    |
+| 1    | C++ (GCC)| [libertyrapid](./cpp/libertyrapid1/main.cpp) | 903 ms    |
 | 2    | Rust     | [s576air](./rust/s576air-1/src/main.rs)     | 1304ms    |
 | 3    | Go       | [lemon-mint(v2)](./go/cmd/lemon-mint2/main.go)   | 1566ms    |
 | 4    | Go       | [lemon-mint(v1)](./go/cmd/lemon-mint1/main.go)   | 1578ms    |
