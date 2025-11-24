@@ -57,7 +57,7 @@ jobs:
     - name: Setup Test
       run: ./setup.sh
     - name: Run Check
-      run: ./run_nodejs.sh
+      run: ./run_javascript.sh
 
   check_java:
     runs-on: ubuntu-latest
