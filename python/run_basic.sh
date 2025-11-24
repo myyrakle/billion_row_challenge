@@ -1,2 +1,2 @@
 #!/bin/sh
-python3 ./python/basic.py
+uv run ./python/basic/main.py

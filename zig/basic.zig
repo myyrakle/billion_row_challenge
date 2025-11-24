@@ -8,128 +8,147 @@ const Status = struct {
     count: i64,
 };
 
-fn compareStrings(_: void, lhs: *[]const u8, rhs: *[]const u8) bool {
-    return std.mem.order(u8, lhs.*, rhs.*).compare(std.math.CompareOperator.lt);
+fn compareStrings(_: void, lhs: []const u8, rhs: []const u8) bool {
+    return std.mem.order(u8, lhs, rhs) == .lt;
 }
 
-fn solution(path: []const u8) ![]const u8 {
-    var allocator = std.heap.page_allocator;
+fn parseValue(line: []const u8, separator_pos: usize) ?i64 {
+    const value_str = line[separator_pos + 1 ..];
+    return std.fmt.parseInt(i64, value_str, 10) catch null;
+}
 
+fn solution(allocator: std.mem.Allocator, path: []const u8) ![]const u8 {
     var file = try std.fs.cwd().openFile(path, .{});
     defer file.close();
 
-    var buf_reader = std.io.bufferedReader(file.reader());
-    var in_stream = buf_reader.reader();
-
-    var buffer: [256]u8 = undefined;
-
     var hashmap = std.StringHashMap(Status).init(allocator);
-    defer hashmap.deinit();
-
-    while (try in_stream.readUntilDelimiterOrEof(&buffer, '\n')) |line| {
-        // ;를 기준으로 분할
-        var splitedIter = std.mem.split(u8, line, ";");
-
-        const cityName: []const u8 = splitedIter.next().?;
-        const measurement: i64 = try std.fmt.parseInt(i32, splitedIter.next().?, 10);
-
-        if (hashmap.getPtr(cityName)) |value| {
-            var min = value.min;
-            if (measurement < min) {
-                min = measurement;
-            }
-
-            var max = value.max;
-            if (measurement > max) {
-                max = measurement;
-            }
-
-            const total = value.total + measurement;
-
-            value.* = Status{
-                .min = min,
-                .max = max,
-                .total = total,
-                .count = value.count + 1,
-            };
-        } else {
-            const cityCopy = try allocator.alloc(u8, cityName.len);
-            @memcpy(cityCopy, cityName);
-
-            try hashmap.put(cityCopy, Status{
-                .min = measurement,
-                .max = measurement,
-                .total = measurement,
-                .count = 1,
-            });
+    defer {
+        var it = hashmap.keyIterator();
+        while (it.next()) |key| {
+            allocator.free(key.*);
         }
+        hashmap.deinit();
     }
 
-    var iterator = hashmap.iterator();
+    // Read entire file into memory for faster processing
+    const file_size = try file.getEndPos();
+    const buffer = try allocator.alloc(u8, file_size);
+    defer allocator.free(buffer);
 
-    var cityNames = std.ArrayList(*[]const u8).init(allocator);
-    defer cityNames.deinit();
-
-    // 키 추출
-    while (iterator.next()) |entry| {
-        const cityName = entry.key_ptr;
-
-        try cityNames.append(cityName);
+    const bytes_read = try file.readAll(buffer);
+    if (bytes_read != file_size) {
+        return error.IncompleteRead;
     }
-    const cityNamesSlice = try cityNames.toOwnedSlice();
 
-    // 키를 오름차순으로 정렬
-    std.mem.sort(*[]const u8, cityNamesSlice, {}, compareStrings);
+    // Process lines
+    var line_start: usize = 0;
+    var i: usize = 0;
 
-    // 키 순서대로 조회하면서 결과 생성
-    var result = try allocator.alloc(u8, 100);
-    result = "";
-    for (cityNamesSlice) |cityName| {
-        if (hashmap.get(cityName.*)) |status| {
+    while (i < buffer.len) {
+        if (buffer[i] == '\n') {
+            var line_end = i;
+
+            // Remove carriage return if present
+            if (line_end > 0 and buffer[line_end - 1] == '\r') {
+                line_end -= 1;
+            }
+
+            if (line_end > line_start) {
+                const line = buffer[line_start..line_end];
+
+                // Find separator
+                if (std.mem.indexOfScalar(u8, line, ';')) |sep_pos| {
+                    const city_name = line[0..sep_pos];
+                    if (parseValue(line, sep_pos)) |measurement| {
+                        // Update or insert in hashmap
+                        if (hashmap.getPtr(city_name)) |entry| {
+                            entry.min = @min(entry.min, measurement);
+                            entry.max = @max(entry.max, measurement);
+                            entry.total += measurement;
+                            entry.count += 1;
+                        } else {
+                            const city_copy = try allocator.dupe(u8, city_name);
+                            try hashmap.put(city_copy, Status{
+                                .min = measurement,
+                                .max = measurement,
+                                .total = measurement,
+                                .count = 1,
+                            });
+                        }
+                    }
+                }
+            }
+
+            line_start = i + 1;
+        }
+
+        i += 1;
+    }
+
+    // Collect and sort city names
+    var city_names: std.ArrayList([]const u8) = .{};
+    defer city_names.deinit(allocator);
+
+    var iterator = hashmap.keyIterator();
+    while (iterator.next()) |city_ptr| {
+        try city_names.append(allocator, city_ptr.*);
+    }
+
+    std.mem.sort([]const u8, city_names.items, {}, compareStrings);
+
+    // Generate output
+    var output: std.ArrayList(u8) = .{};
+    defer output.deinit(allocator);
+
+    var buf: [256]u8 = undefined;
+
+    for (city_names.items) |city_name| {
+        if (hashmap.get(city_name)) |status| {
             const avg = @divTrunc(status.total, status.count);
-
-            const line = try std.fmt.allocPrint(
-                allocator,
+            const line_str = try std.fmt.bufPrint(
+                &buf,
                 "{s}={d};{d};{d}({d}/{d})\n",
-                .{ cityName.*, status.min, status.max, avg, status.total, status.count },
+                .{ city_name, status.min, status.max, avg, status.total, status.count },
             );
-
-            const toFree = result;
-            result = try std.mem.concat(allocator, u8, &[_][]const u8{ result, line });
-            allocator.free(toFree);
-            allocator.free(line);
+            try output.appendSlice(allocator, line_str);
         }
     }
 
-    return result;
+    return output.toOwnedSlice(allocator);
 }
 
 pub fn main() !void {
-    const stdout = std.io.getStdOut().writer();
+    var gpa = std.heap.GeneralPurposeAllocator(.{}){};
+    defer _ = gpa.deinit();
+    const allocator = gpa.allocator();
 
-    var file = try std.fs.cwd().openFile(common.OUTPUT_PATH, .{});
-    defer file.close();
+    // Read expected output
+    var output_file = try std.fs.cwd().openFile(common.OUTPUT_PATH, .{});
+    defer output_file.close();
 
-    var buf_reader = std.io.bufferedReader(file.reader());
-    var in_stream = buf_reader.reader();
+    const expected_output = try output_file.readToEndAlloc(allocator, 1024 * 1024 * 10);
+    defer allocator.free(expected_output);
 
-    var buffer: [8192]u8 = undefined;
-
-    const size = try in_stream.readAll(&buffer);
-    const expectOutputs = buffer[0..size];
-
+    // Time the solution
     var timer = try std.time.Timer.start();
-    const got = try solution(common.MEASUREMENTS_PATH);
-    const elapsedNano = timer.read();
-    const elapsedMilli = elapsedNano / 1_000_000;
+    const got = try solution(allocator, common.MEASUREMENTS_PATH);
+    defer allocator.free(got);
+    const elapsed_nanos = timer.read();
+    const elapsed_millis = elapsed_nanos / 1_000_000;
 
-    try stdout.print("elapsed: {}ms\n", .{elapsedMilli});
+    // Output results
+    _ = try std.posix.write(std.posix.STDOUT_FILENO, "Elapsed: ");
+    var buf: [32]u8 = undefined;
+    const time_str = try std.fmt.bufPrint(&buf, "{}ms\n", .{elapsed_millis});
+    _ = try std.posix.write(std.posix.STDOUT_FILENO, time_str);
 
-    if (std.mem.eql(u8, got, expectOutputs)) {
-        try stdout.print("Test passed\n", .{});
+    if (std.mem.eql(u8, got, expected_output)) {
+        _ = try std.posix.write(std.posix.STDOUT_FILENO, "Test passed\n");
     } else {
-        try stdout.print("Test failed\n", .{});
-        try stdout.print("Expected\n{s}", .{expectOutputs});
-        try stdout.print("Got\n{s}", .{got});
+        _ = try std.posix.write(std.posix.STDOUT_FILENO, "Test failed\n");
+        _ = try std.posix.write(std.posix.STDOUT_FILENO, "Expected:\n");
+        _ = try std.posix.write(std.posix.STDOUT_FILENO, expected_output);
+        _ = try std.posix.write(std.posix.STDOUT_FILENO, "\nGot:\n");
+        _ = try std.posix.write(std.posix.STDOUT_FILENO, got);
     }
 }

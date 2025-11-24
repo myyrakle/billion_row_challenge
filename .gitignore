@@ -19,6 +19,7 @@ Cargo.lock
 /target
 
 measurements.txt
+measurements*.txt
 outputs.txt
 
 main
@@ -45,3 +46,6 @@ obj
 *.o
 
 *.pyc
+
+.venv
+__pycache__/

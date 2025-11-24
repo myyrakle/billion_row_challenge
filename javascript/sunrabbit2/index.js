@@ -157,7 +157,7 @@ async function solution() {
     offsets.map(async (v, idx, array) => {
       return new Promise((resolve, _) => {
         const worker = new workerThreads.Worker(
-          "./nodejs/sunrabbit2/worker.js",
+          "./javascript/sunrabbit2/worker.js",
           {
             workerData: {
               path: MEASUREMENTS_PATH,
