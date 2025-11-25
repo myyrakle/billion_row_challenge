@@ -1,2 +1,2 @@
 #!/bin/sh
-dotnet run --project csharp/basic --configuration Release 
+dotnet run --project csharp/basic --configuration Release
