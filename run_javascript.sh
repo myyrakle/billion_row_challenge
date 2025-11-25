@@ -13,3 +13,6 @@ sh javascript/run_sunrabbit2.sh
 
 echo "[Node.js] prravda1"
 sh javascript/run_prravda1.sh
+
+echo "[Node.js] kimseongjee"
+sh javascript/run_kimseongjee.sh
