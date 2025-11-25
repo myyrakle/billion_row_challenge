@@ -119,24 +119,25 @@ uv init
 | 6    | Go                   | [lemon-mint(v1)](./go/cmd/lemon-mint1/main.go) | 1793ms    |
 | 7    | Rust                 | [whitetac(v1)](./rust/whitetac1/src/main.rs)   | 2187ms    |
 | 8    | C#                   | [rudty](./csharp/rudty1/Program.cs)            | 2330ms    |
-| 9    | Javascript (Node.js) | [sunrabbit(v2)](./nodejs/sunrabbit2/index.js)  | 20512ms   |
-| 10   | Go                   | [Basic](./go/cmd/basic/main.go)                | 60338ms   |
-| 11   | Rust                 | [Basic](./rust/basic/src/main.rs)              | 71499ms   |
-| 12   | C++ (GCC)            | [Basic](./cpp/basic/main.cpp)                  | 81690ms   |
-| 13   | Java (ZGC)           | [Basic](./java/basic/Main.java)                | 88577ms   |
-| 14   | Java (ParallelGC)    | [Basic](./java/basic/Main.java)                | 90484ms   |
-| 15   | Java (G1GC)          | [Basic](./java/basic/Main.java)                | 90667ms   |
-| 16   | C++ (Clang)          | [Basic](./cpp/basic/main.cpp)                  | 93765ms   |
-| 17   | PHP                  | [Basic](./php/basic.php)                       | 119706ms  |
-| 18   | C#                   | [Basic](./csharp/basic/Program.cs)             | 131325ms  |
-| 19   | Javascript (Node.js) | [sunrabbit(v1)](./nodejs/sunrabbit1/index.js)  | 218040ms  |
-| 20   | Javascript (Node.js) | [prravda1](./nodejs/prravda1/index.js)         | 272899ms  |
-| 21   | Javascript (Node.js) | [Basic](./nodejs/basic.js)                     | 369933ms  |
-| 22   | Javascript (Bun)     | [Basic](./nodejs/basic.js)                     | 378794ms  |
-| 23   | Python               | [Basic](./python/basic.py)                     | 412043ms  |
-| 24   | Ruby                 | [Basic](./ruby/basic.rb)                       | 643754ms  |
-| 25   | Zig                  | [Basic](./zig/basic.zig)                       | 1017734ms |
-| 26   | Erlang               | [Basic](./erlang/basic/main.erl)               | 1787073ms |
+| 9    | Javascript (Node.js) | [kimseongjee](./javascript/kimseongjee/index.js)    | 10572ms   |
+| 10   | Javascript (Node.js) | [sunrabbit(v2)](./javascript/sunrabbit2/index.js)  | 20512ms   |
+| 11   | Go                   | [Basic](./go/cmd/basic/main.go)                | 60338ms   |
+| 12   | Rust                 | [Basic](./rust/basic/src/main.rs)              | 71499ms   |
+| 13   | C++ (GCC)            | [Basic](./cpp/basic/main.cpp)                  | 81690ms   |
+| 14   | Java (ZGC)           | [Basic](./java/basic/Main.java)                | 88577ms   |
+| 15   | Java (ParallelGC)    | [Basic](./java/basic/Main.java)                | 90484ms   |
+| 16   | Java (G1GC)          | [Basic](./java/basic/Main.java)                | 90667ms   |
+| 17   | C++ (Clang)          | [Basic](./cpp/basic/main.cpp)                  | 93765ms   |
+| 18   | PHP                  | [Basic](./php/basic.php)                       | 119706ms  |
+| 19   | C#                   | [Basic](./csharp/basic/Program.cs)             | 131325ms  |
+| 20   | Javascript (Node.js) | [sunrabbit(v1)](./javascript/sunrabbit1/index.js)  | 218040ms  |
+| 21   | Javascript (Node.js) | [prravda1](./javascript/prravda1/index.js)         | 272899ms  |
+| 22   | Javascript (Node.js) | [Basic](./javascript/basic.js)                     | 369933ms  |
+| 23   | Javascript (Bun)     | [Basic](./javascript/basic.js)                     | 378794ms  |
+| 24   | Python               | [Basic](./python/basic.py)                     | 412043ms  |
+| 25   | Ruby                 | [Basic](./ruby/basic.rb)                       | 643754ms  |
+| 26   | Zig                  | [Basic](./zig/basic.zig)                       | 1017734ms |
+| 27   | Erlang               | [Basic](./erlang/basic/main.erl)               | 1787073ms |
 
 ## Reference
 
