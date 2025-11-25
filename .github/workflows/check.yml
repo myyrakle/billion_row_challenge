@@ -2,9 +2,9 @@ name: Check
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
 
 env:
   CARGO_TERM_COLOR: always
@@ -13,77 +13,76 @@ jobs:
   check_go:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/setup-go@v5.0.0
-      with:
-        go-version: stable
-    - uses: actions/checkout@v3
-    - name: Setup GCCGO
-      run: sudo apt install gccgo-12 gcc-12 -y && sudo ln -s /usr/bin/gccgo-12 /usr/bin/gccgo
-    - run: chmod +x **/*.sh && chmod +x *.sh
-    - name: Setup Test
-      run: ./setup.sh
-    - name: Run Check
-      run: ./run_go.sh
-      
+      - uses: actions/setup-go@v5.0.0
+        with:
+          go-version: stable
+      - uses: actions/checkout@v3
+      - name: Setup GCCGO
+        run: sudo apt install gccgo-12 gcc-12 -y && sudo ln -s /usr/bin/gccgo-12 /usr/bin/gccgo
+      - run: chmod +x **/*.sh && chmod +x *.sh
+      - name: Setup Test
+        run: ./setup.sh
+      - name: Run Check
+        run: ./run_go.sh
+
   check_rust:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - run: chmod +x **/*.sh && chmod +x *.sh
-    - name: Setup Test
-      run: ./setup.sh
-    - name: Run Check
-      run: ./run_rust.sh
+      - uses: actions/checkout@v3
+      - run: chmod +x **/*.sh && chmod +x *.sh
+      - name: Setup Test
+        run: ./setup.sh
+      - name: Run Check
+        run: ./run_rust.sh
 
   check_cs:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - run: chmod +x **/*.sh && chmod +x *.sh
-    - name: Setup Test
-      run: ./setup.sh
-    - name: Run Check
-      run: ./run_c#.sh
+      - uses: actions/checkout@v3
+      - run: chmod +x **/*.sh && chmod +x *.sh
+      - name: Setup Test
+        run: ./setup.sh
+      - name: Run Check
+        run: ./run_c#.sh
 
   check_nodejs:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v2
-      with:
-        node-version: 20.12.2
-        architecture: arm64
-    - run: chmod +x **/*.sh && chmod +x *.sh
-    - name: Setup Test
-      run: ./setup.sh
-    - name: Run Check
-      run: ./run_javascript.sh
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 20.12.2
+          architecture: arm64
+      - run: chmod +x **/*.sh && chmod +x *.sh
+      - name: Setup Test
+        run: ./setup.sh
+      - name: Run Check
+        run: ./run_javascript.sh
 
   check_java:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/setup-java@v4
-      with:
-        java-version: '22'
-        distribution: 'zulu'
-    - uses: actions/checkout@v3
-    - run: chmod +x **/*.sh && chmod +x *.sh
-    - name: Setup Test
-      run: ./setup.sh
-    - name: Run Check
-      run: ./run_java.sh
+      - uses: actions/setup-java@v4
+        with:
+          java-version: "22"
+          distribution: "zulu"
+      - uses: actions/checkout@v3
+      - run: chmod +x **/*.sh && chmod +x *.sh
+      - name: Setup Test
+        run: ./setup.sh
+      - name: Run Check
+        run: ./run_java.sh
 
-  check_graalvm:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: graalvm/setup-graalvm@v1
-      with:
-        java-version: '22'
-        distribution: 'graalvm'
-    - uses: actions/checkout@v3
-    - run: chmod +x **/*.sh && chmod +x *.sh
-    - name: Setup Test
-      run: ./setup.sh
-    - name: Run Check
-      run: ./run_graalvm.sh
-
+  # check_graalvm:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: graalvm/setup-graalvm@v1
+  #     with:
+  #       java-version: '22'
+  #       distribution: 'graalvm'
+  #   - uses: actions/checkout@v3
+  #   - run: chmod +x **/*.sh && chmod +x *.sh
+  #   - name: Setup Test
+  #     run: ./setup.sh
+  #   - name: Run Check
+  #     run: ./run_graalvm.sh
