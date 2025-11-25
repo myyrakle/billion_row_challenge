@@ -134,7 +134,7 @@ uv init
 | 21   | Javascript (Node.js) | [prravda1](./javascript/prravda1/index.js)         | 272899ms  |
 | 22   | Javascript (Node.js) | [Basic](./javascript/basic.js)                     | 369933ms  |
 | 23   | Javascript (Bun)     | [Basic](./javascript/basic.js)                     | 378794ms  |
-| 24   | Python               | [Basic](./python/basic.py)                     | 412043ms  |
+| 24   | Python               | [Basic](./python/basic/main.py)                     | 412043ms  |
 | 25   | Ruby                 | [Basic](./ruby/basic.rb)                       | 643754ms  |
 | 26   | Zig                  | [Basic](./zig/basic.zig)                       | 1017734ms |
 | 27   | Erlang               | [Basic](./erlang/basic/main.erl)               | 1787073ms |
