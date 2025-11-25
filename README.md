@@ -71,7 +71,7 @@ uv init
 
 ## Java
 
-버전은 openjdk 25.0.1입니다.
+버전은 openjdk 25.0.1/graalvm 25.0.1입니다.
 
 1. java 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
 
@@ -128,16 +128,17 @@ uv init
 | 15   | Java (ParallelGC)    | [Basic](./java/basic/Main.java)                | 90484ms   |
 | 16   | Java (G1GC)          | [Basic](./java/basic/Main.java)                | 90667ms   |
 | 17   | C++ (Clang)          | [Basic](./cpp/basic/main.cpp)                  | 93765ms   |
-| 18   | PHP                  | [Basic](./php/basic.php)                       | 119706ms  |
-| 19   | C#                   | [Basic](./csharp/basic/Program.cs)             | 131325ms  |
-| 20   | Javascript (Node.js) | [sunrabbit(v1)](./javascript/sunrabbit1/index.js)  | 218040ms  |
-| 21   | Javascript (Node.js) | [prravda1](./javascript/prravda1/index.js)         | 272899ms  |
-| 22   | Javascript (Node.js) | [Basic](./javascript/basic.js)                     | 369933ms  |
-| 23   | Javascript (Bun)     | [Basic](./javascript/basic.js)                     | 378794ms  |
-| 24   | Python               | [Basic](./python/basic/main.py)                     | 412043ms  |
-| 25   | Ruby                 | [Basic](./ruby/basic.rb)                       | 643754ms  |
-| 26   | Zig                  | [Basic](./zig/basic.zig)                       | 1017734ms |
-| 27   | Erlang               | [Basic](./erlang/basic/main.erl)               | 1787073ms |
+| 18   | Java (GraalVM)       | [Basic](./java/basic/Main.java)                | 117744ms  |
+| 19   | PHP                  | [Basic](./php/basic.php)                       | 119706ms  |
+| 20   | C#                   | [Basic](./csharp/basic/Program.cs)             | 131325ms  |
+| 21   | Javascript (Node.js) | [sunrabbit(v1)](./javascript/sunrabbit1/index.js)  | 218040ms  |
+| 22   | Javascript (Node.js) | [prravda1](./javascript/prravda1/index.js)         | 272899ms  |
+| 23   | Javascript (Node.js) | [Basic](./javascript/basic.js)                     | 369933ms  |
+| 24   | Javascript (Bun)     | [Basic](./javascript/basic.js)                     | 378794ms  |
+| 25   | Python               | [Basic](./python/basic/main.py)                     | 412043ms  |
+| 26   | Ruby                 | [Basic](./ruby/basic.rb)                       | 643754ms  |
+| 27   | Zig                  | [Basic](./zig/basic.zig)                       | 1017734ms |
+| 28   | Erlang               | [Basic](./erlang/basic/main.erl)               | 1787073ms |
 
 ## Reference
 
