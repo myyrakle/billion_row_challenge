@@ -1,3 +1,3 @@
 #!/bin/sh
 dotnet publish csharp/basic -c Release -r linux-x64 /p:PublishAot=true
-./basic
+./csharp/basic/bin/Release/net9.0/basic

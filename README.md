@@ -101,6 +101,12 @@ uv init
 
 1. erlang 경로에 분리된 새 폴더와 소스파일을 작성합니다.
 
+## Haskell
+
+버전은 ghc 9.6.6입니다.
+
+1. haskell 경로에 분리된 새 폴더와 소스파일을 작성합니다.
+
 ## Zig
 
 버전은 0.15.2입니다.
@@ -140,6 +146,7 @@ uv init
 | 27   | Ruby                 | [Basic](./ruby/basic.rb)                       | 643754ms  |
 | 28   | Zig                  | [Basic](./zig/basic.zig)                       | 1017734ms |
 | 29   | Erlang               | [Basic](./erlang/basic/main.erl)               | 1787073ms |
+| 30   | Haskell              | [Basic](./haskell/basic/Main.hs)               | 3008400ms |
 
 ## Reference
 

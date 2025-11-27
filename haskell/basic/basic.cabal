@@ -1,0 +1,27 @@
+cabal-version:      2.4
+name:               basic
+version:            0.1.0.0
+synopsis:           Billion Row Challenge - Haskell Basic Implementation
+license:            MIT
+author:             BRC Contributor
+maintainer:         example@example.com
+category:           Data
+
+executable basic
+    main-is:          Main.hs
+    build-depends:    base >=4.18 && <5
+                    , containers >=0.6
+                    , time >=1.12
+                    , bytestring >=0.11
+                    , text >=2.0
+    hs-source-dirs:   .
+    default-language: Haskell2010
+    ghc-options:      -O2
+                      -threaded
+                      -rtsopts
+                      -with-rtsopts=-N
+                      -Wall
+                      -fforce-recomp
+                      -fno-warn-unused-do-bind
+                      -fno-warn-name-shadowing
+                      -fno-warn-missing-signatures
