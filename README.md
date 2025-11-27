@@ -95,6 +95,12 @@ uv init
 
 1. php 경로에 새 소스파일을 작성합니다.
 
+## D
+
+버전은 DMD v2.111.0입니다.
+
+1. d 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
+
 ## Erlang
 
 버전은 V16.1.1입니다.
@@ -139,14 +145,15 @@ uv init
 | 20   | PHP                  | [Basic](./php/basic.php)                       | 119706ms  |
 | 21   | C#                   | [Basic](./csharp/basic/Program.cs)             | 131325ms  |
 | 22   | Javascript (Node.js) | [sunrabbit(v1)](./javascript/sunrabbit1/index.js)  | 218040ms  |
-| 23   | Javascript (Node.js) | [prravda1](./javascript/prravda1/index.js)         | 272899ms  |
-| 24   | Javascript (Node.js) | [Basic](./javascript/basic.js)                     | 369933ms  |
-| 25   | Javascript (Bun)     | [Basic](./javascript/basic.js)                     | 378794ms  |
-| 26   | Python               | [Basic](./python/basic/main.py)                     | 412043ms  |
-| 27   | Ruby                 | [Basic](./ruby/basic.rb)                       | 643754ms  |
-| 28   | Zig                  | [Basic](./zig/basic.zig)                       | 1017734ms |
-| 29   | Erlang               | [Basic](./erlang/basic/main.erl)               | 1787073ms |
-| 30   | Haskell              | [Basic](./haskell/basic/Main.hs)               | 3008400ms |
+| 23   | D                    | [Basic](./d/basic/main.d)                         | 260191ms  |
+| 24   | Javascript (Node.js) | [prravda1](./javascript/prravda1/index.js)         | 272899ms  |
+| 25   | Javascript (Node.js) | [Basic](./javascript/basic.js)                     | 369933ms  |
+| 26   | Javascript (Bun)     | [Basic](./javascript/basic.js)                     | 378794ms  |
+| 27   | Python               | [Basic](./python/basic/main.py)                     | 412043ms  |
+| 28   | Ruby                 | [Basic](./ruby/basic.rb)                       | 643754ms  |
+| 29   | Zig                  | [Basic](./zig/basic.zig)                       | 1017734ms |
+| 30   | Erlang               | [Basic](./erlang/basic/main.erl)               | 1787073ms |
+| 31   | Haskell              | [Basic](./haskell/basic/Main.hs)               | 3008400ms |
 
 ## Reference
 
