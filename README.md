@@ -95,6 +95,12 @@ uv init
 
 1. php 경로에 새 소스파일을 작성합니다.
 
+## Lua
+
+버전은 lua 5.4.8입니다.
+
+1. lua 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
+
 ## Julia
 
 버전은 Julia 1.12.2입니다.
@@ -156,10 +162,11 @@ uv init
 | 25   | Javascript (Node.js) | [prravda1](./javascript/prravda1/index.js)         | 272899ms  |
 | 26   | Javascript (Bun)     | [Basic](./javascript/basic.js)                     | 378794ms  |
 | 27   | Python               | [Basic](./python/basic/main.py)                     | 412043ms  |
-| 28   | Ruby                 | [Basic](./ruby/basic.rb)                       | 643754ms  |
-| 29   | Zig                  | [Basic](./zig/basic.zig)                       | 1017734ms |
-| 30   | Erlang               | [Basic](./erlang/basic/main.erl)               | 1787073ms |
-| 31   | Haskell              | [Basic](./haskell/basic/Main.hs)               | 3008400ms |
+| 28   | Lua                 | [Basic](./lua/basic.lua)                       | 569031ms  |
+| 29   | Ruby                 | [Basic](./ruby/basic.rb)                       | 643754ms  |
+| 30   | Zig                  | [Basic](./zig/basic.zig)                       | 1017734ms |
+| 31   | Erlang               | [Basic](./erlang/basic/main.erl)               | 1787073ms |
+| 32   | Haskell              | [Basic](./haskell/basic/Main.hs)               | 3008400ms |
 
 ## Reference
 
