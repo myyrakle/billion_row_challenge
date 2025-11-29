@@ -81,6 +81,12 @@ uv init
 
 1. cpp 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
 
+## Pascal
+
+버전은 Free Pascal Compiler v3.2.2입니다.
+
+1. pascal 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
+
 ## C#
 
 버전은 dotnet 9.0.110입니다.
@@ -170,17 +176,18 @@ uv init
 | 21   | C#                   | [Basic](./csharp/basic/Program.cs)             | 131325ms  |
 | 22   | Julia                | [Basic](./julia/basic.jl)                      | 131684ms  |
 | 23   | Javascript (Node.js) | [sunrabbit(v1)](./javascript/sunrabbit1/index.js)  | 218040ms  |
-| 24   | D                    | [Basic](./d/basic/main.d)                         | 260191ms  |
-| 25   | Javascript (Node.js) | [prravda1](./javascript/prravda1/index.js)         | 272899ms  |
-| 26   | Javascript (Bun)     | [Basic](./javascript/basic.js)                     | 378794ms  |
-| 27   | Python               | [Basic](./python/basic/main.py)                     | 412043ms  |
-| 28   | Perl                 | [Basic](./perl/basic.pl)                       | 530715ms  |
-| 29   | Lua                 | [Basic](./lua/basic.lua)                       | 569031ms  |
-| 30   | Ruby                 | [Basic](./ruby/basic.rb)                       | 643754ms  |
-| 31   | Swift                 | [Basic](./swift/basic.swift)                       | 936221ms  |
-| 32   | Zig                  | [Basic](./zig/basic.zig)                       | 1017734ms |
-| 33   | Erlang               | [Basic](./erlang/basic/main.erl)               | 1787073ms |
-| 34   | Haskell              | [Basic](./haskell/basic/Main.hs)               | 3008400ms |
+| 24   | Pascal               | [Basic](./pascal/basic/main.pas)                | 251556ms  |
+| 25   | D                    | [Basic](./d/basic/main.d)                         | 260191ms  |
+| 26   | Javascript (Node.js) | [prravda1](./javascript/prravda1/index.js)         | 272899ms  |
+| 27   | Javascript (Bun)     | [Basic](./javascript/basic.js)                     | 378794ms  |
+| 28   | Python               | [Basic](./python/basic/main.py)                     | 412043ms  |
+| 29   | Perl                 | [Basic](./perl/basic.pl)                       | 530715ms  |
+| 30   | Lua                 | [Basic](./lua/basic.lua)                       | 569031ms  |
+| 31   | Ruby                 | [Basic](./ruby/basic.rb)                       | 643754ms  |
+| 32   | Swift                 | [Basic](./swift/basic.swift)                       | 936221ms  |
+| 33   | Zig                  | [Basic](./zig/basic.zig)                       | 1017734ms |
+| 34   | Erlang               | [Basic](./erlang/basic/main.erl)               | 1787073ms |
+| 35   | Haskell              | [Basic](./haskell/basic/Main.hs)               | 3008400ms |
 
 ## Reference
 
