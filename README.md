@@ -89,6 +89,12 @@ uv init
    - dotnet new로 직접 생성해도 좋고,
    - basic을 복제해서 사용해도 좋습니다.
 
+## Swift 
+
+버전은 6.2.1입니다. 
+
+1. swift 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
+
 ## PHP
 
 버전은 8.4.15입니다.
@@ -164,9 +170,10 @@ uv init
 | 27   | Python               | [Basic](./python/basic/main.py)                     | 412043ms  |
 | 28   | Lua                 | [Basic](./lua/basic.lua)                       | 569031ms  |
 | 29   | Ruby                 | [Basic](./ruby/basic.rb)                       | 643754ms  |
-| 30   | Zig                  | [Basic](./zig/basic.zig)                       | 1017734ms |
-| 31   | Erlang               | [Basic](./erlang/basic/main.erl)               | 1787073ms |
-| 32   | Haskell              | [Basic](./haskell/basic/Main.hs)               | 3008400ms |
+| 30   | Swift                 | [Basic](./swift/basic.swift)                       | 936221ms  |
+| 31   | Zig                  | [Basic](./zig/basic.zig)                       | 1017734ms |
+| 32   | Erlang               | [Basic](./erlang/basic/main.erl)               | 1787073ms |
+| 33   | Haskell              | [Basic](./haskell/basic/Main.hs)               | 3008400ms |
 
 ## Reference
 

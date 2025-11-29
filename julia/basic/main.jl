@@ -1,5 +1,4 @@
 # Julia Basic Implementation for Billion Row Challenge
-# 파일을 한 줄씩 읽어서 메모리 사용량을 최소화
 
 using Printf
 
