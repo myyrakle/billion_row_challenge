@@ -101,6 +101,12 @@ uv init
 
 1. php 경로에 새 소스파일을 작성합니다.
 
+## Perl
+
+버전은 v5.42.0입니다.
+
+1. perl 경로에 새 폴더와 새 소스파일을 추가해서 작성합니다.
+
 ## Lua
 
 버전은 lua 5.4.8입니다.
@@ -168,12 +174,13 @@ uv init
 | 25   | Javascript (Node.js) | [prravda1](./javascript/prravda1/index.js)         | 272899ms  |
 | 26   | Javascript (Bun)     | [Basic](./javascript/basic.js)                     | 378794ms  |
 | 27   | Python               | [Basic](./python/basic/main.py)                     | 412043ms  |
-| 28   | Lua                 | [Basic](./lua/basic.lua)                       | 569031ms  |
-| 29   | Ruby                 | [Basic](./ruby/basic.rb)                       | 643754ms  |
-| 30   | Swift                 | [Basic](./swift/basic.swift)                       | 936221ms  |
-| 31   | Zig                  | [Basic](./zig/basic.zig)                       | 1017734ms |
-| 32   | Erlang               | [Basic](./erlang/basic/main.erl)               | 1787073ms |
-| 33   | Haskell              | [Basic](./haskell/basic/Main.hs)               | 3008400ms |
+| 28   | Perl                 | [Basic](./perl/basic.pl)                       | 530715ms  |
+| 29   | Lua                 | [Basic](./lua/basic.lua)                       | 569031ms  |
+| 30   | Ruby                 | [Basic](./ruby/basic.rb)                       | 643754ms  |
+| 31   | Swift                 | [Basic](./swift/basic.swift)                       | 936221ms  |
+| 32   | Zig                  | [Basic](./zig/basic.zig)                       | 1017734ms |
+| 33   | Erlang               | [Basic](./erlang/basic/main.erl)               | 1787073ms |
+| 34   | Haskell              | [Basic](./haskell/basic/Main.hs)               | 3008400ms |
 
 ## Reference
 
