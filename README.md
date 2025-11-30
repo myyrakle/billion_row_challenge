@@ -155,11 +155,17 @@ uv init
 
 1. zig 경로에 새 파일 혹은 새 폴더를 만들고 소스코드를 작성합니다.
 
-## Common LISP
+## LISP (Common LISP)
 
 버전은 SBCL v2.5.10입니다.
 
 1. lisp 경로에 새 파일 혹은 새 폴더를 만들고 소스코드를 작성합니다.
+
+## LISP (Scheme)
+
+버전은 guile v3.0.10입니다.
+
+1. scheme 경로에 새 파일 혹은 새 폴더를 만들고 소스코드를 작성합니다.
 
 ## 현재 결과
 
@@ -198,10 +204,11 @@ uv init
 | 31   | Perl                 | [Basic](./perl/basic.pl)                       | 530715ms  |
 | 32   | Lua                  | [Basic](./lua/basic.lua)                       | 569031ms  |
 | 33   | Ruby                 | [Basic](./ruby/basic.rb)                       | 643754ms  |
-| 34   | Swift                | [Basic](./swift/basic.swift)                       | 936221ms  |
-| 35   | Zig                  | [Basic](./zig/basic.zig)                       | 1017734ms |
-| 36   | Erlang               | [Basic](./erlang/basic/main.erl)               | 1787073ms |
-| 37   | Haskell              | [Basic](./haskell/basic/Main.hs)               | 3008400ms |
+| 34   | Swift                | [Basic](./swift/basic.swift)                   | 936221ms  |
+| 35   | Scheme               | [Basic](./scheme/basic.scm)                    | 967971ms  |
+| 36   | Zig                  | [Basic](./zig/basic.zig)                       | 1017734ms |
+| 37   | Erlang               | [Basic](./erlang/basic/main.erl)               | 1787073ms |
+| 38   | Haskell              | [Basic](./haskell/basic/Main.hs)               | 3008400ms |
 
 ## Reference
 

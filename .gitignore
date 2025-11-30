@@ -60,3 +60,5 @@ dist-newstyle
 
 *.cmi
 *.cmx
+
+scheme/**/*.go
