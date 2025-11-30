@@ -57,3 +57,6 @@ __pycache__/
 *.run
 
 dist-newstyle
+
+*.cmi
+*.cmx

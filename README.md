@@ -143,6 +143,12 @@ uv init
 
 1. haskell 경로에 분리된 새 폴더와 소스파일을 작성합니다.
 
+## Ocaml
+
+버전은 v5.4.0입니다.
+
+1. ocaml 경로에 분리된 새 폴더와 소스파일을 작성합니다.
+
 ## Zig
 
 버전은 0.15.2입니다.
@@ -175,19 +181,20 @@ uv init
 | 20   | PHP                  | [Basic](./php/basic.php)                       | 119706ms  |
 | 21   | C#                   | [Basic](./csharp/basic/Program.cs)             | 131325ms  |
 | 22   | Julia                | [Basic](./julia/basic.jl)                      | 131684ms  |
-| 23   | Javascript (Node.js) | [sunrabbit(v1)](./javascript/sunrabbit1/index.js)  | 218040ms  |
-| 24   | Pascal               | [Basic](./pascal/basic/main.pas)                | 251556ms  |
-| 25   | D                    | [Basic](./d/basic/main.d)                         | 260191ms  |
-| 26   | Javascript (Node.js) | [prravda1](./javascript/prravda1/index.js)         | 272899ms  |
-| 27   | Javascript (Bun)     | [Basic](./javascript/basic.js)                     | 378794ms  |
-| 28   | Python               | [Basic](./python/basic/main.py)                     | 412043ms  |
-| 29   | Perl                 | [Basic](./perl/basic.pl)                       | 530715ms  |
-| 30   | Lua                 | [Basic](./lua/basic.lua)                       | 569031ms  |
-| 31   | Ruby                 | [Basic](./ruby/basic.rb)                       | 643754ms  |
-| 32   | Swift                 | [Basic](./swift/basic.swift)                       | 936221ms  |
-| 33   | Zig                  | [Basic](./zig/basic.zig)                       | 1017734ms |
-| 34   | Erlang               | [Basic](./erlang/basic/main.erl)               | 1787073ms |
-| 35   | Haskell              | [Basic](./haskell/basic/Main.hs)               | 3008400ms |
+| 23   | Ocaml                | [Basic](./ocaml/basic.ml)                      | 136462ms  |
+| 24   | Javascript (Node.js) | [sunrabbit(v1)](./javascript/sunrabbit1/index.js)  | 218040ms  |
+| 25   | Pascal               | [Basic](./pascal/basic/main.pas)                | 251556ms  |
+| 26   | D                    | [Basic](./d/basic/main.d)                         | 260191ms  |
+| 27   | Javascript (Node.js) | [prravda1](./javascript/prravda1/index.js)         | 272899ms  |
+| 28   | Javascript (Bun)     | [Basic](./javascript/basic.js)                     | 378794ms  |
+| 29   | Python               | [Basic](./python/basic/main.py)                     | 412043ms  |
+| 30   | Perl                 | [Basic](./perl/basic.pl)                       | 530715ms  |
+| 31   | Lua                 | [Basic](./lua/basic.lua)                       | 569031ms  |
+| 32   | Ruby                 | [Basic](./ruby/basic.rb)                       | 643754ms  |
+| 33   | Swift                 | [Basic](./swift/basic.swift)                       | 936221ms  |
+| 34   | Zig                  | [Basic](./zig/basic.zig)                       | 1017734ms |
+| 35   | Erlang               | [Basic](./erlang/basic/main.erl)               | 1787073ms |
+| 36   | Haskell              | [Basic](./haskell/basic/Main.hs)               | 3008400ms |
 
 ## Reference
 
