@@ -206,17 +206,18 @@ uv init
 | 26   | Pascal               | [Basic](./pascal/basic/main.pas)                | 251556ms  |
 | 27   | D                    | [Basic](./d/basic/main.d)                         | 260191ms  |
 | 28   | Javascript (Node.js) | [prravda1](./javascript/prravda1/index.js)         | 272899ms  |
-| 29   | Javascript (Bun)     | [Basic](./javascript/basic.js)                     | 378794ms  |
-| 30   | Python               | [Basic](./python/basic/main.py)                     | 412043ms  |
-| 31   | Perl                 | [Basic](./perl/basic.pl)                       | 530715ms  |
-| 32   | Lua                  | [Basic](./lua/basic.lua)                       | 569031ms  |
-| 33   | Ruby                 | [Basic](./ruby/basic.rb)                       | 643754ms  |
-| 34   | Swift                | [Basic](./swift/basic.swift)                   | 936221ms  |
-| 35   | Scheme               | [Basic](./scheme/basic.scm)                    | 967971ms  |
-| 36   | Zig                  | [Basic](./zig/basic.zig)                       | 1017734ms |
-| 37   | Erlang               | [Basic](./erlang/basic/main.erl)               | 1787073ms |
-| 38   | Haskell              | [Basic](./haskell/basic/Main.hs)               | 3008400ms |
-| 39   | R                    | [Basic](./r/basic/main.R)                      | 7655896ms |
+| 29   | Javascript (Node.js) | [Basic](./javascript/basic.js)                     | 353595ms  |
+| 30   | Javascript (Bun)     | [Basic](./javascript/basic.js)                     | 378794ms  |
+| 31   | Python               | [Basic](./python/basic/main.py)                | 412043ms |
+| 32   | Perl                 | [Basic](./perl/basic.pl)                       | 530715ms  |
+| 33   | Lua                  | [Basic](./lua/basic.lua)                       | 569031ms  |
+| 34   | Ruby                 | [Basic](./ruby/basic.rb)                       | 643754ms  |
+| 35   | Swift                | [Basic](./swift/basic.swift)                   | 936221ms  |
+| 36   | Scheme               | [Basic](./scheme/basic.scm)                    | 967971ms  |
+| 37   | Zig                  | [Basic](./zig/basic.zig)                       | 1017734ms |
+| 38   | Erlang               | [Basic](./erlang/basic/main.erl)               | 1787073ms |
+| 39   | Haskell              | [Basic](./haskell/basic/Main.hs)               | 3008400ms |
+| 40   | R                    | [Basic](./r/basic/main.R)                      | 7655896ms |
 
 ## Reference
 
