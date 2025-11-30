@@ -69,6 +69,13 @@ uv init
 
 1. ruby 경로에 새 파일을 만듭니다.
 
+
+## R
+
+버전은 v4.5.2입니다.
+
+1. r 경로에 새 폴더와 파일을 만듭니다.
+
 ## Java
 
 버전은 openjdk 25.0.1/graalvm 25.0.1입니다.
@@ -209,6 +216,7 @@ uv init
 | 36   | Zig                  | [Basic](./zig/basic.zig)                       | 1017734ms |
 | 37   | Erlang               | [Basic](./erlang/basic/main.erl)               | 1787073ms |
 | 38   | Haskell              | [Basic](./haskell/basic/Main.hs)               | 3008400ms |
+| 39   | R                    | [Basic](./r/basic/main.R)                      | 7655896ms |
 
 ## Reference
 
