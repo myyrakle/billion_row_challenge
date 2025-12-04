@@ -65,7 +65,7 @@ solution <- function(path) {
     status <- get(city_name, envir = status_map)
     avg <- floor(status$total / status$count)
 
-    line_str <- sprintf("%s=%.0f;%.0f;%.0f(%.0f/%.0f)",
+    line_str <- sprintf("%s=%d;%d;%d(%d/%d)",
                        city_name,
                        status$min,
                        status$max,
@@ -75,8 +75,8 @@ solution <- function(path) {
     result <- c(result, line_str)
   }
 
-  # 개행 문자로 연결
-  paste(result, collapse = "\n")
+  # 개행 문자로 연결하고 마지막에 개행 추가
+  paste0(paste(result, collapse = "\n"), "\n")
 }
 
 # 파일 전체 읽기
