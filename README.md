@@ -66,9 +66,9 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 25   | Ocaml                | [Basic](./ocaml/basic.ml)                         | 136462ms  |
 | 26   | Python (pypy)        | [Basic](./python/basic/main.py)                   | 191197ms  |
 | 27   | Javascript (Node.js) | [sunrabbit(v1)](./javascript/sunrabbit1/index.js) | 218040ms  |
-| 28   | Dart (Dart VM)       | [basic](./dart/basic/main.dart)                   | 243129ms  |
+| 28   | Dart (Dart VM)       | [Basic](./dart/basic/main.dart)                   | 243129ms  |
 | 29   | Pascal               | [Basic](./pascal/basic/main.pas)                  | 251556ms  |
-| 30   | Dart (AOT)           | [basic](./dart/basic/main.dart)                   | 269486ms  |
+| 30   | Dart (AOT)           | [Basic](./dart/basic/main.dart)                   | 269486ms  |
 | 31   | D                    | [Basic](./d/basic/main.d)                         | 260191ms  |
 | 32   | Javascript (Node.js) | [prravda1](./javascript/prravda1/index.js)        | 272899ms  |
 | 33   | Kotlin (Native)      | [Basic](./kotlin/basic/MainNative.kt)             | 286757ms  |
