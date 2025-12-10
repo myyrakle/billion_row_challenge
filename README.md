@@ -51,37 +51,39 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 10   | Javascript (Node.js) | [sunrabbit(v2)](./javascript/sunrabbit2/index.js) | 20512ms   |
 | 11   | C# (AOT)             | [Basic](./csharp/basic/Program.cs)                | 36356ms   |
 | 12   | Go                   | [Basic](./go/cmd/basic/main.go)                   | 60338ms   |
-| 13   | Rust                 | [Basic](./rust/basic/src/main.rs)                 | 71499ms   |
-| 14   | C++ (GCC)            | [Basic](./cpp/basic/main.cpp)                     | 81690ms   |
-| 15   | Java (ZGC)           | [Basic](./java/basic/Main.java)                   | 88577ms   |
-| 16   | Java (ParallelGC)    | [Basic](./java/basic/Main.java)                   | 90484ms   |
-| 17   | Java (G1GC)          | [Basic](./java/basic/Main.java)                   | 90667ms   |
-| 18   | C++ (Clang)          | [Basic](./cpp/basic/main.cpp)                     | 93765ms   |
-| 19   | Java (GraalVM)       | [Basic](./java/basic/Main.java)                   | 117744ms  |
-| 20   | PHP                  | [Basic](./php/basic.php)                          | 119706ms  |
-| 21   | Common LISP          | [Basic](./lisp/main.lisp)                         | 131219ms  |
-| 22   | C#                   | [Basic](./csharp/basic/Program.cs)                | 131325ms  |
-| 23   | Julia                | [Basic](./julia/basic.jl)                         | 131684ms  |
-| 24   | Ocaml                | [Basic](./ocaml/basic.ml)                         | 136462ms  |
-| 25   | Python (pypy)        | [Basic](./python/basic/main.py)                   | 191197ms  |
-| 26   | Javascript (Node.js) | [sunrabbit(v1)](./javascript/sunrabbit1/index.js) | 218040ms  |
-| 27   | Dart (Dart VM)       | [basic](./dart/basic/main.dart)                   | 243129ms  |
-| 28   | Pascal               | [Basic](./pascal/basic/main.pas)                  | 251556ms  |
-| 29   | Dart (AOT)           | [basic](./dart/basic/main.dart)                   | 269486ms  |
-| 30   | D                    | [Basic](./d/basic/main.d)                         | 260191ms  |
-| 31   | Javascript (Node.js) | [prravda1](./javascript/prravda1/index.js)        | 272899ms  |
-| 32   | Javascript (Node.js) | [Basic](./javascript/basic.js)                    | 353595ms  |
-| 33   | Javascript (Bun)     | [Basic](./javascript/basic.js)                    | 378794ms  |
-| 34   | Python (CPython)     | [Basic](./python/basic/main.py)                   | 412043ms  |
-| 35   | Perl                 | [Basic](./perl/basic.pl)                          | 530715ms  |
-| 36   | Lua                  | [Basic](./lua/basic.lua)                          | 569031ms  |
-| 37   | Ruby                 | [Basic](./ruby/basic.rb)                          | 643754ms  |
-| 38   | Swift                | [Basic](./swift/basic.swift)                      | 936221ms  |
-| 39   | Scheme               | [Basic](./scheme/basic.scm)                       | 967971ms  |
-| 40   | Zig                  | [Basic](./zig/basic.zig)                          | 1017734ms |
-| 41   | Erlang               | [Basic](./erlang/basic/main.erl)                  | 1787073ms |
-| 42   | Haskell              | [Basic](./haskell/basic/Main.hs)                  | 3008400ms |
-| 43   | R                    | [Basic](./r/basic/main.R)                         | 7655896ms |
+| 13   | Kotlin (JVM)         | [Basic](./kotlin/basic/Main.kt)                   | 65369ms   |
+| 14   | Rust                 | [Basic](./rust/basic/src/main.rs)                 | 71499ms   |
+| 15   | C++ (GCC)            | [Basic](./cpp/basic/main.cpp)                     | 81690ms   |
+| 16   | Java (ZGC)           | [Basic](./java/basic/Main.java)                   | 88577ms   |
+| 17   | Java (ParallelGC)    | [Basic](./java/basic/Main.java)                   | 90484ms   |
+| 18   | Java (G1GC)          | [Basic](./java/basic/Main.java)                   | 90667ms   |
+| 19   | C++ (Clang)          | [Basic](./cpp/basic/main.cpp)                     | 93765ms   |
+| 20   | Java (GraalVM)       | [Basic](./java/basic/Main.java)                   | 117744ms  |
+| 21   | PHP                  | [Basic](./php/basic.php)                          | 119706ms  |
+| 22   | Common LISP          | [Basic](./lisp/main.lisp)                         | 131219ms  |
+| 23   | C#                   | [Basic](./csharp/basic/Program.cs)                | 131325ms  |
+| 24   | Julia                | [Basic](./julia/basic.jl)                         | 131684ms  |
+| 25   | Ocaml                | [Basic](./ocaml/basic.ml)                         | 136462ms  |
+| 26   | Python (pypy)        | [Basic](./python/basic/main.py)                   | 191197ms  |
+| 27   | Javascript (Node.js) | [sunrabbit(v1)](./javascript/sunrabbit1/index.js) | 218040ms  |
+| 28   | Dart (Dart VM)       | [basic](./dart/basic/main.dart)                   | 243129ms  |
+| 29   | Pascal               | [Basic](./pascal/basic/main.pas)                  | 251556ms  |
+| 30   | Dart (AOT)           | [basic](./dart/basic/main.dart)                   | 269486ms  |
+| 31   | D                    | [Basic](./d/basic/main.d)                         | 260191ms  |
+| 32   | Javascript (Node.js) | [prravda1](./javascript/prravda1/index.js)        | 272899ms  |
+| 33   | Kotlin (Native)      | [Basic](./kotlin/basic/MainNative.kt)             | 286757ms  |
+| 34   | Javascript (Node.js) | [Basic](./javascript/basic.js)                    | 353595ms  |
+| 35   | Javascript (Bun)     | [Basic](./javascript/basic.js)                    | 378794ms  |
+| 36   | Python (CPython)     | [Basic](./python/basic/main.py)                   | 412043ms  |
+| 37   | Perl                 | [Basic](./perl/basic.pl)                          | 530715ms  |
+| 38   | Lua                  | [Basic](./lua/basic.lua)                          | 569031ms  |
+| 39   | Ruby                 | [Basic](./ruby/basic.rb)                          | 643754ms  |
+| 40   | Swift                | [Basic](./swift/basic.swift)                      | 936221ms  |
+| 41   | Scheme               | [Basic](./scheme/basic.scm)                       | 967971ms  |
+| 42   | Zig                  | [Basic](./zig/basic.zig)                          | 1017734ms |
+| 43   | Erlang               | [Basic](./erlang/basic/main.erl)                  | 1787073ms |
+| 44   | Haskell              | [Basic](./haskell/basic/Main.hs)                  | 3008400ms |
+| 45   | R                    | [Basic](./r/basic/main.R)                         | 7655896ms |
 
 ---
 
@@ -150,6 +152,12 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 버전은 Julia 1.12.2입니다.
 
 1. julia 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
+
+### Kotlin
+
+버전은 Kotlin 2.1.20, openjdk 25.0.1입니다.
+
+1. kotlin 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
 
 ### LISP (Common LISP)
 

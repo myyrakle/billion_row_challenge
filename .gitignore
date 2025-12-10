@@ -62,3 +62,6 @@ dist-newstyle
 *.cmx
 
 scheme/**/*.go
+
+*.jar
+*.kexe
