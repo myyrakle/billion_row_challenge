@@ -41,20 +41,20 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | ---- | -------------------- | ------------------------------------------------- | --------- |
 | 1    | C++ (GCC)            | [miyamoto_renya](./cpp/miyamoto_renya/main.cpp)   | 853ms     |
 | 2    | C++ (GCC)            | [libertyrapid](./cpp/libertyrapid1/main.cpp)      | 1176ms    |
-| 3    | Rust                 | [s576air](./rust/s576air-1/src/main.rs)           | 1200ms    |
-| 4    | Go (GCC)             | [lemon-mint(v3)](./go/cmd/lemon-mint3/main.go)    | 1677ms    |
-| 5    | Go                   | [lemon-mint(v2)](./go/cmd/lemon-mint2/main.go)    | 1711ms    |
-| 6    | Rust                 | [whitetac(v2)](./rust/whitetac2/src/main.rs)      | 1755ms    |
-| 7    | Go                   | [lemon-mint(v1)](./go/cmd/lemon-mint1/main.go)    | 1793ms    |
+| 3    | Rust                 | [s576air](./rust/s576air-1/src/main.rs)           | 1368ms    |
+| 4    | Go                   | [lemon-mint(v2)](./go/cmd/lemon-mint2/main.go)    | 1434ms    |
+| 5    | Go (GCC)             | [lemon-mint(v3)](./go/cmd/lemon-mint3/main.go)    | 1829ms    |
+| 6    | Rust                 | [whitetac(v2)](./rust/whitetac2/src/main.rs)      | 2148ms    |
+| 7    | Go                   | [lemon-mint(v1)](./go/cmd/lemon-mint1/main.go)    | 1734ms    |
 | 8    | Rust                 | [whitetac(v1)](./rust/whitetac1/src/main.rs)      | 2187ms    |
 | 9    | C#                   | [rudty](./csharp/rudty1/Program.cs)               | 2330ms    |
 | 10   | Javascript (Node.js) | [kimseongjee](./javascript/kimseongjee/index.js)  | 10572ms   |
 | 11   | Javascript (Node.js) | [sunrabbit(v2)](./javascript/sunrabbit2/index.js) | 20512ms   |
 | 12   | C# (AOT)             | [Basic](./csharp/basic/Program.cs)                | 36356ms   |
-| 13   | Go                   | [Basic](./go/cmd/basic/main.go)                   | 60338ms   |
-| 14   | Kotlin (JVM)         | [Basic](./kotlin/basic/Main.kt)                   | 65369ms   |
-| 15   | Rust                 | [Basic](./rust/basic/src/main.rs)                 | 71499ms   |
-| 16   | C++ (GCC)            | [Basic](./cpp/basic/main.cpp)                     | 81690ms   |
+| 13   | Kotlin (JVM)         | [Basic](./kotlin/basic/Main.kt)                   | 65369ms   |
+| 14   | Go                   | [Basic](./go/cmd/basic/main.go)                   | 66842ms   |
+| 15   | Rust                 | [Basic](./rust/basic/src/main.rs)                 | 74631ms   |
+| 16   | C++ (GCC)            | [Basic](./cpp/basic/main.cpp)                     | 85803ms   |
 | 17   | Java (ZGC)           | [Basic](./java/basic/Main.java)                   | 88577ms   |
 | 18   | Java (ParallelGC)    | [Basic](./java/basic/Main.java)                   | 90484ms   |
 | 19   | Java (G1GC)          | [Basic](./java/basic/Main.java)                   | 90667ms   |
@@ -92,7 +92,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 
 ### C++
 
-버전은 G++ 15.2.1/Clang 21.1.6입니다.
+버전은 G++ 16.1.1/Clang 21.1.6입니다.
 
 1. cpp 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
 
@@ -124,7 +124,7 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 
 ### Go
 
-버전은 Go 1.25.4 입니다.
+버전은 Go 1.26.5 입니다.
 
 1. go/cmd 경로에 새 폴더를 만듭니다.
 2. go/cmd/basic/main.go 파일을 복사한 뒤에 수정해서 최적화합니다.
@@ -229,7 +229,7 @@ uv init
 
 ### Rust
 
-버전은 1.91.1입니다.
+버전은 1.97.1입니다.
 
 1. rust 경로에 추가 프로젝트를 구성합니다. basic을 복사해도 되고, cargo new로 생성해도 됩니다.
 
