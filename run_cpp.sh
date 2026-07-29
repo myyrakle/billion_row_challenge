@@ -5,3 +5,5 @@ echo "[C++] basic example (with clang)"
 sh cpp/run_basic_with_clang.sh
 echo "[C++] libertyrapid1"
 sh cpp/run_libertyrapid1.sh
+echo "[C++] miyamoto_renya"
+sh cpp/run_miyamoto_renya.sh
