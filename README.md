@@ -43,9 +43,9 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 | 2    | C++ (GCC)            | [libertyrapid](./cpp/libertyrapid1/main.cpp)      | 1176ms    |
 | 3    | Rust                 | [s576air](./rust/s576air-1/src/main.rs)           | 1368ms    |
 | 4    | Go                   | [lemon-mint(v2)](./go/cmd/lemon-mint2/main.go)    | 1434ms    |
-| 5    | Go (GCC)             | [lemon-mint(v3)](./go/cmd/lemon-mint3/main.go)    | 1829ms    |
-| 6    | Rust                 | [whitetac(v2)](./rust/whitetac2/src/main.rs)      | 2148ms    |
-| 7    | Go                   | [lemon-mint(v1)](./go/cmd/lemon-mint1/main.go)    | 1734ms    |
+| 5    | Go                   | [lemon-mint(v1)](./go/cmd/lemon-mint1/main.go)    | 1734ms    |
+| 6    | Go (GCC)             | [lemon-mint(v3)](./go/cmd/lemon-mint3/main.go)    | 1829ms    |
+| 7    | Rust                 | [whitetac(v2)](./rust/whitetac2/src/main.rs)      | 2148ms    |
 | 8    | Rust                 | [whitetac(v1)](./rust/whitetac1/src/main.rs)      | 2187ms    |
 | 9    | C#                   | [rudty](./csharp/rudty1/Program.cs)               | 2330ms    |
 | 10   | Javascript (Node.js) | [kimseongjee](./javascript/kimseongjee/index.js)  | 10572ms   |
