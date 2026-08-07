@@ -6,7 +6,10 @@ echo "[GO] lemon-mint1"
 sh go/run_lemon-mint1.sh
 
 echo "[GO] lemon-mint2"
-sh go/run_lemon-mint1.sh
+sh go/run_lemon-mint2.sh
 
 echo "[GO] lemon-mint3"
-sh go/run_lemon-mint1.sh
+sh go/run_lemon-mint3.sh
+
+echo "[GO] lemon-mint4"
+sh go/run_lemon-mint4.sh
