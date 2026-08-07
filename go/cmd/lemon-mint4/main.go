@@ -76,7 +76,6 @@ func solutionWithWorkers(inputPath string, workers int) []byte {
 	if err != nil {
 		panic(err)
 	}
-	defer file.Close()
 
 	info, err := file.Stat()
 	if err != nil {
@@ -90,7 +89,6 @@ func solutionWithWorkers(inputPath string, workers int) []byte {
 	if err != nil {
 		panic(err)
 	}
-	defer syscall.Munmap(data)
 	adviseMapped(data)
 
 	if workers < 1 {
