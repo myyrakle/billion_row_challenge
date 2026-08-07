@@ -39,53 +39,54 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 
 | Rank | Lang                 | Code                                              | time      |
 | ---- | -------------------- | ------------------------------------------------- | --------- |
-| 1    | Rust                 | [myyrakle](./rust/myyrakle1/src/main.rs)          | 486ms     |
-| 2    | C++ (GCC)            | [miyamoto_renya](./cpp/miyamoto_renya/main.cpp)   | 853ms     |
-| 3    | C++ (GCC)            | [libertyrapid](./cpp/libertyrapid1/main.cpp)      | 1176ms    |
-| 4    | Rust                 | [s576air](./rust/s576air-1/src/main.rs)           | 1368ms    |
-| 5    | Go                   | [lemon-mint(v2)](./go/cmd/lemon-mint2/main.go)    | 1434ms    |
-| 6    | Go                   | [lemon-mint(v1)](./go/cmd/lemon-mint1/main.go)    | 1734ms    |
-| 7    | Go (GCC)             | [lemon-mint(v3)](./go/cmd/lemon-mint3/main.go)    | 1829ms    |
-| 8    | Rust                 | [whitetac(v2)](./rust/whitetac2/src/main.rs)      | 2148ms    |
-| 9    | Rust                 | [whitetac(v1)](./rust/whitetac1/src/main.rs)      | 2187ms    |
-| 10    | C#                   | [rudty](./csharp/rudty1/Program.cs)               | 2330ms    |
-| 11   | Javascript (Node.js) | [kimseongjee](./javascript/kimseongjee/index.js)  | 10572ms   |
-| 12   | Javascript (Node.js) | [sunrabbit(v2)](./javascript/sunrabbit2/index.js) | 20512ms   |
-| 13   | C# (AOT)             | [Basic](./csharp/basic/Program.cs)                | 36356ms   |
-| 14   | Kotlin (JVM)         | [Basic](./kotlin/basic/Main.kt)                   | 65369ms   |
-| 15   | Go                   | [Basic](./go/cmd/basic/main.go)                   | 66842ms   |
-| 16   | Rust                 | [Basic](./rust/basic/src/main.rs)                 | 74631ms   |
-| 17   | C++ (GCC)            | [Basic](./cpp/basic/main.cpp)                     | 85803ms   |
-| 18   | Java (ZGC)           | [Basic](./java/basic/Main.java)                   | 88577ms   |
-| 19   | Java (ParallelGC)    | [Basic](./java/basic/Main.java)                   | 90484ms   |
-| 20   | Java (G1GC)          | [Basic](./java/basic/Main.java)                   | 90667ms   |
-| 21   | C++ (Clang)          | [Basic](./cpp/basic/main.cpp)                     | 93765ms   |
-| 22   | Java (GraalVM)       | [Basic](./java/basic/Main.java)                   | 117744ms  |
-| 23   | PHP                  | [Basic](./php/basic.php)                          | 119706ms  |
-| 24   | Common LISP          | [Basic](./lisp/main.lisp)                         | 131219ms  |
-| 25   | C#                   | [Basic](./csharp/basic/Program.cs)                | 131325ms  |
-| 26   | Julia                | [Basic](./julia/basic.jl)                         | 131684ms  |
-| 27   | Ocaml                | [Basic](./ocaml/basic.ml)                         | 136462ms  |
-| 28   | Python (pypy)        | [Basic](./python/basic/main.py)                   | 191197ms  |
-| 29   | Javascript (Node.js) | [sunrabbit(v1)](./javascript/sunrabbit1/index.js) | 218040ms  |
-| 30   | Dart (Dart VM)       | [Basic](./dart/basic/main.dart)                   | 243129ms  |
-| 31   | Pascal               | [Basic](./pascal/basic/main.pas)                  | 251556ms  |
-| 32   | D                    | [Basic](./d/basic/main.d)                         | 260191ms  |
-| 33   | Dart (AOT)           | [Basic](./dart/basic/main.dart)                   | 269486ms  |
-| 34   | Javascript (Node.js) | [prravda1](./javascript/prravda1/index.js)        | 272899ms  |
-| 35   | Kotlin (Native)      | [Basic](./kotlin/basic/MainNative.kt)             | 286757ms  |
-| 36   | Javascript (Node.js) | [Basic](./javascript/basic.js)                    | 353595ms  |
-| 37   | Javascript (Bun)     | [Basic](./javascript/basic.js)                    | 378794ms  |
-| 38   | Python (CPython)     | [Basic](./python/basic/main.py)                   | 412043ms  |
-| 39   | Perl                 | [Basic](./perl/basic.pl)                          | 530715ms  |
-| 40   | Lua                  | [Basic](./lua/basic.lua)                          | 569031ms  |
-| 41   | Ruby                 | [Basic](./ruby/basic.rb)                          | 643754ms  |
-| 42   | Swift                | [Basic](./swift/basic.swift)                      | 936221ms  |
-| 43   | Scheme               | [Basic](./scheme/basic.scm)                       | 967971ms  |
-| 44   | Zig                  | [Basic](./zig/basic.zig)                          | 1017734ms |
-| 45   | Erlang               | [Basic](./erlang/basic/main.erl)                  | 1787073ms |
-| 46   | Haskell              | [Basic](./haskell/basic/Main.hs)                  | 3008400ms |
-| 47   | R                    | [Basic](./r/basic/main.R)                         | 7655896ms |
+| 1    | Rust                 | [whitetac(v3)](./rust/whitetac3//src/main.rs)     | 456ms     |
+| 2    | Rust                 | [myyrakle](./rust/myyrakle1/src/main.rs)          | 486ms     |
+| 3    | C++ (GCC)            | [miyamoto_renya](./cpp/miyamoto_renya/main.cpp)   | 853ms     |
+| 4    | C++ (GCC)            | [libertyrapid](./cpp/libertyrapid1/main.cpp)      | 1176ms    |
+| 5    | Rust                 | [s576air](./rust/s576air-1/src/main.rs)           | 1368ms    |
+| 6    | Go                   | [lemon-mint(v2)](./go/cmd/lemon-mint2/main.go)    | 1434ms    |
+| 7    | Go                   | [lemon-mint(v1)](./go/cmd/lemon-mint1/main.go)    | 1734ms    |
+| 8    | Go (GCC)             | [lemon-mint(v3)](./go/cmd/lemon-mint3/main.go)    | 1829ms    |
+| 9    | Rust                 | [whitetac(v2)](./rust/whitetac2/src/main.rs)      | 2148ms    |
+| 10   | Rust                 | [whitetac(v1)](./rust/whitetac1/src/main.rs)      | 2187ms    |
+| 11   | C#                   | [rudty](./csharp/rudty1/Program.cs)               | 2330ms    |
+| 12   | Javascript (Node.js) | [kimseongjee](./javascript/kimseongjee/index.js)  | 10572ms   |
+| 13   | Javascript (Node.js) | [sunrabbit(v2)](./javascript/sunrabbit2/index.js) | 20512ms   |
+| 14   | C# (AOT)             | [Basic](./csharp/basic/Program.cs)                | 36356ms   |
+| 15   | Kotlin (JVM)         | [Basic](./kotlin/basic/Main.kt)                   | 65369ms   |
+| 16   | Go                   | [Basic](./go/cmd/basic/main.go)                   | 66842ms   |
+| 17   | Rust                 | [Basic](./rust/basic/src/main.rs)                 | 74631ms   |
+| 18   | C++ (GCC)            | [Basic](./cpp/basic/main.cpp)                     | 85803ms   |
+| 19   | Java (ZGC)           | [Basic](./java/basic/Main.java)                   | 88577ms   |
+| 20   | Java (ParallelGC)    | [Basic](./java/basic/Main.java)                   | 90484ms   |
+| 21   | Java (G1GC)          | [Basic](./java/basic/Main.java)                   | 90667ms   |
+| 22   | C++ (Clang)          | [Basic](./cpp/basic/main.cpp)                     | 93765ms   |
+| 23   | Java (GraalVM)       | [Basic](./java/basic/Main.java)                   | 117744ms  |
+| 24   | PHP                  | [Basic](./php/basic.php)                          | 119706ms  |
+| 25   | Common LISP          | [Basic](./lisp/main.lisp)                         | 131219ms  |
+| 26   | C#                   | [Basic](./csharp/basic/Program.cs)                | 131325ms  |
+| 27   | Julia                | [Basic](./julia/basic.jl)                         | 131684ms  |
+| 28   | Ocaml                | [Basic](./ocaml/basic.ml)                         | 136462ms  |
+| 29   | Python (pypy)        | [Basic](./python/basic/main.py)                   | 191197ms  |
+| 30   | Javascript (Node.js) | [sunrabbit(v1)](./javascript/sunrabbit1/index.js) | 218040ms  |
+| 31   | Dart (Dart VM)       | [Basic](./dart/basic/main.dart)                   | 243129ms  |
+| 32   | Pascal               | [Basic](./pascal/basic/main.pas)                  | 251556ms  |
+| 33   | D                    | [Basic](./d/basic/main.d)                         | 260191ms  |
+| 34   | Dart (AOT)           | [Basic](./dart/basic/main.dart)                   | 269486ms  |
+| 35   | Javascript (Node.js) | [prravda1](./javascript/prravda1/index.js)        | 272899ms  |
+| 36   | Kotlin (Native)      | [Basic](./kotlin/basic/MainNative.kt)             | 286757ms  |
+| 37   | Javascript (Node.js) | [Basic](./javascript/basic.js)                    | 353595ms  |
+| 38   | Javascript (Bun)     | [Basic](./javascript/basic.js)                    | 378794ms  |
+| 39   | Python (CPython)     | [Basic](./python/basic/main.py)                   | 412043ms  |
+| 40   | Perl                 | [Basic](./perl/basic.pl)                          | 530715ms  |
+| 41   | Lua                  | [Basic](./lua/basic.lua)                          | 569031ms  |
+| 42   | Ruby                 | [Basic](./ruby/basic.rb)                          | 643754ms  |
+| 43   | Swift                | [Basic](./swift/basic.swift)                      | 936221ms  |
+| 44   | Scheme               | [Basic](./scheme/basic.scm)                       | 967971ms  |
+| 45   | Zig                  | [Basic](./zig/basic.zig)                          | 1017734ms |
+| 46   | Erlang               | [Basic](./erlang/basic/main.erl)                  | 1787073ms |
+| 47   | Haskell              | [Basic](./haskell/basic/Main.hs)                  | 3008400ms |
+| 48   | R                    | [Basic](./r/basic/main.R)                         | 7655896ms |
 
 ---
 
