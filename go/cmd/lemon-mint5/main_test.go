@@ -108,8 +108,8 @@ func TestSolutionGeneratedSmall(t *testing.T) {
 }
 
 func TestSIMDKernelConsumesRecords(t *testing.T) {
-	if !simdTargetAvailable() {
-		t.Skipf("SIMD unavailable on %s/%s", runtime.GOOS, runtime.GOARCH)
+	if !simdAvailable() {
+		t.Skip("SIMD unavailable")
 	}
 	path, expected := makeFixture(t, 32)
 	data, err := os.ReadFile(path)
@@ -118,18 +118,19 @@ func TestSIMDKernelConsumesRecords(t *testing.T) {
 	}
 
 	bounds := splitLanes(data, 0, len(data))
-	var starts, initial, ends [laneCount]int
+	base := uintptr(unsafe.Pointer(unsafe.SliceData(data)))
+	var starts, initial, ends [laneCount]uintptr
 	for lane := range laneCount {
-		starts[lane] = bounds[lane]
+		starts[lane] = base + uintptr(bounds[lane])
 		initial[lane] = starts[lane]
-		ends[lane] = bounds[lane+1]
+		ends[lane] = base + uintptr(bounds[lane+1])
 	}
 	var target table
 	for index := range target {
 		target[index].min = math.MaxInt32
 	}
 
-	processSIMD(data, &starts, &ends, &target)
+	processSIMD(&starts[0], &ends[0], base+uintptr(len(data)-32), &target)
 	for lane := range laneCount {
 		if starts[lane] <= initial[lane] {
 			t.Fatalf("lane %d did not advance", lane)
@@ -138,9 +139,10 @@ func TestSIMDKernelConsumesRecords(t *testing.T) {
 			t.Fatalf("lane %d advanced past its end", lane)
 		}
 		if starts[lane] < ends[lane] {
-			processScalar(data, starts[lane], ends[lane], &target)
+			processScalar(data, int(starts[lane]-base), int(ends[lane]-base), &target)
 		}
 	}
+	runtime.KeepAlive(data)
 
 	got := mergeAndFormat([]table{target})
 	if !bytes.Equal(got, expected) {

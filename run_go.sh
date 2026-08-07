@@ -13,3 +13,6 @@ sh go/run_lemon-mint3.sh
 
 echo "[GO] lemon-mint4"
 sh go/run_lemon-mint4.sh
+
+echo "[GO] lemon-mint5"
+sh go/run_lemon-mint5.sh

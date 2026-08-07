@@ -1,10 +1,10 @@
 package main
 
 import (
+	"brc/internal/measurement"
 	"bytes"
 	"flag"
 	"fmt"
-	"github.com/myyrakle/billion_row_challenge/go/cmd/lemon-mint4/internal/measurement"
 	"math"
 	"os"
 	"runtime"

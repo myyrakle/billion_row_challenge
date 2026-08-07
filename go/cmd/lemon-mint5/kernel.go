@@ -91,34 +91,26 @@ func splitLanes(data []byte, start, end int) (bounds [laneCount + 1]int) {
 	return bounds
 }
 
-func simdTargetAvailable() bool {
-	switch runtime.GOOS {
-	case "darwin", "linux":
-		switch runtime.GOARCH {
-		case "amd64", "arm64":
-			return simdAvailable()
-		}
-	}
-	return false
-}
-
 func processChunk(data []byte, start, end int, target *table) {
-	if end-start < 4096 || !simdTargetAvailable() || len(data) < 32 {
+	if end-start < 4096 || !simdAvailable() || len(data) < 32 {
 		processScalar(data, start, end, target)
 		return
 	}
 
 	bounds := splitLanes(data, start, end)
-	var starts, ends [laneCount]int
+	base := uintptr(unsafe.Pointer(unsafe.SliceData(data)))
+	var starts, ends [laneCount]uintptr
 	for lane := range laneCount {
-		starts[lane] = bounds[lane]
-		ends[lane] = bounds[lane+1]
+		starts[lane] = base + uintptr(bounds[lane])
+		ends[lane] = base + uintptr(bounds[lane+1])
 	}
 
-	processSIMD(data, &starts, &ends, target)
+	processSIMD(&starts[0], &ends[0], base+uintptr(len(data)-32), target)
 	for lane := range laneCount {
 		if starts[lane] < ends[lane] {
-			processScalar(data, starts[lane], ends[lane], target)
+			processScalar(data, int(starts[lane]-base), int(ends[lane]-base), target)
 		}
 	}
+	runtime.KeepAlive(data)
+	runtime.KeepAlive(target)
 }
