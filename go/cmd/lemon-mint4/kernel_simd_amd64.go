@@ -31,8 +31,8 @@ func parseDigitsAMD64(word uint64, digitLen int, pairWeights archsimd.Int8x16, q
 func processSIMD(data []byte, starts, ends *[laneCount]int, target *table) {
 	semicolonVector := archsimd.BroadcastUint8x32(';')
 	newlineVector := archsimd.BroadcastUint8x32('\n')
-	pairWeights := archsimd.LoadInt8x16Array(&amd64PairWeights)
-	quadWeights := archsimd.LoadInt16x8Array(&amd64QuadWeights)
+	pairWeights := archsimd.LoadInt8x16(&amd64PairWeights)
+	quadWeights := archsimd.LoadInt16x8(&amd64QuadWeights)
 	safeEnd := len(data) - 32
 
 	for {
@@ -43,7 +43,7 @@ func processSIMD(data []byte, starts, ends *[laneCount]int, target *table) {
 
 		{
 			position := starts[0]
-			chunk := archsimd.LoadUint8x32(data[position:])
+			chunk := archsimd.LoadUint8x32Slice(data[position:])
 			semicolonMask := chunk.Equal(semicolonVector).ToBits()
 			newlineMask := chunk.Equal(newlineVector).ToBits()
 			if semicolonMask == 0 || newlineMask == 0 {
@@ -67,7 +67,7 @@ func processSIMD(data []byte, starts, ends *[laneCount]int, target *table) {
 
 		{
 			position := starts[1]
-			chunk := archsimd.LoadUint8x32(data[position:])
+			chunk := archsimd.LoadUint8x32Slice(data[position:])
 			semicolonMask := chunk.Equal(semicolonVector).ToBits()
 			newlineMask := chunk.Equal(newlineVector).ToBits()
 			if semicolonMask == 0 || newlineMask == 0 {
