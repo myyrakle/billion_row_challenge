@@ -1,4 +1,4 @@
 cd go
-go build -o ./../main ./cmd/lemon-mint5
+go build -gcflags=-B -o ./../main ./cmd/lemon-mint5
 cd ..
-./main
+GODEBUG=asyncpreemptoff=1 ./main
