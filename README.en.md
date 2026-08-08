@@ -2,12 +2,12 @@
 
 # billion row challenge
 
-- 여러가지 프로그래밍 언어로 도전해볼 수 있는 10억개 데이터 처리 챌린지입니다.
+- A one-billion-row data processing challenge that you can attempt in various programming languages.
 
-## 진행 방법
+## How to participate
 
-1. setup.sh를 실행해서 테스트 데이터를 생성합니다. (Rust가 필요합니다. 17GB 정도의 크기입니다.)
-2. 입력 데이터 파일에는 다음과 같이 지역과 측정값 쌍이 개행으로 구분된 채로 들어있습니다. 숫자는 정수 값입니다.
+1. Run setup.sh to generate the test data. (Rust is required. The file is about 17GB.)
+2. The input data file contains region/measurement pairs separated by newlines, as shown below. The numbers are integer values.
 
 ```
 Prico;458634
@@ -17,10 +17,10 @@ Athens;799643
 Boa Vista;75486
 ```
 
-3. 해당 파일을 읽어서 지역명을 기준으로 최댓값, 최솟값, 개수, 총합, 평균값을 구하세요.
-4. 나눗셈을 할 경우 integer 연산으로 나머지는 버립니다.
-5. 지역명을 기준으로 오름차순 정렬을 합니다.
-6. 기대하는 출력 형태는 다음과 같습니다. `지역명=최솟값;최댓값;평균값(총합/개수)`
+3. Read that file and compute the maximum, minimum, count, sum, and average per region name.
+4. When dividing, use integer arithmetic and discard the remainder.
+5. Sort by region name in ascending order.
+6. The expected output format is as follows: `region=min;max;average(sum/count)`
 
 ```
 Adenarith=1;9999999;5000594(4716533623284/9431947)
@@ -28,16 +28,16 @@ Amsterdam=4;9999999;4999133(4715142248923/9431920)
 Anápolis=0;9999999;4999550(4718363502090/9437576)
 ```
 
-## 제한
+## Constraints
 
-- 일반적인 상용 컴퓨팅 환경에서 동작해야 합니다.
-  - linux/amd64, RAM 64GB, 멀티코어(12코어)
-- 하지만 unsafe나 tricky한 흑마술들은 사용 가능합니다.
-- 제출하는 폴더나 소스파일의 이름은 식별 가능하게 닉네임1 or 닉네임-1 같은 형태로 맞춰주세요. 도전 횟수가 느는 만큼 뒤에 붙은 숫자를 증가시켜주시면 됩니다.
+- It must run in a typical commodity computing environment.
+  - linux/amd64, RAM 64GB, multi-core (12 cores)
+- However, unsafe code and tricky black magic are allowed.
+- Please name the folder or source file you submit so it is identifiable, in a form like nickname1 or nickname-1. As your number of attempts grows, increment the trailing number.
 
 ---
 
-## 현재 결과
+## Current results
 
 | Rank | Lang                 | Code                                              | time      |
 | ---- | -------------------- | ------------------------------------------------- | --------- |
@@ -92,126 +92,126 @@ Anápolis=0;9999999;4999550(4718363502090/9437576)
 
 ---
 
-## 언어별 환경
+## Environment per language
 
 ### C++
 
-버전은 G++ 16.1.1/Clang 21.1.6입니다.
+The version is G++ 16.1.1/Clang 21.1.6.
 
-1. cpp 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
+1. Create a new folder under the cpp path and set up your project.
 
 ### C#
 
-버전은 dotnet 9.0.110입니다.
+The version is dotnet 9.0.110.
 
-1. c# 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
-   - dotnet new로 직접 생성해도 좋고,
-   - basic을 복제해서 사용해도 좋습니다.
+1. Create a new folder under the c# path and set up your project.
+   - You may create it directly with dotnet new,
+   - or copy basic and use that.
 
 ### D
 
-버전은 DMD v2.111.0입니다.
+The version is DMD v2.111.0.
 
-1. d 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
+1. Create a new folder under the d path and set up your project.
 
 ### Dart
 
-버전은 dart 3.10.0입니다.
+The version is dart 3.10.0.
 
-1. dart 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
+1. Create a new folder under the dart path and set up your project.
 
 ### Erlang
 
-버전은 V16.1.1입니다.
+The version is V16.1.1.
 
-1. erlang 경로에 분리된 새 폴더와 소스파일을 작성합니다.
+1. Write a separate new folder and source file under the erlang path.
 
 ### Go
 
-버전은 Go 1.26.5 입니다.
+The version is Go 1.26.5.
 
-1. go/cmd 경로에 새 폴더를 만듭니다.
-2. go/cmd/basic/main.go 파일을 복사한 뒤에 수정해서 최적화합니다.
+1. Create a new folder under the go/cmd path.
+2. Copy the go/cmd/basic/main.go file, then modify and optimize it.
 
 ### Haskell
 
-버전은 ghc 9.6.6입니다.
+The version is ghc 9.6.6.
 
-1. haskell 경로에 분리된 새 폴더와 소스파일을 작성합니다.
+1. Write a separate new folder and source file under the haskell path.
 
 ### Java
 
-버전은 openjdk 25.0.1/graalvm 25.0.1입니다.
+The versions are openjdk 25.0.1/graalvm 25.0.1.
 
-1. java 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
+1. Create a new folder under the java path and set up your project.
 
 ### Javascript
 
-- 버전은 Node.js v24.8.0/Bun v1.3.3입니다.
+- The versions are Node.js v24.8.0/Bun v1.3.3.
 
-1. javascript 경로에 새 파일을 만듭니다.
-2. javascript/basic.js 파일을 복사한 뒤에 수정해서 최적화합니다.
+1. Create a new file under the javascript path.
+2. Copy the javascript/basic.js file, then modify and optimize it.
 
 ### Julia
 
-버전은 Julia 1.12.2입니다.
+The version is Julia 1.12.2.
 
-1. julia 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
+1. Create a new folder under the julia path and set up your project.
 
 ### Kotlin
 
-버전은 Kotlin 2.1.20, openjdk 25.0.1입니다.
+The versions are Kotlin 2.1.20, openjdk 25.0.1.
 
-1. kotlin 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
+1. Create a new folder under the kotlin path and set up your project.
 
 ### LISP (Common LISP)
 
-버전은 SBCL v2.5.10입니다.
+The version is SBCL v2.5.10.
 
-1. lisp 경로에 새 파일 혹은 새 폴더를 만들고 소스코드를 작성합니다.
+1. Create a new file or a new folder under the lisp path and write your source code.
 
 ### LISP (Scheme)
 
-버전은 guile v3.0.10입니다.
+The version is guile v3.0.10.
 
-1. scheme 경로에 새 파일 혹은 새 폴더를 만들고 소스코드를 작성합니다.
+1. Create a new file or a new folder under the scheme path and write your source code.
 
 ### Lua
 
-버전은 lua 5.4.8입니다.
+The version is lua 5.4.8.
 
-1. lua 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
+1. Create a new folder under the lua path and set up your project.
 
 ### Ocaml
 
-버전은 v5.4.0입니다.
+The version is v5.4.0.
 
-1. ocaml 경로에 분리된 새 폴더와 소스파일을 작성합니다.
+1. Write a separate new folder and source file under the ocaml path.
 
 ### Pascal
 
-버전은 Free Pascal Compiler v3.2.2입니다.
+The version is Free Pascal Compiler v3.2.2.
 
-1. pascal 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
+1. Create a new folder under the pascal path and set up your project.
 
 ### Perl
 
-버전은 v5.42.0입니다.
+The version is v5.42.0.
 
-1. perl 경로에 새 폴더와 새 소스파일을 추가해서 작성합니다.
+1. Add a new folder and a new source file under the perl path.
 
 ### PHP
 
-버전은 8.4.15입니다.
+The version is 8.4.15.
 
-1. php 경로에 새 소스파일을 작성합니다.
+1. Write a new source file under the php path.
 
 ### Python
 
-버전은 CPython 3.14, pypy 3.11.13입니다.
-CPython의 경우에는 uv를 사용합니다.
+The versions are CPython 3.14, pypy 3.11.13.
+For CPython, uv is used.
 
-1. uv를 사용해서 python 경로에 새 폴더와 새 파일을 만듭니다.
+1. Use uv to create a new folder and new file under the python path.
 
 ```bash
 mkdir foo
@@ -221,33 +221,33 @@ uv init
 
 ### R
 
-버전은 v4.5.2입니다.
+The version is v4.5.2.
 
-1. r 경로에 새 폴더와 파일을 만듭니다.
+1. Create a new folder and file under the r path.
 
 ### Ruby
 
-버전은 Ruby 3.4.7 입니다.
+The version is Ruby 3.4.7.
 
-1. ruby 경로에 새 파일을 만듭니다.
+1. Create a new file under the ruby path.
 
 ### Rust
 
-버전은 1.97.1입니다.
+The version is 1.97.1.
 
-1. rust 경로에 추가 프로젝트를 구성합니다. basic을 복사해도 되고, cargo new로 생성해도 됩니다.
+1. Set up an additional project under the rust path. You may copy basic, or create one with cargo new.
 
 ### Swift
 
-버전은 6.2.1입니다.
+The version is 6.2.1.
 
-1. swift 경로에 새 폴더를 만들고 프로젝트를 구성합니다.
+1. Create a new folder under the swift path and set up your project.
 
 ### Zig
 
-버전은 0.15.2입니다.
+The version is 0.15.2.
 
-1. zig 경로에 새 파일 혹은 새 폴더를 만들고 소스코드를 작성합니다.
+1. Create a new file or a new folder under the zig path and write your source code.
 
 ---
 
@@ -256,6 +256,6 @@ uv init
 - https://github.com/gunnarmorling/1brc
 - https://benhoyt.com/writings/go-1brc/
 
-## 지난결과
+## Past results
 
-- [시즌 1](./README.v1.md)
+- [Season 1](./README.v1.md)
