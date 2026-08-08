@@ -6,15 +6,15 @@ target="$(go env GOOS)/$(go env GOARCH)"
 case "$target" in
 	darwin/amd64 | linux/amd64)
 		GOEXPERIMENT=simd GOAMD64=v3 \
-			go build -trimpath -o ../../../main .
+			go build -gcflags=-B -trimpath -o ../../../main .
 		;;
 	darwin/arm64 | linux/arm64)
 		GOEXPERIMENT= \
-			go build -trimpath -o ../../../main .
+			go build -gcflags=-B -trimpath -o ../../../main .
 		;;
 	*)
 		GOEXPERIMENT= \
-			go build -trimpath -o ../../../main .
+			go build -gcflags=-B -trimpath -o ../../../main .
 		;;
 esac
 cd ../../..
